@@ -1,0 +1,15 @@
+<html>
+<head>
+    <title>To BEM or not to BEM</title>
+</head>
+<body>
+    <h1>To BEM or not to BEM</h1>
+    <ul>
+        {% for interview in collections.interviews %}
+            <li>
+                <a href="{{interview.path}}">{{interview.title}}</a>
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
