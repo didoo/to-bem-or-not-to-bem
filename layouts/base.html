@@ -1,0 +1,39 @@
+<html>
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>{{ head_title|default(project.title) }}</title>
+    <meta name="description" content="{{ head_description|default(project.description) }}">
+    <meta name="author" content="Cristiano Rastelli">
+
+    <link rel="stylesheet" href="css/main.css">
+
+</head>
+<body>
+
+    {% include "../partials/header.html" %}
+
+    {% block main %}{% endblock %}
+
+    {% include "../partials/footer.html" %}
+
+
+    <script type="text/javascript">
+        WebFontConfig = {
+            google: { families: [ 'Lekton:400,700:latin' ] }
+        };
+        (function() {
+            var wf = document.createElement('script');
+            wf.src = 'https://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
+            wf.type = 'text/javascript';
+            wf.async = 'true';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(wf, s);
+        })();
+    </script>
+
+</body>
+</html>

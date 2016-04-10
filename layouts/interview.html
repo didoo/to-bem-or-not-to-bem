@@ -1,14 +1,32 @@
-<html>
-<head>
-    <title>{{ title }} - To BEM or not to BEM</title>
-</head>
-<body>
-    <h1>{{ title }}</h1>
-    <article>
-        <time>{{ date|date('d M Y') }}</time>
-        <section>
+{% extends "base.html" %}
+
+{% block main %}
+<article class="interview">
+
+    {% if status == 'public' %}
+        <aside class="interview__intro">
+            <span class="interview__number">{{ title }}</span>
+            <h2 class="interview__title">{{ peer.slug }}</h2>
+            <div class="interviewee">
+                <img class="interviewee__avatar" src="{{ peer.avatar }}" alt="{{ peer.fullname }}">
+                <div class="interviewee__bio">{{ peer.bio|safe }}</div>
+                <ul class="socials">
+                    {% for social in peer.socials %}
+                    <li><a href="{{ social.url }}" alt="">{{ social.name }}</a></li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </aside>
+        <section class="interview__main">
+        <!-- dialog -->
             {{ contents|safe }}
         </section>
-    </article>
-</body>
-</html>
+        <div class="interview__meta">
+            <div class="when">This interview has been published on <time>{{ date|date('d M Y') }}</time></div>
+        </div>
+    {% else %}
+        <pre>COMING SOON</pre>
+    {% endif %}
+
+</article>
+{% endblock %}

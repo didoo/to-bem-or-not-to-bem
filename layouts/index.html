@@ -1,15 +1,25 @@
-<html>
-<head>
-    <title>To BEM or not to BEM</title>
-</head>
-<body>
-    <h1>To BEM or not to BEM</h1>
-    <ul>
+{% extends "base.html" %}
+
+{% block main %}
+<main>
+    <ul class="previews">
         {% for interview in collections.interviews %}
-            <li>
-                <a href="{{interview.path}}">{{interview.title}}</a>
+            <li class="billboard {{ interview.status }}">
+                <span class="billboard__number">#{{ interview.number }}</span>
+                <div class="billboard__heading">
+                    <h2 class="billboard__title">
+                        <a href="{{interview.path}}" alt="{{ interview.title }}">
+                            {{ interview.peer_nameslug }}
+                        </a>
+                    </h2>
+                    <h4 class="billboard__subtitle">{{ interview.peer_minibio }}</h4>
+                </div>
+                <div class="billboard__abstract">
+                    <q>{{ interview.quote }}</q>
+                    <a href="{{interview.path}}" alt="{{ interview.title }}">read the interview »</a>
+                </div>
             </li>
         {% endfor %}
     </ul>
-</body>
-</html>
+</main>
+{% endblock %}

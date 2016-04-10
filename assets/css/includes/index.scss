@@ -1,0 +1,93 @@
+////////////////////////////////// INDEX PAGE //////////////////////////////////
+
+main {
+    padding: 40px 60px;
+    max-width: $max-content-width;
+    border: 1px solid red;
+}
+
+.previews {
+    margin: 0px;
+    padding: 0px;
+    list-style-type: none;
+}
+
+.billboard {
+    margin: 0px;
+    padding: 100px 0px 130px;
+    text-align: center;
+    border-bottom: 2px solid $grey-pale;
+}
+
+.billboard__number {
+    font-size: 24px;
+}
+
+.billboard__heading {
+    margin: 60px auto 70px;
+}
+
+.billboard__title {
+    font-size: 52px;
+    color: $grey-dark;
+    a {
+        text-decoration: none;
+        color: inherit;
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}
+
+.billboard__subtitle {
+    margin: 20px auto 0px;
+    font-size: 14px;
+    line-height: 1.25em;
+    color: $grey-light;
+    max-width: 400px;
+}
+
+.billboard__abstract {
+    position: relative;
+    margin: 70px auto 0px;
+    max-width: 600px;
+}
+
+.billboard__abstract::before,
+.billboard__abstract::after {
+    position: absolute;
+    top: 0px;
+    width: 25px;
+    font-size: 52px;
+    text-align: center;
+    vertical-align: top;
+    color: $grey-pale;
+}
+
+.billboard__abstract::before {
+    left: -25px;
+    content: "“";
+}
+.billboard__abstract::after {
+    right: -25px;
+    content: "”";
+}
+
+
+.billboard__abstract q {
+    display: block;
+    font-size: 18px;
+    line-height: 1.25em;
+}
+
+.billboard__abstract a {
+    margin: 20px auto 0px;
+    display: block;
+    font-size: 14px;
+    text-decoration: underline;
+    color: $grey-light;
+    transition: color 0.2s ease-in;
+    &:hover {
+        color: $grey-dark;
+    }
+}
