@@ -1,24 +1,23 @@
-{% extends "base.html" %}
+{% extends "./base.html" %}
 
 {% block main %}
 <article class="interview">
 
     {% if status == 'public' %}
         <aside class="interview__intro">
-            <span class="interview__number">{{ title }}</span>
-            <h2 class="interview__title">{{ peer.slug }}</h2>
+            <span class="interview__number">#{{ number }}</span>
+            <h2 class="interview__title">{{ nameslug }}</h2>
             <div class="interviewee">
-                <img class="interviewee__avatar" src="{{ peer.avatar }}" alt="{{ peer.fullname }}">
-                <div class="interviewee__bio">{{ peer.bio|safe }}</div>
-                <ul class="socials">
-                    {% for social in peer.socials %}
-                    <li><a href="{{ social.url }}" alt="">{{ social.name }}</a></li>
+                <img class="interviewee__avatar" src="{{ interviewee.avatar }}" alt="{{ interviewee.fullname }}">
+                <div class="interviewee__bio">{{ interviewee.fullbio|safe }}</div>
+                <ul class="interviewee__links">
+                    {% for link in interviewee.links %}
+                    <li><a href="{{ link.url }}" alt="">{{ link.label }}</a></li>
                     {% endfor %}
                 </ul>
             </div>
         </aside>
         <section class="interview__main">
-        <!-- dialog -->
             {{ contents|safe }}
         </section>
         <div class="interview__meta">

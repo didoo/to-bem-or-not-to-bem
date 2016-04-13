@@ -1,8 +1,391 @@
 
-////////////////////////////////// MAIN IMPORTS //////////////////////////////////
+////////////////////////////////// RESET //////////////////////////////////
 
-@import 'includes/variables';
-@import 'includes/reset';
-@import 'includes/base';
-@import 'includes/header';
-@import 'includes/index';
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+body {
+    line-height: 1;
+}
+ol, ul {
+    list-style: none;
+}
+blockquote, q {
+    quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+
+////////////////////////////////// MAIN VARIABLES //////////////////////////////////
+
+// colors
+$grey-pale:  #E6E6E6;
+$grey-light: #9B9B9B;
+$grey-base:  #4A4A4A;
+$grey-dark:  #000000;
+
+// sizes
+$size-tablet:  640px;
+$size-desktop: 1200px;
+$max-content-width: 1000px;
+
+// styles
+$block-border: 2px solid $grey-pale;
+
+
+////////////////////////////////// MIXINS //////////////////////////////////
+
+@mixin media($size) {
+    @if $size == tablet {
+        @media (min-width: $size-tablet){
+            @content;
+        }
+    } @else if $size == desktop {
+        @media (min-width: $size-desktop){
+            @content;
+        }
+    }
+}
+
+
+////////////////////////////////// GENERIC BASE STYLES //////////////////////////////////
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+html {
+    position: relative;
+}
+
+body {
+    position: relative;
+    font-family: 'Lekton', sans-serif;
+    // text-rendering: optimizeLegibility;
+    // -webkit-font-smoothing: antialiased;
+    color: $grey-base;
+}
+
+// disable pointer events for SVGs (see: https://css-tricks.com/links-inline-svg-staying-target-events/)
+a > svg {
+    pointer-events: none;
+}
+
+
+////////////////////////////////// HEADER //////////////////////////////////
+
+header {
+    position: relative;
+    max-width: $max-content-width;
+    margin: 0px auto;
+    padding: 50px 4vw 60px;
+    text-align: left;
+    @include media(tablet) {
+        padding: 50px 60px 60px;
+    }
+    @include media(desktop) {
+        padding: 50px 60px 60px;
+    }
+}
+
+.header__logo {
+    display: block;
+    font-weight: bold;
+    font-size: 52px;
+    line-height: 1em;
+    text-decoration: none;
+    color: $grey-dark;
+    &:hover {
+        // TODO
+    }
+}
+
+.header__caption {
+    display: block;
+    margin-top: 20px;
+    padding-left: 4px;
+    font-size: 18px;
+    line-height: 1em;
+    color: $grey-light;
+}
+
+.header__toggle {
+    position: absolute;
+    right: 60px;
+    width: 40px;
+    height: 40px;
+    margin-top: 5px;
+}
+
+header::after {
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    height: 2px;
+    background: $grey-pale;
+    content: "";
+}
+
+
+///////////////////////////////////// INDEX PAGE //////////////////////////////////
+
+main {
+    max-width: $max-content-width;
+    margin: 0px auto;
+    padding: 0px 60px;
+    // border: 1px solid green;
+}
+
+.billboards {
+    margin: 0px;
+    padding: 0px;
+    list-style-type: none;
+}
+
+.billboard {
+    margin: 0px;
+    padding: 90px 0px 130px;
+    text-align: center;
+    border-bottom: $block-border;
+}
+
+.billboard__number {
+    font-size: 24px;
+    color: $grey-light;
+}
+
+.billboard__heading {
+    margin: 60px auto 70px;
+}
+
+.billboard__title {
+    font-size: 52px;
+    color: $grey-dark;
+    a {
+        position: relative;
+        text-decoration: none;
+        color: inherit;
+        &::after {
+            position: absolute;
+            bottom: 10px;
+            left: 0px;
+            right: 0px;
+            z-index: -1;
+            height: 3px;
+            background-color: $grey-pale;
+            opacity: 0;
+            content: "";
+            transition: all 0.2s ease-in-out;
+        }
+        &:hover::after {
+            opacity: 1;
+            bottom: 6px;
+        }
+    }
+}
+
+.billboard__subtitle {
+    margin: 20px auto 0px;
+    font-size: 14px;
+    line-height: 1.25em;
+    color: $grey-light;
+    max-width: 400px;
+}
+
+.billboard__abstract {
+    position: relative;
+    margin: 0px auto;
+    max-width: 600px;
+}
+
+.billboard__abstract::before,
+.billboard__abstract::after {
+    position: absolute;
+    top: 0px;
+    width: 25px;
+    font-size: 52px;
+    text-align: center;
+    vertical-align: top;
+    color: $grey-pale;
+}
+
+.billboard__abstract::before {
+    left: -25px;
+    content: "“";
+}
+.billboard__abstract::after {
+    right: -25px;
+    content: "”";
+}
+
+
+.billboard__abstract q {
+    display: block;
+    font-size: 18px;
+    line-height: 1.25em;
+}
+
+.billboard__abstract a {
+    margin: 20px auto 0px;
+    display: block;
+    font-size: 14px;
+    text-decoration: underline;
+    color: $grey-light;
+    transition: color 0.2s ease-in;
+    &:hover {
+        color: $grey-dark;
+    }
+}
+
+
+///////////////////////////////////// INTERVIEW PAGE //////////////////////////////////
+
+.interview {
+    max-width: $max-content-width;
+    margin: 0px auto;
+    padding: 0px 60px;
+    border-bottom: $block-border;
+}
+
+.interview__intro {
+    // margin: 0px auto;
+    padding: 80px 70px 90px (70px + 80px);
+    border-bottom: $block-border;
+}
+
+.interview__number {
+    position: absolute;
+    margin: 15px auto 0px -80px;
+    font-size: 24px;
+    color: $grey-light;
+}
+
+.interview__title {
+    font-size: 52px;
+    color: $grey-dark;
+}
+
+.interviewee {
+    font-size: 14px;
+    line-height: 1.25em;
+    color: $grey-light;
+}
+
+.interviewee__avatar {
+    width: 160px;
+    height: auto;
+    float: left;
+}
+
+.interviewee__bio {
+    margin: 40px 0px 0px 200px;
+    p {
+        margin-bottom: 6px;
+    }
+}
+
+.interviewee__links {
+    margin: 20px 0px 0px 200px;
+    li {
+        display: inline-block;
+        &::after {
+            content: "  --  ";
+        }
+    }
+    a {
+        color: inherit;
+        text-decoration: underline;
+    }
+}
+
+.interview__main {
+    // margin: 0px auto;
+    padding: 80px 70px 90px;
+
+    .dialog {
+        display: inline-block;
+        margin: 0px auto 30px;
+        max-width: 550px;
+    }
+
+    .dialog--question {
+        margin-left: 0px;
+        text-align: left;
+        outline: 1px solid red;
+    }
+
+    .dialog--answer {
+        margin-right: 0px;
+        text-align: left;
+        outline: 1px solid green;
+    }
+
+    p {
+        font-size: 18px;
+        line-height: 1.25em;
+        margin-bottom: 12px;
+    }
+
+}
+
+.interview__meta {
+    text-align: center;
+    .when {
+        position: relative;
+        margin: 50px auto 0px;
+        padding: 40px;
+        font-size: 10px;
+        color: #D0D0D0;
+        border-top: 1px solid $grey-pale;
+        display: inline-block;
+        &::before {
+            position: absolute;
+            top: 0px;
+            left: 50%;
+            padding: 2px 10px;
+            font-size: 16px;
+            color: $grey-dark;
+            background: #FFF;
+            // content: "❦";
+            // content: "{···}";
+            content: "· ✤ ·";
+            transform: translate(-50%,-50%);
+        }
+    }
+}

@@ -1,18 +1,18 @@
-{% extends "base.html" %}
+{% extends "./base.html" %}
 
 {% block main %}
 <main>
-    <ul class="previews">
+    <ul class="billboards">
         {% for interview in collections.interviews %}
             <li class="billboard {{ interview.status }}">
                 <span class="billboard__number">#{{ interview.number }}</span>
                 <div class="billboard__heading">
                     <h2 class="billboard__title">
                         <a href="{{interview.path}}" alt="{{ interview.title }}">
-                            {{ interview.peer_nameslug }}
+                            {{ interview.nameslug }}
                         </a>
                     </h2>
-                    <h4 class="billboard__subtitle">{{ interview.peer_minibio }}</h4>
+                    <h4 class="billboard__subtitle">{{ interview.interviewee.minibio }}</h4>
                 </div>
                 <div class="billboard__abstract">
                     <q>{{ interview.quote }}</q>

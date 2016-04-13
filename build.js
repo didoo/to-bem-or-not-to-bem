@@ -24,7 +24,11 @@ var xpress       = require('metalsmith-express');
 // var pcssSimpleVars = require('postcss-simple-vars');
 // var pcssCustomProperties = require('postcss-custom-properties');
 // var pcssNested   = require('postcss-nested');
-// require('postcss-inline-comment')
+// var pcssMqpacker = require('css-mqpacker');
+// var pcssInlineComments = require('postcss-inline-comment');
+// var pcssNext = require('postcss-cssnext');
+// var pcssNano = require('cssnano');
+
 
 /**
  * Build.
@@ -41,7 +45,7 @@ Metalsmith(__dirname)
     .use(permalinks({
         linksets: [{
             match: { collection: 'interviews' },
-            pattern: 'interviews/:number-:title',
+            pattern: 'interview__:number--:title',
         }]
     }))
     .use(collections({
@@ -51,7 +55,7 @@ Metalsmith(__dirname)
         }
     }))
     .use(layouts({
-        engine: 'swig', // 'handlebars',
+        engine: 'swig',
         // directory: 'layouts',
         // partials: 'partials',
         cache: false
