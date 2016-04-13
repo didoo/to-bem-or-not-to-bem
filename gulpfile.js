@@ -1,54 +1,69 @@
+
+// === PACKAGES ===
+
 // gulp plugins
 var gulp         = require('gulp');
-var gulpsmith    = require('gulpsmith');
+var connect      = require('gulp-connect');
 var front_matter = require('gulp-front-matter');
+var gutil        = require('gulp-util');
+var htmlmin      = require('gulp-htmlmin');
 var livereload   = require('gulp-livereload');
+var postcss      = require('gulp-postcss');
 var sass         = require('gulp-sass');
-
-//use "gulp-nunjucks" if you need to kill metalsmith!
-//var postcss = require('gulp-postcss');
-
-// metalsmith plugins
-var collections  = require('metalsmith-collections');
-var drafts       = require('metalsmith-drafts');
-var layouts      = require('metalsmith-layouts');
-var metadata     = require('metalsmith-metadata');
-var permalinks   = require('metalsmith-permalinks');
-var xpress       = require('metalsmith-express');
-var m_watch      = require('metalsmith-watch');
-var m_sass       = require('metalsmith-sass');
+var swig         = require('gulp-swig');
 
 // other plugins
-var _assign      = require('lodash.assign');
+//var _assign = require('lodash.assign');
+var autoprefixer = require('autoprefixer');
+var cssnano = require('cssnano');
+var del = require('del');
+
+
+// === INITIALISE ===
+
+var _project = require('./content/metadata.json');
+
+// === TASKS ===
 
 gulp.task('css', function () {
 
-    //var processors = [
-    //    require('postcss-simple-vars')(),
-    //    //require('postcss-custom-properties'),
-    //    require('postcss-import')(),
-    //    require('postcss-nested')(),
-    //    require('postcss-inline-comment')(),
-    //    require('postcss-discard-comments')(),
-    //    require('autoprefixer')({ browsers: ['last 2 versions'] })
-    //];
+    var processors = [
+        //cssnano()
+        autoprefixer({browsers: ['last 2 versions']})
+    ];
 
-    return gulp.src('./assets/css/main.scss')
-        //.pipe(postcss(processors, { syntax: sass }))
+    return gulp.src('./assets/scss/*.scss')
         .pipe(sass().on('error', sass.logError))
-        .pipe(gulp.dest('./src/css/'))
-        .pipe(livereload())
+        .pipe(postcss(processors))
+        .pipe(gulp.dest('./build/css/'))
+        //.pipe(livereload())
+        .pipe(connect.reload())
         ;
 
 });
 
-gulp.task('metal', function () {
+gulp.task('html', function () {
 
-    return gulp.src('./src/**/*')
-        .pipe(front_matter()).on('data', function(file) {
-            _assign(file, file.frontMatter);
-            delete file.frontMatter;
-        })
+    return gulp.src('./content/**/*')
+        //.pipe(front_matter()).on('data', function(file) {
+        //    _assign(file, file.frontMatter);
+        //    delete file.frontMatter;
+        //})
+        .pipe(front_matter({
+            property: 'data',
+            remove: true
+        }))
+        .pipe(swig({
+            defaults: { cache: false },
+            load_json: true,
+            json_path: './contents/metadata.json'
+        }))
+        //.pipe(htmlmin({ collapseWhitespace: true }))
+        .pipe(connect.reload())
+        .pipe(gulp.dest('./build'))
+        ;
+
+        /*
         .pipe(gulpsmith()
             .use(xpress())
             .use(metadata({
@@ -73,10 +88,6 @@ gulp.task('metal', function () {
                 // partials: 'partials',
                 cache: false
             }))
-            .use(m_sass({
-                outputStyle: 'expanded',
-                outputDir: 'css/'
-            }))
             // .use(postcss({
             //     input: "assets/css/main.css",
             //     output: "mainpost.css",
@@ -88,24 +99,40 @@ gulp.task('metal', function () {
             //         'autoprefixer': { browsers: ['last 2 versions'] }
             //     }
             // }))
-            .use(m_watch({
-                paths: {
-                    '${source}/**/*': true,
-                    'layouts/**/*': '**/*.html',
-                },
-                livereload: true,
-            }))
         )
-        .pipe(gulp.dest('./build'))
-        ;
+        */
 
+});
+
+gulp.task('connect', function() {
+    connect.server({
+        root: './build',
+        //host: 'pippo.lan',
+        port: 8888,
+        livereload: true
+    });
 });
 
 gulp.task('watch', function() {
-    //livereload.listen();
-    gulp.watch('./assets/css/**/*.scss', ['css']);
-    //gulp.watch('./assets/css/**/*.scss', ['metal']);
+    livereload.listen();
+    gulp.watch(['./templates/**/*','./content/**/*'], gulp.series('html'));
+    gulp.watch('./assets/scss/**/*.scss', gulp.series('css'));
 });
 
-//gulp.task('default', ['metal', 'css', 'watch']);
-gulp.task('default', ['metal']);
+gulp.task('clean', function() {
+    return del(['./build/**/*']);
+});
+
+
+// === MAIN RUNNER ===
+
+gulp.task('default',
+    gulp.series(
+        'clean',
+        gulp.parallel('html', 'css'),
+        'connect',
+        'watch'
+    )
+);
+
+

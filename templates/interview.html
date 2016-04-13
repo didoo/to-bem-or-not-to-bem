@@ -18,7 +18,8 @@
             </div>
         </aside>
         <section class="interview__main">
-            {{ contents|safe }}
+            {% block inteview %}
+            {% endblock %}
         </section>
         <div class="interview__meta">
             <div class="when">This interview has been published on <time>{{ date|date('d M Y') }}</time></div>

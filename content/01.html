@@ -21,6 +21,9 @@ interviewee:
           url: https://github.com/creinartz
 ---
 
+{% extends "../templates/interview.html" %}
+
+{% block inteview %}
 <div class="dialog dialog--question">
     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit corporis quae reiciendis eveniet quis recusandae, blanditiis culpa atque labore voluptas.</p>
 </div>
@@ -71,3 +74,4 @@ interviewee:
 <div class="dialog dialog--answer">
     <p>Ut orci risus, accumsan porttitor, cursus quis, aliquet eget, justo. Sed pretium blandit orci. </p>
 </div>
+{% endblock %}
