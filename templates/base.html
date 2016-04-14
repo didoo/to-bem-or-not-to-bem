@@ -14,9 +14,7 @@
 </head>
 <body>
 
-    <pre>{{ data|json }}</pre>
-    <pre>{{ context|json }}</pre>
-    <pre>{{ project|json }}</pre>
+    {% block debug %}{% endblock %}
 
     {% include "partials/header.html" %}
 

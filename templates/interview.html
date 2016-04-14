@@ -1,21 +1,23 @@
 {% extends "./base.html" %}
 
+{% set interview = interviews[number] %}
+
 {% block main %}
 <article class="interview">
 
-    {% if status == 'public' %}
+    {% if interview.status == 'public' %}
         <aside class="interview__intro">
             <span class="interview__number">#{{ number }}</span>
-            <h2 class="interview__title">{{ nameslug }}</h2>
+            <h2 class="interview__title">{{ interview.nameslug }}</h2>
             <div class="interviewee">
-                <img class="interviewee__avatar" src="{{ interviewee.avatar }}" alt="{{ interviewee.fullname }}">
+                <img class="interviewee__avatar" src="{{ interview.interviewee.avatar }}" alt="{{ interview.interviewee.fullname }}">
                 <div class="interviewee__bio">
                     {% block biography %}
                     {% endblock %}
                 </div>
                 <ul class="interviewee__links">
-                    {% for link in interviewee.links %}
-                    <li><a href="{{ link.url }}" alt="">{{ link.label }}</a></li>
+                    {% for link in interview.interviewee.links %}
+                    <li><a href="{{ link }}" alt="">{{ loop.key }}</a></li>
                     {% endfor %}
                 </ul>
             </div>

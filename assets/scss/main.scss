@@ -324,7 +324,7 @@ main {
     margin: 20px 0px 0px 200px;
     li {
         display: inline-block;
-        &::after {
+        & + li::before {
             content: "  --  ";
         }
     }

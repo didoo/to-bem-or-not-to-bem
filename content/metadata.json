@@ -2,5 +2,41 @@
     "project": {
         "title": "To BEM or not to BEM",
         "description": "a series of interviews on BEM methodology"
+    },
+    "interviews": {
+        "01": {
+            "nameslug" : "christoph__reinartz",
+            "title" : "Interview with Christoph Reinartz",
+            "date" : "2016-04-20",
+            "status" : "public",
+            "quote" : "Sequi illo deleniti, nostrum illum ad, nemo labore eligendi consequuntur incidunt dolores molestias suscipit perspiciatis aperiam.",
+            "interviewee": {
+                "avatar": "http://frontendunited.org/sites/default/files/styles/speaker_round/public/2016-03/christoph.jpg",
+                "fullname": "Christoph Reinartz",
+                "minibio": "ux engineer & frontend architect, fullstack css developer, team lead ui/ux engineering at trivago",
+                "links": {
+                    "website": "http://www.creinartz.de",
+                    "twitter": "https://twitter.com/pistenprinz",
+                    "github": "https://github.com/creinartz"
+                }
+            }
+        },
+        "02": {
+            "nameslug" : "name_surname",
+            "title" : "My Second Interview",
+            "date" : "2016-05-20",
+            "status" : "draft",
+            "quote" : "Nemo labore eligendi consequuntur incidunt dolores molestias suscipit perspiciatis aperiam.",
+            "interviewee": {
+                "avatar": "http://placehold.it/200x200",
+                "fullname": "Name Surname",
+                "minibio": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi officiis sint suscipit odit! Ipsa atque quo quas cupiditate consectetur excepturi.",
+                "links": {
+                    "website": "http://www.pippo.com",
+                    "twitter": "https://twitter.com/pippo",
+                    "github": "https://github.com/pippo"
+                }
+            }
+        }
     }
 }

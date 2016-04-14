@@ -9,20 +9,14 @@ var gutil        = require('gulp-util');
 var htmlmin      = require('gulp-htmlmin');
 var livereload   = require('gulp-livereload');
 var postcss      = require('gulp-postcss');
-var rename       = require("gulp-rename");
 var sass         = require('gulp-sass');
 var swig         = require('gulp-swig');
-var tap          = require('gulp-tap'); // use: .pipe(tap(function(file,t) { console.log('lorem'); }))
 
 // other plugins
 var autoprefixer = require('autoprefixer');
 var cssnano      = require('cssnano');
 var del          = require('del');
 
-
-// === INITIALISE ===
-
-var _project = require('./content/metadata.json');
 
 // === TASKS ===
 
@@ -44,28 +38,22 @@ gulp.task('css', function () {
 
 gulp.task('html', function () {
 
+    var data = require('./content/metadata.json');
+
     return gulp.src('./content/**/*.html')
-        //.pipe(front_matter()).on('data', function(file) {
-        //    _assign(file, file.frontMatter);
-        //    delete file.frontMatter;
-        //})
         .pipe(front_matter({
             property: 'data',
             remove: true
         }))
         .pipe(swig({
-            defaults: { cache: false },
+            // really needed ?
             load_json: true,
-            json_path: './contents/metadata.json'
+            json_path: './contents/metadata.json',
+            defaults: {
+                locals: data || {},
+                cache: false
+            }
         }))
-        //.pipe(tap(function(file,opts) {
-        //    console.log(file);
-        //    console.log(JSON.stringify(opts.data));
-        //}))
-        //.pipe(rename(function(filepath,opts){
-        //    // 01__interview-with--christoph__reinartz
-        //    filepath.basename = opts.data.number + '__interview-with--' + opts.data.nameslug
-        //}))
         //.pipe(htmlmin({ collapseWhitespace: true }))
         .pipe(connect.reload())
         .pipe(gulp.dest('./build'))
@@ -102,5 +90,3 @@ gulp.task('default',
         'watch'
     )
 );
-
-

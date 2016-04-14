@@ -4,8 +4,9 @@
 <main>
     <ul class="billboards">
         {% for interview in interviews %}
+            {% set interview.path = loop.key + '__interview-with--' + interview.nameslug + '.html' %}
             <li class="billboard {{ interview.status }}">
-                <span class="billboard__number">#{{ interview.number }}</span>
+                <span class="billboard__number">#{{ loop.key }}</span>
                 <div class="billboard__heading">
                     <h2 class="billboard__title">
                         <a href="{{interview.path}}" alt="{{ interview.title }}">
@@ -14,10 +15,16 @@
                     </h2>
                     <h4 class="billboard__subtitle">{{ interview.interviewee.minibio }}</h4>
                 </div>
+                {% if interview.status == 'public' %}
                 <div class="billboard__abstract">
                     <q>{{ interview.quote }}</q>
                     <a href="{{interview.path}}" alt="{{ interview.title }}">read the interview »</a>
                 </div>
+                {% else %}
+                <div class="billboard__teaser">
+                    <pre>COMING SOON</pre>
+                </div>
+                {% endif %}
             </li>
         {% endfor %}
     </ul>
