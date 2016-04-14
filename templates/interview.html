@@ -9,7 +9,10 @@
             <h2 class="interview__title">{{ nameslug }}</h2>
             <div class="interviewee">
                 <img class="interviewee__avatar" src="{{ interviewee.avatar }}" alt="{{ interviewee.fullname }}">
-                <div class="interviewee__bio">{{ interviewee.fullbio|safe }}</div>
+                <div class="interviewee__bio">
+                    {% block biography %}
+                    {% endblock %}
+                </div>
                 <ul class="interviewee__links">
                     {% for link in interviewee.links %}
                     <li><a href="{{ link.url }}" alt="">{{ link.label }}</a></li>
@@ -18,7 +21,7 @@
             </div>
         </aside>
         <section class="interview__main">
-            {% block inteview %}
+            {% block interview %}
             {% endblock %}
         </section>
         <div class="interview__meta">

@@ -1,4 +1,6 @@
 {
-    "title": "To BEM or not to BEM",
-    "description": "a series of interviews on BEM methodology"
+    "project": {
+        "title": "To BEM or not to BEM",
+        "description": "a series of interviews on BEM methodology"
+    }
 }

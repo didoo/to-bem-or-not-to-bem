@@ -9,14 +9,15 @@ var gutil        = require('gulp-util');
 var htmlmin      = require('gulp-htmlmin');
 var livereload   = require('gulp-livereload');
 var postcss      = require('gulp-postcss');
+var rename       = require("gulp-rename");
 var sass         = require('gulp-sass');
 var swig         = require('gulp-swig');
+var tap          = require('gulp-tap'); // use: .pipe(tap(function(file,t) { console.log('lorem'); }))
 
 // other plugins
-//var _assign = require('lodash.assign');
 var autoprefixer = require('autoprefixer');
-var cssnano = require('cssnano');
-var del = require('del');
+var cssnano      = require('cssnano');
+var del          = require('del');
 
 
 // === INITIALISE ===
@@ -36,7 +37,6 @@ gulp.task('css', function () {
         .pipe(sass().on('error', sass.logError))
         .pipe(postcss(processors))
         .pipe(gulp.dest('./build/css/'))
-        //.pipe(livereload())
         .pipe(connect.reload())
         ;
 
@@ -44,7 +44,7 @@ gulp.task('css', function () {
 
 gulp.task('html', function () {
 
-    return gulp.src('./content/**/*')
+    return gulp.src('./content/**/*.html')
         //.pipe(front_matter()).on('data', function(file) {
         //    _assign(file, file.frontMatter);
         //    delete file.frontMatter;
@@ -58,65 +58,33 @@ gulp.task('html', function () {
             load_json: true,
             json_path: './contents/metadata.json'
         }))
+        //.pipe(tap(function(file,opts) {
+        //    console.log(file);
+        //    console.log(JSON.stringify(opts.data));
+        //}))
+        //.pipe(rename(function(filepath,opts){
+        //    // 01__interview-with--christoph__reinartz
+        //    filepath.basename = opts.data.number + '__interview-with--' + opts.data.nameslug
+        //}))
         //.pipe(htmlmin({ collapseWhitespace: true }))
         .pipe(connect.reload())
         .pipe(gulp.dest('./build'))
         ;
-
-        /*
-        .pipe(gulpsmith()
-            .use(xpress())
-            .use(metadata({
-                project: 'metadata.json'
-            }))
-            .use(drafts())
-            .use(permalinks({
-                linksets: [{
-                    match: { collection: 'interviews' },
-                    pattern: 'interview__:number--:title',
-                }]
-            }))
-            .use(collections({
-                interviews: {
-                    pattern: 'interviews/*.html',
-                    sortBy: 'number'
-                }
-            }))
-            .use(layouts({
-                engine: 'swig',
-                // directory: 'layouts',
-                // partials: 'partials',
-                cache: false
-            }))
-            // .use(postcss({
-            //     input: "assets/css/main.css",
-            //     output: "mainpost.css",
-            //     plugins: {
-            //         'postcss-import': {},
-            //         'postcss-simple-vars': {},
-            //         'postcss-custom-properties': {},
-            //         'postcss-nested': {},
-            //         'autoprefixer': { browsers: ['last 2 versions'] }
-            //     }
-            // }))
-        )
-        */
-
 });
 
-gulp.task('connect', function() {
+gulp.task('connect', function(done) {
     connect.server({
         root: './build',
-        //host: 'pippo.lan',
         port: 8888,
         livereload: true
     });
+    done();
 });
 
-gulp.task('watch', function() {
-    livereload.listen();
+gulp.task('watch', function(done) {
     gulp.watch(['./templates/**/*','./content/**/*'], gulp.series('html'));
     gulp.watch('./assets/scss/**/*.scss', gulp.series('css'));
+    done();
 });
 
 gulp.task('clean', function() {

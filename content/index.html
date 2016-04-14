@@ -3,7 +3,7 @@
 {% block main %}
 <main>
     <ul class="billboards">
-        {% for interview in collections.interviews %}
+        {% for interview in interviews %}
             <li class="billboard {{ interview.status }}">
                 <span class="billboard__number">#{{ interview.number }}</span>
                 <div class="billboard__heading">

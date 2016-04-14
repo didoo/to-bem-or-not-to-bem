@@ -4,14 +4,11 @@ nameslug: christoph__reinartz
 title: Interview with Christoph Reinartz
 date: 2016-04-20
 status: public
-layout: interview.html
-collection: interviews
 quote: Sequi illo deleniti, nostrum illum ad, nemo labore eligendi consequuntur incidunt dolores molestias suscipit perspiciatis aperiam.
 interviewee:
     avatar: http://frontendunited.org/sites/default/files/styles/speaker_round/public/2016-03/christoph.jpg
     fullname: Christoph Reinartz
     minibio: ux engineer & frontend architect, fullstack css developer, team lead ui/ux engineering at trivago
-    fullbio: <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur explicabo quae soluta quaerat, quasi voluptates</p><p>eveniet animi ullam a natus excepturi voluptatum, ipsa inventore.</p><p>Soluta tempora officia doloribus eligendi amet, quas maiores ratione magni porro maxime, incidunt nobis vel id repudiandae asperiores quaerat perferendis esse quam eum excepturi consequatur.</p>
     links:
         - label: website
           url: http://www.creinartz.de
@@ -23,7 +20,13 @@ interviewee:
 
 {% extends "../templates/interview.html" %}
 
-{% block inteview %}
+{% block biography %}
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur explicabo quae soluta quaerat, quasi voluptates</p>
+<p>eveniet animi ullam a natus excepturi voluptatum, ipsa inventore.</p>
+<p>Soluta tempora officia doloribus eligendi amet, quas maiores ratione magni porro maxime, incidunt nobis vel id repudiandae asperiores quaerat perferendis esse quam eum excepturi consequatur.</p>
+{% endblock %}
+
+{% block interview %}
 <div class="dialog dialog--question">
     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit corporis quae reiciendis eveniet quis recusandae, blanditiis culpa atque labore voluptas.</p>
 </div>
