@@ -3,6 +3,7 @@
 
 // gulp plugins
 var gulp         = require('gulp');
+var cheerio      = require('gulp-cheerio');
 var connect      = require('gulp-connect');
 var front_matter = require('gulp-front-matter');
 var gutil        = require('gulp-util');
@@ -20,11 +21,22 @@ var del          = require('del');
 
 // === TASKS ===
 
+// gulp.task('convert', function () {
+//     return gulp.src('./raws/*.html')
+//         .pipe(cheerio(function ($, file) {
+//             $('.DMConversation-content .DirectMessage-message .DirectMessage-text').each(function () {
+//                 console.log();
+//             });
+//         }))
+//         .pipe(gulp.dest('./raw_out/'))
+//         ;
+// });
+
 gulp.task('css', function () {
 
     var processors = [
         //cssnano()
-        autoprefixer({browsers: ['last 2 versions']})
+        autoprefixer({browsers: ['> 1%']})
     ];
 
     return gulp.src('./assets/scss/*.scss')

@@ -61,8 +61,11 @@ $grey-dark:  #000000;
 
 // sizes
 $size-tablet:  640px;
-$size-desktop: 1200px;
+$size-desktop: 1000px;
 $max-content-width: 1000px;
+$pad-content-mobile: 5vw;
+$pad-content-tablet: 40px;
+$pad-content-desktop: 40px;
 
 // styles
 $block-border: 2px solid $grey-pale;
@@ -113,35 +116,42 @@ header {
     position: relative;
     max-width: $max-content-width;
     margin: 0px auto;
-    padding: 50px 5vw 60px;
-    text-align: left;
+    padding: 30px 2vw;
+    text-align: center;
     @include media(tablet) {
-        padding: 50px 60px 60px;
+        padding: 50px $pad-content-tablet 60px;
+        text-align: left;
     }
     @include media(desktop) {
-        padding: 50px 60px 60px;
+        padding: 50px $pad-content-desktop 60px;
     }
 }
 
 .header__logo {
     display: block;
     font-weight: bold;
-    font-size: 52px;
+    font-size: 8vw;
     line-height: 1em;
     text-decoration: none;
     color: $grey-dark;
     &:hover {
         // TODO
     }
+    @include media(tablet) {
+        font-size: 52px;
+    }
 }
 
 .header__caption {
     display: block;
-    margin-top: 20px;
+    margin-top: 3vw;
     padding-left: 4px;
-    font-size: 18px;
+    font-size: 4vw;
     line-height: 1em;
     color: $grey-light;
+    @include media(tablet) {
+        font-size: 18px;
+    }
 }
 
 .header__toggle {
@@ -150,6 +160,7 @@ header {
     width: 40px;
     height: 40px;
     margin-top: 5px;
+    display: none;
 }
 
 header::after {
@@ -168,8 +179,13 @@ header::after {
 main {
     max-width: $max-content-width;
     margin: 0px auto;
-    padding: 0px 60px;
-    // border: 1px solid green;
+    padding: 0px $pad-content-mobile;
+    @include media(tablet) {
+        padding: 0px $pad-content-tablet;
+    }
+    @include media(desktop) {
+        padding: 0px $pad-content-desktop;
+    }
 }
 
 .billboards {
@@ -180,58 +196,82 @@ main {
 
 .billboard {
     margin: 0px;
-    padding: 90px 0px 130px;
+    padding: 10vh 0px 12vh;
     text-align: center;
     border-bottom: $block-border;
+    @include media(tablet) {
+        padding: 90px 0px 130px;
+    }
 }
 
 .billboard__number {
-    font-size: 24px;
+    font-size: 18px;
     color: $grey-light;
+    @include media(tablet) {
+        font-size: 24px;
+    }
 }
 
 .billboard__heading {
-    margin: 60px auto 70px;
+    margin: 5vh auto 6vh;
+    @include media(tablet) {
+        margin: 60px auto 70px;
+    }
 }
 
 .billboard__title {
-    font-size: 52px;
+    font-size: 8vw;
     color: $grey-dark;
+    @include media(tablet) {
+        font-size: 52px;
+    }
+
     a {
         position: relative;
+        display: inline-block;
         text-decoration: none;
         color: inherit;
+
+        // visual effect - underscore line
         &::after {
             position: absolute;
-            bottom: 10px;
+            top: 0px;
             left: 0px;
             right: 0px;
             z-index: -1;
-            height: 3px;
-            background-color: $grey-pale;
+            overflow: hidden;
+            color: $grey-pale;
             opacity: 0;
-            content: "";
+            content: "____________________________________________________________________";
             transition: all 0.2s ease-in-out;
         }
         &:hover::after {
             opacity: 1;
-            bottom: 6px;
         }
+
     }
+
 }
 
 .billboard__subtitle {
-    margin: 20px auto 0px;
-    font-size: 14px;
+    margin: 1.5em auto 0px;
+    font-size: 12px;
     line-height: 1.25em;
     color: $grey-light;
-    max-width: 400px;
+    width: 80%;
+    @include media(tablet) {
+        font-size: 14px;
+        max-width: 400px;
+    }
 }
 
 .billboard__abstract {
     position: relative;
     margin: 0px auto;
-    max-width: 600px;
+    padding: 0px 30px;
+    @include media(tablet) {
+        max-width: 600px;
+    }
 }
 
 .billboard__abstract::before,
@@ -246,19 +286,22 @@ main {
 }
 
 .billboard__abstract::before {
-    left: -25px;
+    left: 0px;
     content: "“";
 }
 .billboard__abstract::after {
-    right: -25px;
+    right: 0px;
     content: "”";
 }
 
 
 .billboard__abstract q {
     display: block;
-    font-size: 18px;
+    font-size: 14px;
     line-height: 1.25em;
+    @include media(tablet) {
+        font-size: 18px;
+    }
 }
 
 .billboard__abstract a {
@@ -279,26 +322,47 @@ main {
 .interview {
     max-width: $max-content-width;
     margin: 0px auto;
-    padding: 0px 60px;
+    padding: 0px $pad-content-mobile;
     border-bottom: $block-border;
+    @include media(tablet) {
+        padding: 0px $pad-content-tablet;
+    }
+    @include media(desktop) {
+        padding: 0px $pad-content-desktop;
+    }
 }
 
 .interview__intro {
     // margin: 0px auto;
-    padding: 80px 70px 90px (70px + 80px);
+    padding: 4vh 0px;
     border-bottom: $block-border;
+    text-align: center;
+    @include media(tablet) {
+        padding: 80px 70px 90px (70px + 80px);
+        text-align: left;
+    }
+    @include media(desktop) {
+    }
 }
 
 .interview__number {
-    position: absolute;
-    margin: 15px auto 0px -80px;
-    font-size: 24px;
+    display: block;
+    margin: 0px auto 15px;
+    font-size: 6vw;
     color: $grey-light;
+    @include media(tablet) {
+        position: absolute;
+        margin: 15px auto 0px -80px;
+        font-size: 24px;
+    }
 }
 
 .interview__title {
-    font-size: 52px;
+    font-size: 8vw;
     color: $grey-dark;
+    @include media(tablet) {
+        font-size: 52px;
+    }
 }
 
 .interviewee {
@@ -308,20 +372,33 @@ main {
 }
 
 .interviewee__avatar {
-    width: 160px;
+    width: 80px;
     height: auto;
-    float: left;
+    margin: 10px auto;
+    @include media(tablet) {
+        float: left;
+        width: 160px;
+        margin: 0px;
+    }
 }
 
 .interviewee__bio {
-    margin: 40px 0px 0px 200px;
+    margin: 10px auto;
+    @include media(tablet) {
+        margin: 40px 0px 0px 200px;
+    }
+
     p {
         margin-bottom: 6px;
     }
 }
 
 .interviewee__links {
-    margin: 20px 0px 0px 200px;
+    margin: 10px auto 0px;
+    @include media(tablet) {
+        margin: 40px 0px 0px 200px;
+    }
+
     li {
         display: inline-block;
         & + li::before {
@@ -335,31 +412,46 @@ main {
 }
 
 .interview__main {
-    // margin: 0px auto;
-    padding: 80px 70px 90px;
+    padding: 5vh 0px 0px;
+    display: flex;
+    flex-direction: column;
+    @include media(tablet) {
+        padding: 40px 30px 0px;
+    }
+    @include media(desktop) {
+        padding: 80px 70px 0px;
+    }
 
     .dialog {
-        display: inline-block;
-        margin: 0px auto 30px;
-        max-width: 550px;
+        margin: 0px 0px 1em;
+        max-width: 90%;
+        @include media(tablet) {
+            max-width: 75%;
+            margin-bottom: 2em;
+        }
+        @include media(desktop) {
+            max-width: 60%;
+        }
     }
 
     .dialog--question {
-        margin-left: 0px;
-        text-align: left;
-        outline: 1px solid red;
+        align-self: flex-start;
     }
 
     .dialog--answer {
-        margin-right: 0px;
-        text-align: left;
-        outline: 1px solid green;
+        align-self: flex-end;
     }
 
     p {
-        font-size: 18px;
+        font-size: 14px;
         line-height: 1.25em;
         margin-bottom: 12px;
+        @include media(tablet) {
+            font-size: 16px;
+        }
+        @include media(desktop) {
+            font-size: 18px;
+        }
     }
 
 }
@@ -371,6 +463,7 @@ main {
         margin: 50px auto 0px;
         padding: 40px;
         font-size: 10px;
+        line-height: 1.2em;
         color: #D0D0D0;
         border-top: 1px solid $grey-pale;
         display: inline-block;
@@ -388,4 +481,38 @@ main {
             transform: translate(-50%,-50%);
         }
     }
+    a {
+        text-decoration: none;
+        color: inherit;
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}
+
+
+
+////////////////////////////////// DEBUG //////////////////////////////////
+
+@mixin show_media_query($msg,$col) {
+    content: $msg;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    z-index: 9999;
+    display: block;
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 40px;
+    text-align: center;
+    color: #000000;
+    background: $col;
+    opacity: 0.5;
+}
+
+body:after {
+    @include show_media_query("mobile",red);
+    @include media(tablet){ @include show_media_query("tablet",green); }
+    @include media(desktop){ @include show_media_query("desktop",yellow); }
 }
