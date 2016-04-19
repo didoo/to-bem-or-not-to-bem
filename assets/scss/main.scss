@@ -338,10 +338,11 @@ main {
     border-bottom: $block-border;
     text-align: center;
     @include media(tablet) {
-        padding: 80px 70px 90px (70px + 80px);
-        text-align: left;
+        padding: 40px 30px;
     }
     @include media(desktop) {
+        padding: 80px 70px 90px (70px + 80px);
+        text-align: left;
     }
 }
 
@@ -351,16 +352,22 @@ main {
     font-size: 6vw;
     color: $grey-light;
     @include media(tablet) {
+        font-size: 24px;
+    }
+    @include media(desktop) {
         position: absolute;
         margin: 15px auto 0px -80px;
-        font-size: 24px;
     }
 }
 
 .interview__title {
     font-size: 8vw;
     color: $grey-dark;
+    margin: 10px auto;
     @include media(tablet) {
+        font-size: 42px;
+    }
+    @include media(desktop) {
         font-size: 52px;
     }
 }
@@ -369,6 +376,9 @@ main {
     font-size: 14px;
     line-height: 1.25em;
     color: $grey-light;
+    @include media(tablet) {
+        padding-left: 200px;
+    }
 }
 
 .interviewee__avatar {
@@ -376,7 +386,7 @@ main {
     height: auto;
     margin: 10px auto;
     @include media(tablet) {
-        float: left;
+        position: absolute;
         width: 160px;
         margin: 0px;
     }
@@ -385,7 +395,8 @@ main {
 .interviewee__bio {
     margin: 10px auto;
     @include media(tablet) {
-        margin: 40px 0px 0px 200px;
+        margin: 40px 0px 0px 0px;
+        text-align: left;
     }
 
     p {
@@ -396,7 +407,7 @@ main {
 .interviewee__links {
     margin: 10px auto 0px;
     @include media(tablet) {
-        margin: 40px 0px 0px 200px;
+        margin: 40px 0px 0px 0px;
     }
 
     li {
