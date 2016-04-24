@@ -1,0 +1,38 @@
+////////////////////////////////// GENERIC BASE STYLES //////////////////////////////////
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+html {
+    position: relative;
+}
+
+body {
+    position: relative;
+    max-width: $max-content-width;
+    margin: 0px auto;
+    font-family: 'Lekton', sans-serif;
+    font-size: 16px;
+    line-height: 1.25em;
+    color: $grey-base;
+    // text-rendering: optimizeLegibility;
+    // -webkit-font-smoothing: antialiased;
+}
+
+input, button, textarea {
+    font-family: inherit;
+}
+
+a {
+    color: inherit;
+}
+
+// disable pointer events for SVGs (see: https://css-tricks.com/links-inline-svg-staying-target-events/)
+a > svg {
+    pointer-events: none;
+}
+
+main {
+    @extend %padded-content;
+}

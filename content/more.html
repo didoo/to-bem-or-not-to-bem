@@ -1,0 +1,31 @@
+{% extends "../templates/base.html" %}
+
+{% block main %}
+<main class="more">
+    <section class="more__section .more-about">
+        <h2 class="more__title">about this project</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minus sapiente ullam pariatur quas temporibus in possimus commodi similique dolorem incidunt.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis inventore ab illum mollitia molestiae, voluptates, provident odio consectetur excepturi voluptatibus impedit blanditiis asperiores. Beatae ex iusto architecto harum, ab et!</p>
+    </section>
+    <section class="more__section more-subscribe">
+        <h2 class="more__title">subscribe</h2>
+        <p>Do you want to be notified when a new interview is published?</p>
+
+        <!-- MailChimp Signup Form -->
+        <form class="subscribe-form" action="//didoo.us1.list-manage.com/subscribe/post?u=a7b66a940002c25ced3d7ae1f&amp;id=202d719b38" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" target="_blank" novalidate>
+            <!-- <label for="mce-EMAIL" class="subscribe-form__label">Do you want to be notified when a new interview is published?</label> -->
+            <div class="subscribe-form__group">
+                <input class="subscribe-form__input is-required" type="email" value="" name="EMAIL" id="mce-EMAIL" placeholder="Your email address" />
+                <input  class="subscribe-form__button" type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" />
+            </div>
+            <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+            <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_a7b66a940002c25ced3d7ae1f_202d719b38" tabindex="-1" value=""></div>
+        </form>
+
+    </section>
+    <section class="more__section more-credits">
+        <h2 class="more__title">credits</h2>
+        <p>The font used on this website is <a href="https://www.google.com/fonts/specimen/Lekton">Lekton</a>, designed by <a href="http://lucianoperondi.isiaurbino.net/">Luciano Perondi</a> and his students at Accademia di Belle Arti di Urbino. Thanks Maurizio “<a href="http://ilpiac.com/">ilpiac</a>” Piacenza for inspiring me to use this amazing font.</p>
+    </section>
+</main>
+{% endblock %}

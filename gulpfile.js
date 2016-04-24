@@ -35,7 +35,7 @@ var del          = require('del');
 gulp.task('css', function () {
 
     var processors = [
-        //cssnano()
+        cssnano(),
         autoprefixer({browsers: ['> 1%']})
     ];
 
@@ -66,7 +66,7 @@ gulp.task('html', function () {
                 cache: false
             }
         }))
-        //.pipe(htmlmin({ collapseWhitespace: true }))
+        .pipe(htmlmin({ collapseWhitespace: true }))
         .pipe(connect.reload())
         .pipe(gulp.dest('./build'))
         ;

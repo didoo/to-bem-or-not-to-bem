@@ -1,7 +1,8 @@
 {% extends "../templates/base.html" %}
 
 {% block main %}
-<main>
+<main class="index">
+
     <ul class="billboards">
         {% for interview in interviews %}
             {% set interview.path = loop.key + '__interview-with--' + interview.nameslug + '.html' %}
@@ -28,5 +29,6 @@
             </li>
         {% endfor %}
     </ul>
+
 </main>
 {% endblock %}

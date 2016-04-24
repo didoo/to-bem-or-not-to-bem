@@ -1,0 +1,25 @@
+////////////////////////////////// DEBUG //////////////////////////////////
+
+@mixin show_media_query($msg,$col) {
+    content: $msg;
+    position: fixed;
+    // top: 0px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    z-index: 9999;
+    display: block;
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 40px;
+    text-align: center;
+    color: #000000;
+    background: $col;
+    opacity: 0.5;
+}
+
+body:after {
+    @include show_media_query("mobile",red);
+    @include media(tablet){ @include show_media_query("tablet",green); }
+    @include media(desktop){ @include show_media_query("desktop",yellow); }
+}

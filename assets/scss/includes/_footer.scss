@@ -1,0 +1,37 @@
+////////////////////////////////// FOOTER //////////////////////////////////
+
+footer {
+    @extend %padded-content;
+    margin: 30px auto;
+    font-size: 10px;
+    line-height: 1.2em;
+    text-align: center;
+    color: $grey-light;
+    @include media(tablet) {
+        height: 10px;
+        margin: 60px auto 40px;
+    }
+
+    .footer__links {
+        @extend %links-list;
+        @include media(tablet) {
+            float: left;
+        }
+    }
+
+    .footer__license {
+        margin-top: 10px;
+        @include media(tablet) {
+            margin-top: 0px;
+            float: right;
+        }
+    }
+
+    a {
+        text-decoration: none;
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+
+}

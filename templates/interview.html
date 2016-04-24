@@ -1,9 +1,10 @@
+{% set interview = interviews[number] %}
+{% set head_title = interview.title + ' -- ' + project.title %}
+
 {% extends "./base.html" %}
 
-{% set interview = interviews[number] %}
-
 {% block main %}
-<article class="interview">
+<main class="interview">
 
     {% if interview.status == 'public' %}
         <aside class="interview__intro">
@@ -23,15 +24,18 @@
             </div>
         </aside>
         <section class="interview__main">
+            <article>
             {% block interview %}
             {% endblock %}
+            </article>
         </section>
         <div class="interview__meta">
-            <div class="when">This interview has been published on <time>{{ interview.date|date('d M Y') }}</time> under a <a href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0</a> license.</div>
+            This interview has been published on <time>{{ interview.date|date('d M Y') }}</time>
         </div>
     {% else %}
         <pre>COMING SOON</pre>
     {% endif %}
 
-</article>
+</main>
+
 {% endblock %}

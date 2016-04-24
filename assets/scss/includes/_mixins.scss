@@ -1,0 +1,36 @@
+////////////////////////////////// MIXINS //////////////////////////////////
+
+@mixin media($size) {
+    @if $size == tablet {
+        @media (min-width: $size-tablet){
+            @content;
+        }
+    } @else if $size == desktop {
+        @media (min-width: $size-desktop){
+            @content;
+        }
+    }
+}
+
+////////////////////////////////// HELPER CLASSES //////////////////////////////////
+
+// main content has variable horizontal inset padding
+%padded-content {
+    padding: 0px $pad-content-mobile;
+    @include media(tablet) {
+        padding: 0px $pad-content-tablet;
+    }
+    @include media(desktop) {
+        padding: 0px $pad-content-desktop;
+    }
+}
+
+// generic list of links
+%links-list {
+    li {
+        display: inline-block;
+        & + li::before {
+            content: "\00a0--\00a0";
+        }
+    }
+}

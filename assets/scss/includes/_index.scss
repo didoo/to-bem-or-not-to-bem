@@ -1,0 +1,134 @@
+///////////////////////////////////// INDEX PAGE //////////////////////////////////
+
+.billboards {
+    margin: 0px;
+    padding: 0px;
+    list-style-type: none;
+}
+
+.billboard {
+    margin: 0px;
+    padding: 50px 0px 60px;
+    @supports (padding-top: 10vh) {
+        padding-top: 10vh;
+        padding-bottom: 12vh
+    }
+    text-align: center;
+    border-bottom: $block-border;
+    @include media(tablet) {
+        padding: 90px 0px 130px;
+    }
+}
+
+.billboard__number {
+    font-size: 18px;
+    line-height: 1em;
+    color: $grey-light;
+    @include media(tablet) {
+        font-size: 24px;
+    }
+}
+
+.billboard__heading {
+    margin: 5vh auto 6vh;
+    @include media(tablet) {
+        margin: 60px auto 70px;
+    }
+}
+
+.billboard__title {
+    font-size: 8vw;
+    line-height: 1em;
+    color: $grey-dark;
+    @include media(tablet) {
+        font-size: 52px;
+    }
+
+    a {
+        position: relative;
+        display: inline-block;
+        text-decoration: none;
+
+        // visual effect - underscore line
+        &::after {
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            right: 0px;
+            z-index: -1;
+            overflow: hidden;
+            color: $grey-pale;
+            opacity: 0;
+            content: "____________________________________________________________________";
+            transition: all 0.2s ease-in-out;
+        }
+        &:hover::after {
+            opacity: 1;
+        }
+
+    }
+
+}
+
+.billboard__subtitle {
+    margin: 1.5em auto 0px;
+    font-size: 12px;
+    line-height: 1.25em;
+    color: $grey-light;
+    width: 80%;
+    @include media(tablet) {
+        font-size: 14px;
+        max-width: 400px;
+    }
+}
+
+.billboard__abstract {
+    position: relative;
+    margin: 0px auto;
+    padding: 0px 30px;
+    @include media(tablet) {
+        max-width: 600px;
+    }
+}
+
+.billboard__abstract::before,
+.billboard__abstract::after {
+    position: absolute;
+    top: 0px;
+    width: 25px;
+    font-size: 52px;
+    text-align: center;
+    vertical-align: top;
+    color: $grey-pale;
+}
+
+.billboard__abstract::before {
+    left: 0px;
+    content: "“";
+}
+.billboard__abstract::after {
+    right: 0px;
+    content: "”";
+}
+
+
+.billboard__abstract q {
+    display: block;
+    font-size: 14px;
+    line-height: 1.25em;
+    @include media(tablet) {
+        font-size: 18px;
+    }
+}
+
+.billboard__abstract a {
+    margin: 20px auto 0px;
+    display: block;
+    font-size: 14px;
+    text-decoration: underline;
+    color: $grey-light;
+    transition: color 0.2s ease-in;
+    &:hover {
+        color: $grey-dark;
+    }
+}
