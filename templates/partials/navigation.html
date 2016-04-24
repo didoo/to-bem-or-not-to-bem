@@ -1,0 +1,31 @@
+<nav class="navigation">
+    <a class="navigation__toggle js-overlay-toggle">
+        <svg viewBox="0 0 40 40">
+            <rect x="4" y="18" width="32" height="4" transform="rotate(-45 20 20)"></rect>
+            <rect x="4" y="18" width="32" height="4" transform="rotate(45 20 20)"></rect>
+        </svg>
+        <span>CLOSE</span>
+    </a>
+    <ul class="navigation__menu">
+
+        {#
+        {% for interview in interviews %}
+            {% set interview.path = loop.key + '__interview-with--' + interview.nameslug + '.html' %}
+            {% if interview.status == 'public' %}
+            <li class="navigation__menu-item">
+                <span class="navigation__menu-number">#{{ loop.key }}</span>
+                <a href="{{interview.path}}" alt="{{ interview.title }}">
+                    {{ interview.nameslug }}
+                </a>
+            </li>
+            {% endif %}
+        {% endfor %}
+        #}
+
+        <li class="navigation__menu-item"><a href="./">interviews</a></li>
+        <li class="navigation__menu-divider"></li>
+        <li class="navigation__menu-item"><a href="more.html#about">about</a></li>
+        <li class="navigation__menu-item"><a href="more.html#credits">credits</a></li>
+        <li class="navigation__menu-item"><a href="more.html#subscribe">subscribe</a></li>
+    </ul>
+</nav>

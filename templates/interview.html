@@ -23,12 +23,10 @@
                 </ul>
             </div>
         </aside>
-        <section class="interview__main">
-            <article>
+        <article class="interview__main">
             {% block interview %}
             {% endblock %}
-            </article>
-        </section>
+        </article>
         <div class="interview__meta">
             This interview has been published on <time>{{ interview.date|date('d M Y') }}</time>
         </div>

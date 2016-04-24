@@ -8,15 +8,21 @@ var connect      = require('gulp-connect');
 var front_matter = require('gulp-front-matter');
 var gutil        = require('gulp-util');
 var htmlmin      = require('gulp-htmlmin');
+var imagemin     = require('gulp-imagemin');
 var livereload   = require('gulp-livereload');
 var postcss      = require('gulp-postcss');
 var sass         = require('gulp-sass');
 var swig         = require('gulp-swig');
 
 // other plugins
+var pngquant     = require('imagemin-pngquant');
 var autoprefixer = require('autoprefixer');
 var cssnano      = require('cssnano');
 var del          = require('del');
+
+// debugging tools
+// var using        = require('gulp-using');    // use: .pipe(using({ prefix:'Using', color:'blue' }))
+// var filelog      = require('gulp-filelog');  // use: .pipe(filelog())
 
 
 // === TASKS ===
@@ -43,6 +49,19 @@ gulp.task('css', function () {
         .pipe(sass().on('error', sass.logError))
         .pipe(postcss(processors))
         .pipe(gulp.dest('./build/css/'))
+        .pipe(connect.reload())
+        ;
+
+});
+
+gulp.task('images', function () {
+
+    return gulp.src('./assets/img/*.{jpg,png,gif}')
+        .pipe(imagemin({
+            progressive: true,
+            use: [pngquant()]
+        }))
+        .pipe(gulp.dest('./build/img/'))
         .pipe(connect.reload())
         ;
 
@@ -84,6 +103,7 @@ gulp.task('connect', function(done) {
 gulp.task('watch', function(done) {
     gulp.watch(['./templates/**/*','./content/**/*'], gulp.series('html'));
     gulp.watch('./assets/scss/**/*.scss', gulp.series('css'));
+    gulp.watch('./assets/img/**/*.{jpg|png|gif}', gulp.series('images'));
     done();
 });
 
@@ -97,7 +117,7 @@ gulp.task('clean', function() {
 gulp.task('default',
     gulp.series(
         'clean',
-        gulp.parallel('html', 'css'),
+        gulp.parallel('html', 'css', 'images'),
         'connect',
         'watch'
     )
