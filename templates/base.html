@@ -33,5 +33,19 @@
         })();
     </script>
 
+    <script type="text/javascript">
+        (function() {
+            var togglers = document.querySelectorAll('.js-overlay-toggle'),
+                overlay = document.querySelector('.js-overlay');
+
+            for(var i=0; i<togglers.length; i++) {
+                togglers[i].addEventListener( 'click', function(){
+                    document.body.classList.toggle('overlay-is-open');
+                })
+            }
+
+        })();
+    </script>
+
 </body>
 </html>
