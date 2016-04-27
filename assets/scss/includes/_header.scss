@@ -2,13 +2,13 @@
 
 header {
     @extend %padded-content;
-    border-bottom: $block-border;
 }
 
 .header__wrapper {
     position: relative;
     padding: 30px 0px;
     text-align: center;
+    border-bottom: $block-border;
     @include media(tablet) {
         padding: 50px 0px 60px;
         text-align: left;
@@ -26,7 +26,7 @@ header {
         // TODO
     }
     @include media(tablet) {
-        font-size: 42px;
+        font-size: 40px;
     }
     @include media(desktop) {
         font-size: 52px;
@@ -49,7 +49,7 @@ header {
 .header__toggle {
     display: none;
     position: absolute;
-    top: 55px;
+    top: 50px;
     right: 0px;
     padding: 10px 0px;
     color: $grey-light;

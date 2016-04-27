@@ -11,11 +11,13 @@ var htmlmin      = require('gulp-htmlmin');
 var imagemin     = require('gulp-imagemin');
 var livereload   = require('gulp-livereload');
 var postcss      = require('gulp-postcss');
+var rename       = require("gulp-rename");
 var sass         = require('gulp-sass');
 var swig         = require('gulp-swig');
 
 // other plugins
 var pngquant     = require('imagemin-pngquant');
+var mqpacker     = require("css-mqpacker")();
 var autoprefixer = require('autoprefixer');
 var cssnano      = require('cssnano');
 var del          = require('del');
@@ -40,14 +42,24 @@ var del          = require('del');
 
 gulp.task('css', function () {
 
-    var processors = [
-        cssnano(),
-        autoprefixer({browsers: ['> 1%']})
-    ];
-
     return gulp.src('./assets/scss/*.scss')
         .pipe(sass().on('error', sass.logError))
-        .pipe(postcss(processors))
+        .pipe(gulp.dest('./build/css/'))
+        .pipe(postcss([
+            mqpacker,
+            autoprefixer({
+                browsers: [
+                    'iOS >= 6',
+                    'Android >= 2',
+                    'Explorer >= 9'
+                ]
+            }),
+            cssnano({
+                autoprefixer: false,
+                minifyFontValues: false
+            })
+        ]))
+        .pipe(rename({suffix:".min"}))
         .pipe(gulp.dest('./build/css/'))
         .pipe(connect.reload())
         ;

@@ -9,7 +9,7 @@
     <meta name="description" content="{{ head_description|default(project.description) }}">
     <meta name="author" content="Cristiano Rastelli">
 
-    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/main.min.css">
 
 </head>
 <body>
@@ -36,12 +36,26 @@
     <script type="text/javascript">
         (function() {
             var togglers = document.querySelectorAll('.js-overlay-toggle'),
-                overlay = document.querySelector('.js-overlay');
+                menuitems = document.querySelectorAll('.navigation__menu a');
 
+            // handle the overlay open/close togglers
             for(var i=0; i<togglers.length; i++) {
-                togglers[i].addEventListener( 'click', function(){
+                togglers[i].addEventListener('click', function() {
                     document.body.classList.toggle('overlay-is-open');
-                })
+                });
+            }
+
+            // defer the navigation so that the overlay can close before actually navigating away
+            for(var j=0; j<menuitems.length; j++) {
+                menuitems[j].addEventListener('click', function(e) {
+                    var url = this.getAttribute('href');
+                    document.body.classList.remove('overlay-is-open');
+                    console.log(this,url);
+                    setTimeout(function(){
+                        window.location.href = url;
+                        // window.location.reload(true);
+                    }, 500);
+                });
             }
 
         })();
