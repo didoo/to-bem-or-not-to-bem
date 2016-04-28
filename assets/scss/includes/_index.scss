@@ -18,6 +18,9 @@
     @include media(tablet) {
         padding: 90px 0px 130px;
     }
+    &:last-child {
+        border-bottom: none;
+    }
 }
 
 .billboard__number {

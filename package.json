@@ -23,7 +23,8 @@
     "gulp-using": "^0.1.0",
     "gulp-util": "^3.0.7",
     "imagemin-pngquant": "^4.2.2",
-    "swig": "^1.4.2"
+    "swig": "^1.4.2",
+    "vinyl-ftp": "^0.4.5"
   },
   "scripts": {
     "gulp": "./node_modules/gulp/bin/gulp.js"

@@ -17,14 +17,20 @@ var swig         = require('gulp-swig');
 
 // other plugins
 var pngquant     = require('imagemin-pngquant');
-var mqpacker     = require("css-mqpacker")();
+var mqpacker     = require('css-mqpacker')();
 var autoprefixer = require('autoprefixer');
 var cssnano      = require('cssnano');
 var del          = require('del');
+var ftp          = require('vinyl-ftp');
 
 // debugging tools
 // var using        = require('gulp-using');    // use: .pipe(using({ prefix:'Using', color:'blue' }))
 // var filelog      = require('gulp-filelog');  // use: .pipe(filelog())
+
+
+// === CONFIG ===
+
+var _config = require('./config.js');
 
 
 // === TASKS ===
@@ -103,6 +109,23 @@ gulp.task('html', function () {
         ;
 });
 
+gulp.task('deploy', function () {
+
+    var ftpconn = ftp.create({
+        host: _config.ftp_host,
+        user: _config.ftp_user,
+        password: _config.ftp_password,
+        parallel: 10,
+        log: gutil.log
+    });
+
+    return gulp.src( './build/**/*.*', { base: './build', buffer: false } ) // turn off buffering in gulp.src for best performance
+        .pipe(ftpconn.newerOrDifferentSize(_config.ftp_dest)) // only upload files newer or with different file size
+        .pipe(ftpconn.dest(_config.ftp_dest))
+        ;
+
+});
+
 gulp.task('connect', function(done) {
     connect.server({
         root: './build',
@@ -113,9 +136,9 @@ gulp.task('connect', function(done) {
 });
 
 gulp.task('watch', function(done) {
-    gulp.watch(['./templates/**/*','./content/**/*'], gulp.series('html'));
-    gulp.watch('./assets/scss/**/*.scss', gulp.series('css'));
-    gulp.watch('./assets/img/**/*.{jpg|png|gif}', gulp.series('images'));
+    gulp.watch(['./templates/**/*','./content/**/*'], gulp.series('html','deploy'));
+    gulp.watch('./assets/scss/**/*.scss', gulp.series('css','deploy'));
+    gulp.watch('./assets/img/**/*.{jpg|png|gif}', gulp.series('images','deploy'));
     done();
 });
 
@@ -130,6 +153,7 @@ gulp.task('default',
     gulp.series(
         'clean',
         gulp.parallel('html', 'css', 'images'),
+        'deploy',
         'connect',
         'watch'
     )

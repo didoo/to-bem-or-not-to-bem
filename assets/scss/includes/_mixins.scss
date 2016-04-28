@@ -1,7 +1,11 @@
 ////////////////////////////////// MIXINS //////////////////////////////////
 
 @mixin media($size) {
-    @if $size == tablet {
+    @if $size == mobile {
+        @media (max-width: #{$size-tablet - 1px}){
+            @content;
+        }
+    } @else if $size == tablet {
         @media (min-width: $size-tablet){
             @content;
         }

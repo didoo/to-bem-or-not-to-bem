@@ -2,7 +2,6 @@
 
 .interview {
     @extend %padded-content;
-    border-bottom: $block-border;
 }
 
 .interview__intro {
@@ -112,7 +111,9 @@
 
     .dialog {
         margin: 0px 0px 1em;
-        max-width: 90%;
+        @include media(mobile) {
+            padding: 0px 20px;
+        }
         @include media(tablet) {
             max-width: 75%;
             margin-bottom: 2em;
@@ -122,12 +123,27 @@
         }
     }
 
+    $mobile-border-width: 2px;
+    $mobile-border-color: $grey-pale;
+
     .dialog--question {
-        align-self: flex-start;
+        @include media(mobile) {
+            border-left: $mobile-border-width solid $mobile-border-color;
+            margin-right: $mobile-border-width;
+        }
+        @include media(tablet) {
+            align-self: flex-start;
+        }
     }
 
     .dialog--answer {
-        align-self: flex-end;
+        @include media(mobile) {
+            border-right: $block-border;
+            margin-left: $mobile-border-width;
+        }
+        @include media(tablet) {
+            align-self: flex-end;
+        }
     }
 
     p {
@@ -167,5 +183,15 @@
         // content: "{···}";
         content: "· ✤ ·";
         transform: translate(-50%,-50%);
+    }
+    span {
+        display: block;
+        margin: 0px auto 10px;
+    }
+    a {
+        text-decoration: none;
+        &:hover {
+            text-decoration: underline;
+        }
     }
 }

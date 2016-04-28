@@ -28,7 +28,8 @@
             {% endblock %}
         </article>
         <div class="interview__meta">
-            This interview has been published on <time>{{ interview.date|date('d M Y') }}</time>
+            <span>This interview has been published on <time>{{ interview.date|date('d M Y') }}</time></span>
+            <span>License: <a href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0</a></span>
         </div>
     {% else %}
         <pre>COMING SOON</pre>

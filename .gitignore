@@ -5,3 +5,4 @@ node_modules
 
 # Metalsmith build/public folder
 build
+config.js
