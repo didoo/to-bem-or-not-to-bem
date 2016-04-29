@@ -2,7 +2,6 @@
 
 .more__section {
     padding: 50px 0px;
-    border-bottom: $block-border;
     @include media(tablet) {
         padding: 90px 0px;
     }
@@ -19,7 +18,7 @@
     line-height: 1em;
     color: $grey-dark;
     @include media(tablet) {
-        font-size: 42px;
+        font-size: 36px;
     }
 }
 
