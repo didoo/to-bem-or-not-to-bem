@@ -7,12 +7,13 @@
 @import "includes/mixins";
 
 @import "includes/base";
-@import "includes/header";
-@import "includes/navigation";
-@import "includes/footer";
 
-@import "includes/index";
-@import "includes/interview";
-@import "includes/more";
+@import "includes/components/header";
+@import "includes/components/navigation";
+@import "includes/components/footer";
+
+@import "includes/pages/index";
+@import "includes/pages/interview";
+@import "includes/pages/more";
 
 // @import "includes/debug";

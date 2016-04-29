@@ -1,0 +1,84 @@
+{% set interview = interviews[number] %}
+{% set head_title = interview.title + ' -- ' + project.title %}
+
+{% extends "../base.html" %}
+
+{% block main %}
+<main class="interview">
+
+    {% if interview.status == 'public' %}
+        <aside class="interview__intro">
+            <span class="interview__number">#{{ number }}</span>
+            <h2 class="interview__title">{{ interview.nameslug }}</h2>
+            <div class="interviewee">
+                <img class="interviewee__avatar" src="{{ interview.interviewee.avatar }}" alt="{{ interview.interviewee.fullname }}">
+                <div class="interviewee__bio">
+                    {% block biography %}
+                    {% endblock %}
+                </div>
+                <ul class="interviewee__links">
+                    {% for link in interview.interviewee.links %}
+                    <li><a href="{{ link }}" alt="">{{ loop.key }}</a></li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </aside>
+        <article class="interview__main">
+            {% block interview %}
+            {% endblock %}
+        </article>
+        <div class="share">
+            <span class="share__cta">Like it? Share it</span>
+            <ul class="share__socials">
+                <li>
+                    <div class="fb-like" data-href="{{interview.path}}" data-layout="button_count" data-action="like" data-show-faces="false" data-share="true"></div>
+                </li>
+                <li>
+                    <a href="https://twitter.com/share" class="twitter-share-button" data-count="horizontal">Tweet</a>
+                </li>
+                <!-- <li>
+                    <div class="g-plusone" data-size="medium" data-count="true"></div>
+                </li> -->
+            </ul>
+        </div>
+    {% else %}
+        <pre>COMING SOON</pre>
+    {% endif %}
+
+</main>
+{% endblock %}
+
+{#<!-- override default footer -->#}
+{% block footer %}
+<footer>
+    <div class="footer__wrapper">
+        <span class="footer__meta">This interview has been published on <time>{{ interview.date|date('d M Y') }}</time></span>
+        <span class="footer__meta">License: <a href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0</a></span>
+    </div>
+</footer>
+{% endblock %}
+
+{% block extra_scripts %}
+<script type="text/javascript">
+    (function(doc, script) {
+      var js,
+          fjs = doc.getElementsByTagName(script)[0],
+          frag = doc.createDocumentFragment(),
+          add = function(url, id) {
+              if (doc.getElementById(id)) {return;}
+              js = doc.createElement(script);
+              js.src = url;
+              id && (js.id = id);
+              frag.appendChild( js );
+          };
+        // Facebook SDK
+        add('//connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v2.6', 'facebook-jssdk');
+        // Twitter SDK
+        add('//platform.twitter.com/widgets.js');
+        // Google+ button
+        // add('https://apis.google.com/js/plusone.js');
+
+        fjs.parentNode.insertBefore(frag, fjs);
+    }(document, 'script'));
+</script>
+{% endblock %}

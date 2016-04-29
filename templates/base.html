@@ -17,7 +17,7 @@
     {% include "partials/header.html" %}
     {% include "partials/navigation.html" %}
     {% block main %}{% endblock %}
-    {% include "partials/footer.html" %}
+    {% block footer %}{% endblock %}
 
     <script type="text/javascript">
         WebFontConfig = {
@@ -57,9 +57,10 @@
                     }, 500);
                 });
             }
-
         })();
     </script>
+
+    {% block extra_scripts %}{% endblock %}
 
 </body>
 </html>

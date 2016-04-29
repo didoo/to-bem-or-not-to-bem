@@ -6,6 +6,7 @@
 
 html {
     position: relative;
+    -webkit-text-size-adjust: 100%; // Prevent adjustments of font size after orientation changes in IE and iOS.
 }
 
 body {
@@ -26,6 +27,7 @@ input, button, textarea {
 
 a {
     color: inherit;
+    -webkit-text-decoration-skip: objects; // Remove gaps in links underline in iOS 8+ and Safari 8+.
 }
 
 // disable pointer events for SVGs (see: https://css-tricks.com/links-inline-svg-staying-target-events/)

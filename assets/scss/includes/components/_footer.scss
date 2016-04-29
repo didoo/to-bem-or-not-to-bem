@@ -1,0 +1,32 @@
+////////////////////////////////// FOOTER //////////////////////////////////
+
+footer {
+    @extend %padded-content;
+}
+
+.footer__wrapper {
+    padding: 30px 0;
+    border-top: $block-border;
+    @include media(tablet) {
+        padding-top: 60px;
+        padding-bottom: 40px;
+    }
+}
+
+.footer__meta {
+    position: relative;
+    margin: 0px auto 10px;
+    display: block;
+    font-size: 10px;
+    line-height: 1.2em;
+    text-align: center;
+    color: #D0D0D0;
+
+    a {
+        text-decoration: none;
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+
+}

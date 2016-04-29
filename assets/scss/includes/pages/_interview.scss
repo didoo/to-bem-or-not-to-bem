@@ -160,38 +160,35 @@
 
 }
 
-.interview__meta {
+.share {
     position: relative;
-    max-width: 400px;
-    margin: 50px auto;
+    max-width: 320px;
+    margin: 50px auto 0px;
     padding: 40px 0px;
     display: block;
-    font-size: 10px;
-    line-height: 1.2em;
     text-align: center;
-    color: #D0D0D0;
     border-top: 1px solid $grey-pale;
-    &::before {
+    @include media(tablet) {
+        margin-bottom: 50px;
+    }
+
+    .share__cta {
         position: absolute;
         top: 0px;
         left: 50%;
-        padding: 2px 10px;
-        font-size: 16px;
-        color: $grey-dark;
+        padding: 0px 15px;
+        font-size: 12px;
+        color: $grey-light;
+        color: #D0D0D0;
         background: #FFF;
-        // content: "❦";
-        // content: "{···}";
-        content: "· ✤ ·";
         transform: translate(-50%,-50%);
     }
-    span {
-        display: block;
-        margin: 0px auto 10px;
-    }
-    a {
-        text-decoration: none;
-        &:hover {
-            text-decoration: underline;
+
+    .share__socials {
+        li {
+            display: inline-block;
+            margin: 10px;
         }
     }
+
 }
