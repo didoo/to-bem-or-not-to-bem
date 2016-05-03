@@ -6,12 +6,12 @@ header {
 
 .header__wrapper {
     position: relative;
-    padding: 30px 0px;
+    padding: 30px 0px 0px;
     text-align: center;
-    border-bottom: $block-border;
     @include media(tablet) {
         padding: 50px 0px 60px;
         text-align: left;
+        border-bottom: $block-border;
     }
 }
 

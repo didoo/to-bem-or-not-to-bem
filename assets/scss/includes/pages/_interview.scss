@@ -90,10 +90,15 @@
 }
 
 .interviewee__links {
-    @extend %links-list;
     margin: 10px auto 0px;
     @include media(tablet) {
         margin: 40px 0px 0px 0px;
+    }
+    li {
+        display: inline-block;
+        & + li::before {
+            content: "\00a0--\00a0";
+        }
     }
     a {
         text-decoration: underline;

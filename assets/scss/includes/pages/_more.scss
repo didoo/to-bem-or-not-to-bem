@@ -80,6 +80,7 @@ $subscribe-input-height: 42px;
     background: $grey-light;
     border: none;
     cursor: pointer;
+    appearance: none;
     &:hover {
         background-color: $grey-base; // $grey-dark
     }

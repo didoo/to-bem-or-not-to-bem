@@ -28,13 +28,3 @@
         padding: 0px $pad-content-desktop;
     }
 }
-
-// generic list of links
-%links-list {
-    li {
-        display: inline-block;
-        & + li::before {
-            content: "\00a0--\00a0";
-        }
-    }
-}
