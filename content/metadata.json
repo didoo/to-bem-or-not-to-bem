@@ -1,7 +1,8 @@
 {
     "project": {
         "title": "To BEM or not to BEM",
-        "description": "a series of interviews on BEM methodology"
+        "description": "a series of interviews on BEM methodology",
+        "basepath": "http://www.didoo.net/to-bem-or-not-to-bem"
     },
     "interviews": {
         "01": {

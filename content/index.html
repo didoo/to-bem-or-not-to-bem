@@ -1,3 +1,10 @@
+{% set head_meta_social = {
+    'title': project.title,
+    'description': project.description,
+    'image': project.basepath + '/img/social-card-generic.png',
+    'url': project.basepath
+} %}
+
 {% extends "../templates/pages/generic.html" %}
 
 {% block main %}

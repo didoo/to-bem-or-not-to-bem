@@ -1,5 +1,12 @@
 {% set interview = interviews[number] %}
 {% set head_title = interview.title + ' -- ' + project.title %}
+{% set head_description = project.description %}
+{% set head_meta_social = {
+    'title': interview.title + ' -- ' + project.title,
+    'description': '“' + interview.quote + '”',
+    'image': project.basepath + '/img/social-card-' + number + '.png',
+    'url': project.basepath + '/' + number + '__interview-with--' + interview.nameslug + '.html'
+} %}
 
 {% extends "../base.html" %}
 
