@@ -3,29 +3,31 @@
 @include media(mobile) {
 
     .navigation {
-        padding: 0px $pad-content-mobile
-    }
-
-    .navigation__toggle {
-        display: none;
+        background: $grey-light;
     }
 
     .navigation__menu {
+        max-width: 360px;
+        margin: 0px auto;
+        padding: 0px 10px;
         display: flex;
-        justify-content: center;
-        border-bottom: $block-border;
+        justify-content: space-around;
     }
 
     .navigation__menu-item {
-        margin: 0px 10px;
-        padding: 20px 0px;
+        margin: 0px;
         a {
-            font-size: 14px;
+            padding: 10px 5px;
+            display: block;
+            font-size: 16px;
             line-height: 1em;
-            color: $grey-light;
+            color: $grey-pale;
+            color: #FFFFFF; text-decoration: none;
         }
+        &:hover a { color: #FFFFFF; text-decoration: underline; }
     }
 
+    .navigation__toggle,
     .navigation__menu-divider {
         display: none;
     }
