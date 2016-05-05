@@ -23,6 +23,7 @@
             line-height: 1em;
             color: $grey-pale;
             color: #FFFFFF; text-decoration: none;
+            -webkit-tap-highlight-color: transparent;
         }
         &:hover a { color: #FFFFFF; text-decoration: underline; }
     }
@@ -59,8 +60,8 @@
         padding: 10px 0px;
         color: $grey-base;
         cursor: pointer;
+        -webkit-tap-highlight-color: transparent;
         &:hover {
-            // color: $grey-pale;
             color: #FFFFFF;
         }
 

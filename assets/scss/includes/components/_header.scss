@@ -54,6 +54,7 @@ header {
     padding: 10px 0px;
     color: $grey-light;
     cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
     @include media(tablet) {
         display: block;
     }
