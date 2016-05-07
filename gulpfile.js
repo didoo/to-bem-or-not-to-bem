@@ -10,6 +10,7 @@ var gutil        = require('gulp-util');
 var htmlmin      = require('gulp-htmlmin');
 var imagemin     = require('gulp-imagemin');
 var livereload   = require('gulp-livereload');
+var prettify     = require('gulp-prettify');
 var postcss      = require('gulp-postcss');
 var rename       = require("gulp-rename");
 var sass         = require('gulp-sass');
@@ -35,16 +36,48 @@ var _config = require('./config.js');
 
 // === TASKS ===
 
-// gulp.task('convert', function () {
-//     return gulp.src('./raws/*.html')
-//         .pipe(cheerio(function ($, file) {
-//             $('.DMConversation-content .DirectMessage-message .DirectMessage-text').each(function () {
-//                 console.log();
-//             });
-//         }))
-//         .pipe(gulp.dest('./raw_out/'))
-//         ;
-// });
+gulp.task('convert', function () {
+    return gulp.src('./raws/*.html')
+        .pipe(cheerio({
+            run: function ($, file) {
+                $('.DirectMessage').each(function(i,dm) {
+                    var kind;
+                    var $dm = $(this);
+                    if($dm.hasClass('DirectMessage--sent')){
+                        kind = 'question';
+                    } else if($dm.hasClass('DirectMessage--received')){
+                        kind = 'answer';
+                    }
+                    $dm.attr('class','dialog dialog--' + kind);
+                    $dm.removeAttr('data-message-id');
+                    $dm.removeAttr('data-component-context');
+                    $dm.append(
+                        $dm.find('.DirectMessage-message .DirectMessage-text p')
+                        .removeAttr('class')
+                        .removeAttr('lang')
+                        .removeAttr('data-aria-label-part')
+                    );
+                    $dm.find('.DirectMessage-message').remove();
+                    $dm.find('p a').each(function(i,a) {
+                        var url = $(this).attr('data-expanded-url');
+                        $(this).replaceWith($('<a href="' + url + '">' + url + '</a>'));
+                    });
+                });
+                $('.DirectMessage-avatar').remove();
+                $('.DirectMessage-actions').remove();
+                $('.DirectMessage-footer').remove();
+                $('.DirectMessage-container').remove();
+            },
+            parserOptions: {
+                normalizeWhitespace: true,
+                decodeEntities: true
+            }
+        }))
+        .pipe(prettify({indent_size: 4}))
+        .pipe(rename({suffix:".clean"}))
+        .pipe(gulp.dest('./raws_out/'))
+        ;
+});
 
 gulp.task('css', function () {
 

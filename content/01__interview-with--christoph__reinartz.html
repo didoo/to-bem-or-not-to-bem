@@ -5,60 +5,131 @@ number: "01"
 {% extends "../templates/pages/interview.html" %}
 
 {% block biography %}
-<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur explicabo quae soluta quaerat, quasi voluptates</p>
-<p>eveniet animi ullam a natus excepturi voluptatum, ipsa inventore.</p>
-<p>Soluta tempora officia doloribus eligendi amet, quas maiores ratione magni porro maxime, incidunt nobis vel id repudiandae asperiores quaerat perferendis esse quam eum excepturi consequatur.</p>
+<p>Front-End Developer &amp; Teamlead UI/UX Engineering at <a href="http://www.trivago.com/">trivago</a>. Christoph is working on scaling and improving the User Interface of the trivago core product on a large scale since more than 3 years now. He worked in several agencies before.</p>
+<p>Loves to code things that people like to look at and want to interact with. Always worried about performance of websites and the scalability of frontends.</p>
 {% endblock %}
 
 {% block interview %}
 <div class="dialog dialog--question">
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit corporis quae reiciendis eveniet quis recusandae, blanditiis culpa atque labore voluptas.</p>
+    <p>Hi Christoph, thank you for accepting my invite for this interview.</p>
 </div>
-
 <div class="dialog dialog--answer">
-    <p>Curabitur sodales ligula in libero. Sed dignissim lacinia nunc. Curabitur tortor. Pellentesque nibh. Aenean quam.</p>
-    <p>In scelerisque sem at dolor. Maecenas mattis. Sed convallis tristique sem. Proin ut ligula vel nunc egestas porttitor. Morbi lectus risus, iaculis vel, suscipit quis, luctus non, massa.</p>
-    <p>Fusce ac turpis quis ligula lacinia aliquet. Mauris ipsum. </p>
+    <p>You are very welcome. Happy to chat about my experiences with BEM.</p>
 </div>
-
 <div class="dialog dialog--question">
-    <p>Nulla metus metus, ullamcorper vel, tincidunt sed, euismod in, nibh. Quisque volutpat condimentum velit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nam nec ante. Sed lacinia, urna non tincidunt mattis, tortor neque adipiscing diam, a cursus ipsum ante quis turpis. Nulla facilisi. Ut fringilla. Suspendisse potenti. Nunc feugiat mi a tellus consequat imperdiet. Vestibulum sapien. Proin quam. Etiam ultrices. </p>
+    <p>This is a side project, called &quot;To BEM or not to BEM&quot;, and as you will guess, it&apos;s about the BEM methodology, but not only.</p>
+    <p>Everything started when one evening, a few weeks ago, I read <a href="https://medium.com/@pistenprinz/rebuilding-an-aircraft-on-the-fly-a-pattern-library-integration-at-trivago-b2fd6954a88e#.a2qlv5rl1">your article on Medium</a>, in which I found this phrase: &#x201C;In the meantime, to fight the CSS structure problem we found that ITCSS is the way to go.&#x201D; after having told that in the beginning you were using BEM as methodology</p>
+    <p>so, let&apos;s start from the beginning. can you tell me your role in trivago? how comes that you started to work on the project? what is your role?</p>
 </div>
-
 <div class="dialog dialog--answer">
-    <p>Suspendisse in justo eu magna luctus suscipit. Sed lectus. Integer euismod lacus luctus magna. Quisque cursus, metus vitae pharetra auctor, sem massa mattis sem, at interdum magna augue eget diam. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Morbi lacinia molestie dui. Praesent blandit dolor. Sed non quam. In vel mi sit amet augue congue elementum. Morbi in ipsum sit amet pede facilisis laoreet. Donec lacus nunc, viverra nec, blandit vel, egestas et, augue. Vestibulum tincidunt malesuada tellus. Ut ultrices ultrices enim. Curabitur sit amet mauris. </p>
+    <p>I am currently leading the UI/UX Engineering team at trivago and I would describe myself a Front-End Developer. The company I am working for grew a lot the last years. When I started we were around 150 people and last week we celebrated employee Nr.1000. In such a fast growing environment we had issues with keeping consistency in code and design. In the beginning of 2015 we started creating a Design System and introduced a pattern library. After we redesigned our company pages we had to somehow bring in the new architecture into our core product, the trivago hotel search.</p>
 </div>
-
 <div class="dialog dialog--question">
-    <p>Morbi in dui quis est pulvinar ullamcorper?</p>
+    <p>When you started to work on the project, as far as I understand, it&apos;s one year ago. How was built the CSS codebase? Less, Sass, &quot;pure&quot; CSS, other?</p>
 </div>
-
 <div class="dialog dialog--answer">
-    <p>Nulla facilisi.</p>
+    <p>Yes correct one year ago we started with revising our coding guidelines and the way we built our UI patterns. Our CSS codebase was built with Sass but our coding guidelines didn&apos;t allow us to scale up our Front-End which let us rethink the way we built our CSS.</p>
 </div>
-
 <div class="dialog dialog--question">
-    <p>Integer lacinia sollicitudin massa?</p>
+    <p>What was the reason for &quot;not being able to scale&quot;? What do you mean?</p>
 </div>
-
 <div class="dialog dialog--answer">
-    <p>Cras metus. Sed aliquet risus a tortor.</p>
-    <p>Integer id quam. Morbi mi. Quisque nisl felis, venenatis tristique, dignissim in, ultrices sit amet, augue. Proin sodales libero eget ante. Nulla quam. Aenean laoreet.</p>
+    <p>We started to repeat ourselves too often. we reinvented the wheel way all the time because re-usability was very low. This slowed us down in maintainability and in creating new features</p>
 </div>
-
 <div class="dialog dialog--question">
-    <p>Integer id quam. Morbi mi. Quisque nisl felis, venenatis tristique, dignissim in, ultrices sit amet, augue.</p>
+    <p>And how BEM enter in all of this? Which were the reasons that made you choose to adopt it? Who decided, you on your own or was a collective/team decision?</p>
 </div>
-
 <div class="dialog dialog--answer">
-    <p> Proin sodales libero eget ante. Nulla quam. Aenean laoreet.</p>
+    <p>I had a very deep look into BEM and was very convinced that this will help building more modular CSS. I think it is important that not one person decides but the team is comfortable with it. So I proposed it and asked my colleagues to try it out. At first people where very unlucky with the amount of classes BEM can add to the markup, but once they understood the structure and the benefits they felt comfortable with applying it. BEM was not designed to be pretty but to scale. Although we still often discuss about too many classnames, but in nearly every instance you can proof that moving the &quot;problem&quot; to CSS and try to save a classname with e.g. only using modifiers classes for block elements does not scale but will blow up your CSS.</p>
 </div>
-
 <div class="dialog dialog--question">
-    <p>Vestibulum nisi lectus, commodo ac, facilisis ac, ultricies eu, pede.</p>
+    <p>Do you follow strictly the BEM dictations? e.g. &#x201C;everything is a class and nothing is nested&#x201D;.</p>
+    <p>Do you nest, for example? I have seen the worst things, caused by this &#x201C;Thou shalt not nest!&#x201D; :)</p>
+    <p>Do you have multiple components/blocks under the same file, or there is always a one-to-one relation?</p>
 </div>
-
 <div class="dialog dialog--answer">
-    <p>Ut orci risus, accumsan porttitor, cursus quis, aliquet eget, justo. Sed pretium blandit orci. </p>
+    <p>No this might work in an ideal world. But e.g. in some cases you might not have access to the markup, because it is coming from a database. So we don&apos;t strictly apply BEM but in some cases like our new re-designed item element we use it extensively. The element is also very, very complex and so in some cases we nest, but in general the nesting level is max 2, way less than it was before applying BEM. It depends on the use-case. Also we combine BEM with OOCSS and Atomic CSS, which adds even more classes but keeps the CSS more DRY.</p>
+</div>
+<div class="dialog dialog--question">
+    <p>But if everything is in the root scope, how do you avoid to end up in clashing names (e.g. someone decides to use a class name, that doesn&apos;t know is already used somewhere else) or in spending time and mental energies trying to find names to the things?</p>
+    <p>I mean, once someone before me decided to use &quot;.form&quot; for something (where &quot;form-new&quot; is the block part, I mean), and maybe is not really a global &quot;form&quot; style across all the website/application, that name is taken and I will not be able to use it. so I have seen things like &quot;.form-new&quot; &quot;.form-v2&quot; and &quot;.form-new-v2&quot;, because of that</p>
+</div>
+<div class="dialog dialog--answer">
+    <p>We try to use BEM on components level as much as possible, so the form would be a component for us. But we sometimes have issues with our Atomic CSS / helper classes, e.g. something like &quot;pull-left&quot;. It happened recently that we had different class names for this and I removed the deprecated one, which was the one everybody used :) In general knowledge sharing with workshops and code reviews is highly important for us. So it is important that people also understand the big picture of the CSS codebase. If they just would do BEM everywhere there might be e.g. a lot of color-definitions which you could also add with a atomic CSS class.</p>
+</div>
+<div class="dialog dialog--question">
+    <p>So you say BEM is working well for your project, and within your team. So why did you say that &quot;ITCSS is the way to go&quot;? What happened? Did you started to do <a href="http://csswizardry.com/2015/08/bemit-taking-the-bem-naming-convention-a-step-further/">BEMIT</a> (as Harry Roberts calls it)?</p>
+</div>
+<div class="dialog dialog--answer">
+    <p>OK we see <a href="https://speakerdeck.com/dafed/managing-css-projects-with-itcss">ITCSS</a> more of a structural approach for our files and it nicely goes along / combines with our BEM approach. Beginning from the components level we only use BEM but only a very rare cases on the layers below, e.g. objects. So this allows us that we always have our base CSS loaded on pagelaod and then beginning from the components layer we can conditionally load the components. I am still a big fan of having a global CSS but like also to have CSS chunks for your components (which rely on that the base CSS is loaded)</p>
+    <p>We had a look into BEMIT, but as our structure is working so good for us we didn&apos;t yet apply it.</p>
+</div>
+<div class="dialog dialog--question">
+    <p>So you are doing BEM + OOCSS + Atomic + ITCSS ? :)</p>
+</div>
+<div class="dialog dialog--answer">
+    <p>Yes exactly! And the results are convincing us.</p>
+</div>
+<div class="dialog dialog--question">
+    <p>Let&apos;s talk about the future: I see two big &quot;architectural&quot; shifts on the CSS panorama: <a href="https://github.com/gajus/react-css-modules">CSS Modules</a> in React (and web components in general) and <a href="http://acss.io/">Atomic CSS</a>.</p>
+    <p>With the first one, do you still see the need for BEM? You just said &quot;We try to use BEM on components level as much as possible&quot;, but if the component is really &quot;isolated&quot; like in the case of a React component, and the CSS is &quot;imported&quot; like <a href="https://github.com/gajus/react-css-modules">here</a>:</p>
+    <p>import styles from &apos;./buttons.css&apos; or <br>import styles from &apos;./forms.css&apos;</p>
+    <p>at that point, why do you need the extra complexity of the B-E-M naming, when there&apos;s non risk of name clashing or property overriding/inheritance?</p>
+</div>
+<div class="dialog dialog--answer">
+    <p>We try to built up a system / base which works for all our applications, some of them already use approaches of web components (we e.g. use already webpack to load and our CSS asyncronously) while others e.g. use wordpress with a way more
+        simple approach to render a site and load their assets. It is important for us that we consider all ways to include our CSS so there will be most likely always a benefit of BEM for us.</p>
+</div>
+<div class="dialog dialog--question">
+    <p>OK, and what about Atomic CSS? At the end, it&apos;s BEM taken to the extremes, no? Every class is an &quot;helper&quot; (in some way a &quot;*__*--&quot; modifier), everything is in the root scope but because of the naming convention there&apos;s no risk of clashes, all the styles are declaratively applied in the HTML itself, no need to create &quot;structure&quot; in the CSS.</p>
+</div>
+<div class="dialog dialog--answer">
+    <p>I see Atomic CSS only as a useful addition but I would never see the benefit of putting everything into the root scope. Your CSS would become completely unstructured. Also I think this would not make it maintainable anymore nor would it be encapsulated.</p>
+</div>
+<div class="dialog dialog--question">
+    <p>I agree.</p>
+</div>
+<div class="dialog dialog--question">
+    <p>What sometimes struggles me is that I don&apos;t find so many examples of &quot;real world usage&quot; of BEM as I would expect, given the fact that apparently everybody uses BEM. Do you have some preferred Git repository/project that you use as example/reference/inspiration? Or other sources of &quot;real world use cases&quot; that you can share?</p>
+</div>
+<div class="dialog dialog--question">
+    <p>What I mean is, of &quot;good use&quot; of BEM that goes beyond the &quot;hello world&quot; examples that you can find on every article or tutorial on BEM. Some large-scale project built using BEM consistently across all the codebase.</p>
+</div>
+<div class="dialog dialog--answer">
+    <p>Ahaha yes. It is like with the Todo-Apps in the JS-area, there are so many articles and tutorials, but none of them helps you to apply BEM on large scale. We are thinking of making at least a part of our new CSS base public on GitHub. Also because we are curious about the feedback. I like what the e.g. theguardian is doing, <a href="https://github.com/guardian/frontend/tree/master/static/src/stylesheets">they use BEM a lot</a>. I even think they recently started using BEMIT.</p>
+</div>
+<div class="dialog dialog--question">
+    <p>You are so enthusiast of BEM. Is there something that you find doesn&apos;t work well, of this methodology? Or you simply have &quot;adapted&quot; it to your own taste (see the integration with OOCSS, Atomic, etc.)</p>
+    <p>Which is what in some way happened with the Agile methodologies: everybody &#x201C;does Agile&#x201D; but everyone has chosen his own flavour or pick of them.</p>
+    <p>&#x201C;We do Agile but&#x201D; and is something similar to what I generally hear of BEM: &#x201C;We use BEM but&#x201D;, &#x201C;Yes, we use BEM. Kind of&#x201D;.</p>
+</div>
+<div class="dialog dialog--answer">
+    <p>In general I think it is quite bulletproof. And it helped us a lot. But as already said in some cases you might not have full access to the markup or content writers will add some text with a text editor which doesn&apos;t automatically add your element classes. So in this case you could write your own / adapt the editor or you just apply BEM where it works for you. And if some Atomic CSS classes make you develop fast and keep your CSS size smaller then we decide to do so.</p>
+</div>
+<div class="dialog dialog--question">
+    <p>Ok, make sense. very pragmatic (and smart).</p>
+    <p>So, last question, To BEM or not to BEM?</p>
+    <p>If someone should start a large-scale greenfield project today, would you advice her/him to use BEM? or yourself, would you still use BEM or you would go for {name your other choice here}?</p>
+</div>
+<div class="dialog dialog--answer">
+    <p>Yes definitely! I would advise using BEM and ITCSS and make use of Atomic CSS + OOCSS if needed/suitable.</p>
+</div>
+<div class="dialog dialog--question">
+    <p>Good.</p>
+    <p>That&apos;s it, thank you so much for your time!</p>
+</div>
+<div class="dialog dialog--answer">
+    <p>You are very very welcome! Was a pleasure. And I liked your questions</p>
+</div>
+<div class="dialog dialog--question">
+    <p>I know that in the next weeks you are going to present your experience (the so called Project Ironman) at many conferences across Europe. Can you mention them?</p>
+</div>
+<div class="dialog dialog--answer">
+    <p>Official are <a href="http://amsterdam2016.codemotionworld.com/">Codemotion Amsterdam</a>, <a href="http://frontendunited.org/">Frontend United</a> and <a href="http://scotlandcss.com/">ScotlandCSS</a>. A few are pending and not official yet - I already had the pleasure at <a href="http://2015.jsunconf.eu/">JSunconf Hamburg</a></p>
+</div>
+<div class="dialog dialog--question">
+    <p>Wow, great!</p>
+    <p>Thank you so much, thank you for sharing your experiences not only here with me, but also through your posts and your talks. Sharing is caring :)</p>
+    <p>Hope to see you soon, and thank you again!</p>
 </div>
 {% endblock %}

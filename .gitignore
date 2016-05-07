@@ -3,6 +3,12 @@ npm-debug.log*
 node_modules
 .npm
 
-# Metalsmith build/public folder
-build
+# Project config (contains FTP credentials)
 config.js
+
+# Build folder
+build
+
+# Service folders
+raws
+raws_out
