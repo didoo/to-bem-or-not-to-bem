@@ -8,6 +8,7 @@
 
     p {
         margin-bottom: 1em;
+        line-height: 1.4em;
     }
 
 }
@@ -29,6 +30,8 @@ $subscribe-input-height: 42px;
 
 .subscribe-form {
     max-width: 400px;
+    margin-top: 20px;
+    margin-bottom: 20px;
     @include media(tablet) {
         max-width: 450px;
     }

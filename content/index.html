@@ -17,9 +17,13 @@
                 <span class="billboard__number">#{{ loop.key }}</span>
                 <div class="billboard__heading">
                     <h2 class="billboard__title">
+                        {% if interview.status == 'public' %}
                         <a href="{{interview.path}}" alt="{{ interview.title }}">
                             {{ interview.nameslug }}
                         </a>
+                        {% else %}
+                            {{ interview.nameslug }}
+                        {% endif %}
                     </h2>
                     <h4 class="billboard__subtitle">{{ interview.interviewee.minibio }}</h4>
                 </div>

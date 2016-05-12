@@ -8,7 +8,7 @@
         "01": {
             "nameslug" : "christoph__reinartz",
             "title" : "Interview with Christoph Reinartz",
-            "date" : "2016-04-20",
+            "date" : "2016-05-06",
             "status" : "public",
             "quote" : "BEM was not designed to be pretty but to scale. In general I think it is quite bulletproof. And it helped us a lot.",
             "interviewee": {
@@ -23,19 +23,18 @@
             }
         },
         "02": {
-            "nameslug" : "name_surname",
-            "title" : "My Second Interview",
-            "date" : "2016-05-20",
+            "nameslug" : "razvan__spatariu",
+            "title" : "Interview with Razvan Spatariu",
+            "date" : "2016-05-13",
             "status" : "draft",
             "quote" : "Nemo labore eligendi consequuntur incidunt dolores molestias suscipit perspiciatis aperiam.",
             "interviewee": {
-                "avatar": "http://placehold.it/200x200",
-                "fullname": "Name Surname",
-                "minibio": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi officiis sint suscipit odit! Ipsa atque quo quas cupiditate consectetur excepturi.",
+                "avatar": "https://pbs.twimg.com/profile_images/572194979993243648/sHR7qccX.jpeg",
+                "fullname": "Razvan Spatariu",
+                "minibio": "frontend engineer at Funding Circle UK",
                 "links": {
-                    "website": "http://www.pippo.com",
-                    "twitter": "https://twitter.com/pippo",
-                    "github": "https://github.com/pippo"
+                    "twitter": "https://twitter.com/RazvanSpatariu",
+                    "github": "https://github.com/RazvanDH"
                 }
             }
         }
