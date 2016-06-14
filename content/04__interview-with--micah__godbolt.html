@@ -1,0 +1,96 @@
+---
+number: "04"
+---
+
+{% extends "../templates/pages/interview.html" %}
+
+{% block biography %}
+<p>Author of <a href="https://www.amazon.com/Frontend-Architecture-Design-Systems-Sustainable-ebook/dp/B01B6WS868">Frontend Architecture for Design Systems</a></p>
+<p>Micah Godbolt, frontend architect, author, podcaster, trainer and speaker at worldwide open source events, is often found promoting frontend architecture, <a href="https://www.youtube.com/user/sassbites">Sass</a>, visual regression testing, and schema-based design at his blog, <a href="http://micah.codes">micah.codes</a>.</p>
+<p>A Pacific Northwest native, he currently lives outside of Portland, Oregon with his wife and two children.</p>
+{% endblock %}
+
+{% block interview %}
+
+<div class="dialog dialog--question">
+    <p>Hi Micah,<br>thank you so much for your accepting my invite.</p>
+    <p>I don't think you need introductions, you have been such an active speaker and blogger since a long time that everyone knows you. But just to give some context, what are you working on these days? Are you still working for Red Hat? I ask because I saw <a href="https://twitter.com/micahgodbolt/status/735538874349281280">this tweet</a> a few weeks ago and I was surprised.</p>
+</div>
+<div class="dialog dialog--answer">
+    <p>I came on at Red Hat as a contractor through my actual employer Phase 2. I originally came in to help with their site launch over 2 years ago, but then I was asked to stay and help them create a new design system to replace the hastily assembled theme they build for their launch.</p>
+    <p>Years later now, Red Hat has a much more robust, component based design system and are now self sufficient for extending that system with more patterns and components. So with my contract coming to a close we're trying to figure out what the person will look like that's coming after me.</p>
+</div>
+<div class="dialog dialog--question">
+    <p>Let's come to the reason why I decided to ask you to take part to this series of interviews. I have recently read your new book, <a href="https://www.amazon.com/Frontend-Architecture-Design-Systems-Sustainable-ebook/dp/B01B6WS868">Frontend Architecture for Design Systems</a>, which I found absolutely interesting and very practical and pragmatic. I've devoured it during a plane trip, but the part that made me jump on the seat was the chapter about the CSS architecture you have adopted for the Red Hat project. In ten pages, from 54 to 64, you have described a fully working CSS architecture, and the rationale behind it, that probably many CSS architects would judge unorthodox, if not heretic :)</p>
+    <p>Can you explain for those who have not read the book which were your choices, the approach you have chosen to follow, and the rationale behind it?</p>
+    <p>And then the big question: why not simply use BEM? I mean, it's considered the de facto standard for large scale projects, with lots of developers, that use components and atomic design. The Red Hat project would have made the perfect case for it.</p>
+</div>
+<div class="dialog dialog--answer">
+    <p>One thing that differentiate my system from others is the separation of markup into component templates, which display text and image content and layout templates, which are only used for providing layout, spacing, themes and background to the components inside of them.</p>
+    <p>Another notable deviation is the idea of contexts. You see, one of my rules is that a parent layout should have no direct style impact on the component below it, but it can provide contextual cues that a component CAN opt into. This means that while a layout with a dark background can’t change all of the child text to white, it can provide a theme of “dark” that component styles can “opt in” to, and they can define how their elements should look in a dark theme.</p>
+    <p>The last notable difference in my approach is how those contexts and modifiers were applied. Typically in a BEM approach the modifies would just be classes. So <code>block__element--modifier</code> would modify <code>block__element</code>. While I really like the flat selector approach that BEM defines, I prefer to not clutter my elements with a bunch of classes. My decision was then to use data attributes to apply my modifiers and contexts. So I’d have a class of <code>block__element</code> but then the modifier would be applied by adding <code>data-modifier="value"</code>. Not only did this split modifiers into their own “space” but it also made them multi dimensional so I could have a <code>data-theme="dark"</code> and a <code>data-theme="light"</code>.</p>
+</div>
+<div class="dialog dialog--question">
+    <p>So the only disadvantage you found in BEM is just the cluttering of the HTML? Because looks like a not so important reason – everyone says “you will get accustomed to it” when you start to use it, and in some way is true – to give up on such a common “best practice”.</p>
+</div>
+<div class="dialog dialog--answer">
+    <p>Yes being cluttered is a reason against, but I also think BEDAM offers even more functionality than BEM, creating a separation of component class with modifier class, and creating multi-dimensional selectors.</p>
+    <p>When you have something like alignment, you don’t need <code>class="align-left || align-right || align-center"</code> you can use <code>data-align="left || center || right"</code>.</p>
+    <p>Last thing about this is that classes directly apply styles. If you add a class, it will add styles. But data attributes are all opt in.</p>
+    <p>If you don’t define what data-align=“center” means for a given component, then that data attribute will have no affect.</p>
+    <p>The reasoning here is that not all components would use text-align to accomplish alignment. And some components should NEVER align center</p>
+    <p>By forcing each component to specifically define every possible modifier, you can also be confident that you know every possible permutation of that component.</p>
+    <p>If you instead had a bunch of utility classes, it’d be difficult to know what each of those classes might do to a given component, especially when combined together</p>
+    <p>So, all modifiers are opt in only, and are separated from the direct applying block-element class by being placed into data attributes.</p>
+</div>
+<div class="dialog dialog--question">
+    <p>I can see in this a clear separation of roles: those who build the system (and decide what can go or not go in a component: see the "left” alignment) and those who use the system to build other pages, views, templates, etc.</p>
+    <p>But is not this a risk too? I mean, there is a lot of control from above, on what a component can or can’t do. But at the same time you are sacrificing the possibility of “compose” the properties, the classes, the layouts.</p>
+    <p>I totally get your point and your approach, I have always been the same and coded my CSS for being as “immutable” as possible. But especially recently, I am viewing things in a less rigid way. With Atomic CSS in particular (not a big fan, but made me rethink some approaches).</p>
+</div>
+<div class="dialog dialog--answer">
+    <p>Yeah, if I was trying to make a Bootstrap, some design system to let users just “make whatever they want” I probably wouldn’t make things so rigid.</p>
+    <p>But we are trying to create a brand experience. We want each component to be displayed in a way that is consistent with brand standards.</p>
+    <p>If you can apply text centering to every component in our entire library, we are not going to have a very consistent brand experience.</p>
+</div>
+<div class="dialog dialog--question">
+    <p>Let’s get back to your non-orthodox approach, your BEDAM as you call it.</p>
+    <p>Weren’t you scared to introduce something that maybe juniors developers or new joiners would struggle to understand?</p>
+    <p>Of course, a massive work on the documentation (I say it for those who haven't read the book) has been done, but still...</p>
+</div>
+<div class="dialog dialog--answer">
+    <p>We were transitioning from a naming methodology nothing like BEM or BEDAM, and being a small team, I had no qualms with “rolling my own” and creating a system that bucked convention for power.</p>
+</div>
+<div class="dialog dialog--question">
+    <p>If I am not wrong, from what I have read from your <a href="https://micah.codes/a-new-design-system-architecture/">latest blog post</a> you say that the project is more or less one year old. Do you think will be flexible enough to cope with the continuous evolutions that a website undergoes in these days? Technical evolutions, design evolution, business evolutions.</p>
+</div>
+<div class="dialog dialog--answer">
+    <p>I’m completely confident. We’ve done a lot of work in the past year, and our decision to use this styling convention has paid off quite well. We now have over a dozen developers using this system, and they picked up quite quickly how to create class names and then apply modifiers with data attributes.</p>
+    <p>It was probably easier to train them in this approach than to explain BEM thoroughly.</p>
+</div>
+<div class="dialog dialog--question">
+    <p>Mmm, interesting. Maybe, because BEM looks so simple but actually hides a lot of complexity (and requires a lot of self-discipline) often leads to under-documented projects. “It’s self-explanatory” we often hear. I’ve never seen it under this point of view, probably you’re right.</p>
+</div>
+<div class="dialog dialog--answer">
+    <p>I certainly don’t have enough experience with BEM to discredit or make judgements, but I do know that all of our developers found this approach very easy to pick up.</p>
+</div>
+<div class="dialog dialog--question">
+    <p>A couple of questions more and then I’ll let you go.</p>
+</div>
+<div class="dialog dialog--answer">
+    <p>Go for it</p>
+</div>
+<div class="dialog dialog--question">
+    <p>I know that in September you will held a workshop in London, about <a href="http://www.generateconf.com/london-2016/schedule/frontend-architecture-design-systems/">Frontend Architecture for Design Systems</a>. I was imagining when comes to CSS strategies and conventions, what you were going to tell and teach to the attendees :)</p>
+    <p>Because one thing is decide to use a methodology like BEDAM for ourselves, because we master it and is applied in a well controlled context. One thing is decide to promote it as a “way to go” in a course.</p>
+    <p>Will you tell them to use BEM, BEDAM, both? Or will you remain more generic?</p>
+</div>
+<div class="dialog dialog--answer">
+    <p>The greatest lesson I hope to teach is that if you don’t specify and enforce a single methodology or approach, each developer is going to use whichever feels best to them. So the object of Frontend Architecture is to determine which methodologies, which frameworks, which build tools, which testing frameworks will be right for your project, and then make it easy for developers to use them.</p>
+</div>
+<div class="dialog dialog--question">
+    <p>A perfect answer to close an interview!</p>
+    <p>Thanks for your time, and hope to see you in London.</p>
+</div>
+
+{% endblock %}

@@ -56,6 +56,20 @@
                 }
             }
         },
+        "04": {
+            "nameslug" : "micah__godbolt",
+            "title" : "Interview with Micah Godbolt",
+            "date" : "2016-06-22",
+            "status" : "preview",
+            "quote" : "While I really like the flat selector approach that BEM defines, I prefer to not clutter my elements with a bunch of classes. My decision was then to use data attributes to apply my modifiers and contexts.",
+            "interviewee": {
+                "avatar": "img/micah+godbolt.jpg",
+                "fullname": "Micah Godbolt",
+                "minibio": "frontend architect, blogger, podcaster, trainer, speaker<br>author of Front End Architecture for Design Systems",
+                "links": {
+                    "website": "https://micah.codes",
+                    "twitter": "https://twitter.com/micahgodbolt",
+                    "github": "https://github.com/micahgodbolt"
                 }
             }
         }
