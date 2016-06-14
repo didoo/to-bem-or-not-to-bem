@@ -72,6 +72,22 @@
                     "github": "https://github.com/micahgodbolt"
                 }
             }
+        },
+        "05": {
+            "nameslug" : "varya__stepanova",
+            "title" : "",
+            "date" : "2016-06-08",
+            "status" : "draft",
+            "quote" : "",
+            "interviewee": {}
+        },
+        "06": {
+            "nameslug" : "mark__dalgleish",
+            "title" : "",
+            "date" : "2016-06-08",
+            "status" : "draft",
+            "quote" : "",
+            "interviewee": {}
         }
     }
 }
