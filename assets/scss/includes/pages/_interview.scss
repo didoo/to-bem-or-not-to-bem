@@ -56,6 +56,7 @@
     color: $grey-light;
     @include media(tablet) {
         padding-left: 200px;
+        min-height: 160px;
     }
 }
 
@@ -156,12 +157,31 @@
         }
     }
 
-    p {
+    p, pre {
         font-size: 16px;
         line-height: 1.4em;
         margin-bottom: 12px;
         @include media(desktop) {
             font-size: 18px;
+        }
+    }
+    pre {
+        padding: 4px 8px;
+        font-style: italic;
+        white-space: pre-wrap;
+        word-wrap: break-word;
+        background: #FAFAFA;
+    }
+
+    em, code {
+        font-style: italic;
+    }
+
+    figure {
+        margin: 20px 0px;
+        img {
+            max-width: 100%;
+            border-radius: 5px;
         }
     }
 

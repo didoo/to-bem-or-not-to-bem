@@ -1,0 +1,103 @@
+---
+number: "03"
+---
+
+{% extends "../templates/pages/interview.html" %}
+
+{% block biography %}
+<p>Sam Thurman is a Software Engineer at <a href="http://buzzfeed.com/">BuzzFeed</a>, where he focuses on the intersection of development and design.</p>
+<p>He also draws <a href="http://sam-thurman.tumblr.com/">strange pictures</a>, <a href="http://www.whatnotnyc.com/">sells pins</a>, and takes as much vacation as possible.</p>
+{% endblock %}
+
+{% block interview %}
+
+
+<div class="dialog dialog--question">
+    <p>Hi Sam,<br>thank you for accepting my invite to the interview.</p>
+    <p><a href="https://twitter.com/emilybrick">Emily Brick</a> mentioned me your name, as one of the main contributors to Solid, the front-end framework used at <a href="https://www.buzzfeed.com/">BuzzFeed</a>. And replying to my email you said me “We've gone back and forth about BEM usage at BuzzFeed, and I have a lot of opinions regarding proper usage :) ”</p>
+    <p>Can you tell me more about your role in the development of <a href="http://solid.buzzfeed.com/">Solid</a>? (btw, is it a Front-End framework or a CSS style guide?) I had a look at it, and looks like is mixing Atomic CSS and BEM. Am I wrong?</p>
+</div>
+<div class="dialog dialog--answer">
+    <p>Sure! <a href="http://solid.buzzfeed.com/">Solid</a> is a front end framework and a styleguide. It provides a single responsability class framework for us to rapidly style UI in a unified BuzzFeed style. It also includes simple “components” which use a BEM like naming convention.</p>
+    <p>Solid was initially conceived by <a href="http://capwatkins.com/">Cap Watkins</a> after he was blown away by Brent Jackson’s work on <a href="http://www.basscss.com/">basscss</a>. Cap thought that an Atomic framework would be a great way to get our designers writing front end code in a unified style. He cobbled together a team of designers within BuzzFeed to develop Solid, along with one developer, me.</p>
+    <p>Solid is currently being used by every BuzzFeed team working on the web. Initially I thought using an Atomic class based framework as a style guide was a terrible idea, but I changed my mind.</p>
+    <p>I wrote a medium post about that journey: <a href="https://medium.com/buzzfeed-design/how-i-learned-to-stop-worrying-and-love-the-atomic-class">https://medium.com/buzzfeed-design/how-i-learned-to-stop-worrying-and-love-the-atomic-class</a></p>
+</div>
+<div class="dialog dialog--question">
+    <p>But how can Atomic classes and BEM classes live together? It’s the first time I see them used in this way. Do the "BEM components" inherit (or share) some properties from the Atomic declarations?</p>
+</div>
+<div class="dialog dialog--answer">
+    <p>The BEM and atomic parts work independently of each other in Solid. If we had more BEM components it would make sense for us to make a whole new library for them! But one of the benefits of managing a library for use within the company is that we can provide just enough functionality to serve our needs, even if there's a conceptual incongruity.</p>
+    <p>I do think that atomic classes can work well in a BEM based system though.</p>
+    <p>The benefit of Atomic classes is that they are composable, easy to use, and standardized. The drawback is they wreck DOM readability. When you have elements that rely on each other hierarchically that information has to be conveyed somewhere. BEM serves this purpose well.</p>
+    <p>Though I think it's important to note that when you have a component based architecture - using react components for example - a lot of semantic information is built into how components are named and organized. And I think in that context single responsability classes work really well.</p>
+</div>
+<div class="dialog dialog--question">
+    <p>I totally agree with you</p>
+    <p>Solid in some way is a relatively simple framework. <a href="https://www.buzzfeed.com/">BuzzFeed</a> has a lot of (hidden, in some cases) complexity. How does your styleguide integrate with your editorial system, your CMS? Do you share in some way components/templates with the "production" code or is just a reference?</p>
+</div>
+<div class="dialog dialog--answer">
+    <p>Solid is definitely simple by design. Our practice is that we want our designers to be comfortable writing front end code, and comfortable extending Solid when necessary. Our CMS definitely has different needs than our web application. So if our CMS team needed tighter spacing and more form controls we encourage them to develop custom atomic classes to do so.</p>
+    <p>Shared components are great, and what Financial Times has done with <a href="http://origami.ft.com/">Origami</a> is amazing. We simply don't have the need or resources for a framework that complex. We have many internal projects working on many different stacks and we don't have a front end infrastructure team to work on cross-team components.</p>
+    <p>Right now at BuzzFeed we are trying to structure our teams to be more independent. We want our CMS to be optimized for formatting content, and our site to be optimized for displaying that content. This was a pragmatic choice. Will be serving our content to an infinite variety of screen dimensions and sizes. We can never guarantee a 1:1 relationship between our CMS preview and what winds up displaying on the site.</p>
+    <p>So we're trying to embrace that.</p>
+    <p>That said with encapsulation there will always be duplication. We are experimenting with a shared component library and figuring out to what extend that could be useful to us. But so far Solid has produced many of the same visual benefits without a lot of developer overhead.</p>
+</div>
+<div class="dialog dialog--question">
+    <p>If I can ask (and just to have an idea of the complexity) how many people there are in the team? How the team (or the teams) are structured?</p>
+</div>
+<div class="dialog dialog--answer">
+    <p>BuzzFeed dev has around 60 developers working on a variety of internal tools, ad tools, and applications. We have somewhere in the neighborhood of 20 active projects using Solid right now. These range in complexity from simple internal dashboards to the BuzzFeed CMS. We have more projects that are no longer in development which benefited from Solid a great deal.</p>
+    <p>The solid team consists of four designers, each from a different group (our higher level org structure), and myself. We also have point people in every team using Solid that we keep abreast of all changes in Solid. We call them “Solid Scouts”. I send a lot of update emails to them with dumb gifs. This stuff gets dry quickly if you don’t find ways to keep it fun.</p>
+</div>
+<div class="dialog dialog--question">
+    <p>20 projects? Wow!</p>
+    <p>In your <a href="https://medium.com/buzzfeed-design/how-i-learned-to-stop-worrying-and-love-the-atomic-class">article</a> on Medium, two phrases really struck me: “a CSS framework that works for our team” and “Autonomy is the key word here.”</p>
+    <p>How much of the choice of a CSS architecture and naming strategy is dictated by "tech" reasons and how much by "soft" reasons, like “what a team likes"? In your experience of course.</p>
+</div>
+<div class="dialog dialog--answer">
+    <p>Great question! In my experience you're lucky to have someone who cares about CSS naming conventions. I think when it comes to naming conventions in general the most important thing is having one. The second most important thing is that everyone agree on that convention. The semantic stability of the convention is important, but it's nothing compared to those first two.</p>
+    <p>In Solid when we make concessions it's generally to write classes that "feel" right. This is nebulous but it belies Solid's roots as a design-led framework. But no matter what bizarre naming conventions we've developed the most important thing is that we have heavily documented them.</p>
+    <p>We don't impose any CSS naming structure on any of our teams. I have preached BEM, and I think it's a good solution to a lot of CSS semantic issues. But I think having a well documented naming scheme is more important than having a perfect one, and being dogmatic doesn't help anyone.</p>
+</div>
+<div class="dialog dialog--question">
+    <p>Let's go back for one moment at your “back and forth about BEM usage” and your opinions regarding proper usage. This intrigues me a lot :)</p>
+    <p>What is "proper usage" of BEM, for you? And when do you think BEM is not used properly?</p>
+</div>
+<div class="dialog dialog--answer">
+    <p>Everyone has their own interpretation of BEM, and arguing about it gets silly fast.</p>
+    <p>I think for me the most common mistake with BEM is assuming you have to create massive chains of child sibling classes.</p>
+    <p>I think if you're creating these your real problem is you are writing your front end code in a totally un-modular fashion. So if you wind up with <code>header__content__logo__subtitle</code> it’s probably time to break your UI down into more independent bits.</p>
+</div>
+<div class="dialog dialog--question">
+    <p>I have a question that is not BEM-related but I am curious. I sneaked into the Release Notes of Solid, and at the version 1.6.1 - May 06, 2016 - "Updated Line Height Values For Headers" it reports:</p>
+    <pre>Potential Breaking Change: Updated the values of $line-height-1, $line-height-2, and $line-height-3 to tighten line heights for headers.<br>Deprecated: $line-height-4, $line-height-5, and $line-height-6</pre>
+    <p>You dropped 50% of your line-height values, across an entire framework. I can imagine removing Atomic classes (find and replace all the line-height-4/5/6 in your HTML codebase) but doing it simply dropping Sass variables, well... that's impressive!</p>
+    <p>How did you do it without breaking everything, without a massive refactoring? How can it be so "elastic" and "Solid" at the same time?</p>
+</div>
+<div class="dialog dialog--answer">
+    <p>We have made a couple of sweeping, ambitious, sometimes stupid changes to Solid. It’s really been a learning process! We are able to do this for two reasons:</p>
+    <p>First, Solid is a versioned node package. Giving our teams the ability to choose when to update the library has been a boon. We can update without the fear of immediately breaking our applications, and make ourselves available to aid in updating if need be.</p>
+    <p>Second, we over communicate every change in Solid. We go through great pains to make sure everyone using Solid internally knows what changes are in the pipeline. We do this with emails, slack updates, and our online docs. We give internal talks about Solid. We give workshops. We’re probably a little annoying honestly. But the result is we have a passionate internal user base who will tell us if we’re fucking up. Without that Solid never would have worked. I cannot stress that enough.</p>
+    <p>Creating a style framework instead of a style guide was a bit of a strange move, but it has worked very well for us. I think the reason for this is that we didn’t set out to create an all-encompassing framework. We were just trying to make a tool that worked well with our design process. Once we released it we saw huge internal adoption. It was simply easier to use than to avoid. That let Solid become the backbone of our web design process.</p>
+    <p>I think it's tempting to try and create a styleguide, show it off, and try and convince your team to use it. I’ve done that before! But I think if you focus on the tooling that makes sense for your team you will find a better Solution. At least that’s what worked for us.</p>
+</div>
+<div class="dialog dialog--question">
+    <p>My very last question: BuzzFeed generates each month something like seven billion views, 200 million unique visitors, with 70% of the traffic from mobile. Web performance must be absolutely a key factor for a website like this.</p>
+    <p>And let's be honest: when comes to large scale websites CSS performance is definitely a pain point. Feature after feature, view after view, page after page, the CSS is always added and never removed, doomed to grow indefinitely.</p>
+    <p>Do you think Atomic CSS will gain traction because of their intrinsic advantage that the overall CSS size grows little or nothing as the application/website evolves in time?</p>
+</div>
+<div class="dialog dialog--answer">
+    <p>I think Atomic CSS will gain traction because it works so well in component based front end architectures, and yes it keeps CSS weight down. That said it is a hell of a dependency, and is nowhere near as rigid as an OOCSS based class system. This is a pro for us, since we trust our designers to use the library efficiently.</p>
+    <p>CSS does gain weight over time but compared to other assets it is comparatively small. It's the complexity that can make CSS a nightmare. If you want to stop your CSS from evolving into nightmare spaghetti you'll need some kind of convention to combat implicit dependencies and bloat.</p>
+    <p>If your designers are coding, or your coders are designing, I think you'll find a lot to like with an Atomic CSS based system. Otherwise for the love of god please choose SOME convention and stick to it. CSS is declarative. It should be stupid. It should be easy. It's our job to keep it that way.</p>
+</div>
+<div class="dialog dialog--question">
+    <p>Wow, I love your response.</p>
+    <p>Thank you so much for your time. And hope to meet you in person somewhere somehow, one day :)</p>
+</div>
+<div class="dialog dialog--answer">
+    <p>Great, it's been a pleasure. Hope we do get to meet in real life!</p>
+</div>
+
+{% endblock %}

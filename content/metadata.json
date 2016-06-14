@@ -38,6 +38,24 @@
                     "codepen": "http://codepen.io/RazvanDH/"
                 }
             }
+        },
+        "03": {
+            "nameslug" : "sam__thurman",
+            "title" : "Interview with Sam Thurman",
+            "date" : "2016-06-15",
+            "status" : "preview",
+            "quote" : "I have preached BEM, and I think it's a good solution to a lot of CSS semantic issues. But I think having a well documented naming scheme is more important than having a perfect one, and being dogmatic doesn't help anyone.",
+            "interviewee": {
+                "avatar": "img/sam+thurman.jpg",
+                "fullname": "Sam Thurman",
+                "minibio": "front end developer working at the intersection of development and design at BuzzFeed",
+                "links": {
+                    "website": "http://www.samthurman.com/",
+                    "twitter": "https://twitter.com/sam_thurman",
+                    "github": "https://github.com/samthurman"
+                }
+            }
+        },
                 }
             }
         }
