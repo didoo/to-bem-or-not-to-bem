@@ -25,16 +25,19 @@
         "02": {
             "nameslug" : "razvan__spatariu",
             "title" : "Interview with Razvan Spatariu",
-            "date" : "2016-05-13",
-            "status" : "draft",
-            "quote" : "Nemo labore eligendi consequuntur incidunt dolores molestias suscipit perspiciatis aperiam.",
+            "date" : "2016-05-15",
+            "status" : "public",
+            "quote" : "BEM does not translate to “making sense of things”. If it's a logical decision that can be understood and extended by anyone in your team just by reading the code/documentation, then it's the right decision. And don't assume it will auto-magically solve your scalability issues. It is a good start, but there is a lot of work to be done.",
             "interviewee": {
-                "avatar": "https://pbs.twimg.com/profile_images/572194979993243648/sHR7qccX.jpeg",
+                "avatar": "img/razvan+spatariu.jpg",
                 "fullname": "Razvan Spatariu",
-                "minibio": "frontend engineer at Funding Circle UK",
+                "minibio": "frontend engineer at Funding Circle UK<br>co-organiser of london sass meetup",
                 "links": {
                     "twitter": "https://twitter.com/RazvanSpatariu",
-                    "github": "https://github.com/RazvanDH"
+                    "github": "https://github.com/RazvanDH",
+                    "codepen": "http://codepen.io/RazvanDH/"
+                }
+            }
                 }
             }
         }

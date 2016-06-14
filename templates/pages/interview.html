@@ -13,7 +13,7 @@
 {% block main %}
 <main class="interview">
 
-    {% if interview.status == 'public' %}
+    {% if interview.status == 'public' or interview.status == 'preview' %}
         <aside class="interview__intro">
             <span class="interview__number">#{{ number }}</span>
             <h2 class="interview__title">{{ interview.nameslug }}</h2>

@@ -5,9 +5,196 @@ number: "02"
 {% extends "../templates/pages/interview.html" %}
 
 {% block biography %}
-<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi officiis sint suscipit odit! Ipsa atque quo quas cupiditate consectetur excepturi.</p>
+<p>Razvan is currently working as a Front-end Engineer at <a href="https://www.fundingcircle.com/">Funding Circle</a> where he works on improving the quality and scalability of their front-end.</p>
+<p>Loves everything CSS related and has an unhealthy obsession with using <a href="http://codepen.io/RazvanDH/">Sass as a programming language</a>.</p>
+<p>Big fan of a happy designer–developer relation.</p>
+<p>Co-organiser of <a href="http://www.meetup.com/London-Sass-Meetup/">London Sass Meetup</a>.</p>
 {% endblock %}
 
 {% block interview %}
-<p>Beatae quia quaerat autem tempora voluptas nobis aperiam veniam nisi quo voluptates id dicta, molestiae itaque perspiciatis repellendus iste blanditiis, odit iusto tempore ducimus a consequatur. Placeat necessitatibus, illo eligendi quidem architecto quae corporis, nesciunt praesentium minima veniam nostrum at corrupti adipisci itaque sit aliquam ipsam aliquid officia voluptate, et, pariatur ullam perspiciatis saepe enim! Delectus corporis omnis hic natus, nostrum, dolore quos beatae voluptate libero mollitia perferendis sint modi temporibus dicta dolorum alias ratione, eligendi rem expedita in! Quas nulla consequatur obcaecati adipisci excepturi saepe numquam aut aliquam, eveniet quos ad unde reiciendis repudiandae minus, incidunt fuga cum, vel, deleniti officiis dolore praesentium. Repudiandae quisquam harum consequatur nisi blanditiis odio officia eos, dicta voluptate quia ab expedita nam itaque hic numquam omnis alias accusantium. Perspiciatis porro, at perferendis esse optio autem, aperiam quisquam veniam repudiandae quidem fugiat ex ipsa accusamus molestiae alias fuga beatae sequi, sapiente obcaecati. Nobis quibusdam, ratione, repudiandae a dolore iusto illo velit error veniam itaque! Debitis neque et eos minima veniam ipsum quidem quos consectetur voluptas laboriosam quam quasi officiis totam earum voluptates libero, omnis cumque, amet aspernatur? Ipsa, at placeat quod nesciunt deserunt facere, molestiae quos.</p>
+
+<div class="dialog dialog--question">
+    <p>Hi Razvan, thank you for accepting to be the next interviewee for this project.</p>
+    <p>First of all, some introductions: I know you work at Funding Circle, here in London. What is your role in the company, in which team do you work?</p>
+</div>
+<div class="dialog dialog--answer">
+    <p>Hi Cristiano! The pleasure is all mine! In a front-end world where JavaScript is the word on everyone&apos;s lips, CSS is often seen as an afterthought, so I&apos;m really excited to see projects like this one.</p>
+    <p>Indeed, I work at Funding Circle. I am a Frontend Engineer there (since December 2014). We are a fairly small FE team (5 people) so we shift around in different teams. Right now I am working in the Investor team (taking care of the experience for the users that invest money using our platform), but I think it&apos;s fair to say that my self-assigned role in the company is to always remind everyone about the importance of CSS and good CSS architectures :)</p>
+</div>
+<div class="dialog dialog--question">
+    <p>So you are the &#x201C;CSS guy&#x201D; I understand. Are you the only one working on the CSS codebase, or are there other people getting their hands dirty with classes, selectors and properties? How do you split the work? Someone works on the CSS and someone else does the JS (where the HTML is everyone&apos;s land) or is more of a hybrid approach?</p>
+    <p>I ask because I see more and more the rise of a CSS developer figure, in many companies (mine included), thing that up to a few years ago was inconceivable.</p>
+</div>
+<div class="dialog dialog--answer">
+    <p>The great thing about our front-end team is that all of us understand the importance of good, clean, reusable CSS. We all like to get our hands dirty, we all like to complain about CSS. We are all confident enough in both CSS and JS, so we don&apos;t split them. I am probably perceived as the &quot;CSS guy&quot; mostly because I was there for a bit longer and from day one I got that stamp. And talking about the CSS developer figure - I see that becoming more of a thing in the future, as CSS (alongside pre/post-processors) is more complex, while JavaScript is already a crazy train-ride.</p>
+</div>
+<div class="dialog dialog--question">
+    <p>So, a small front-end team, 5 people. Why the need for adopting BEM? Was not the simple &quot;team communication&quot; enough?</p>
+</div>
+<div class="dialog dialog--answer">
+    <p>Great question.</p>
+    <p>I strongly believe that the way you architect your CSS is not related to the size of your team or the hype / trend at that moment. I think it is more related to the product that you are building. And talking about the product, a really important part on deciding that BEM is the way to go was played by our design team.</p>
+    <p>Sitting with the design team, looking at what we had in the past in Funding Circle, looking at what we want to build in the present and future, everything yelled: components.</p>
+    <p>And when it comes to components, I think BEM as a base methodology (with sprinkles from others) is the way to go.</p>
+    <p>And related somehow to the numbers of people working on the codebase, BEM is also quite easy to understand by non-front-end people. And considering that only in the UK we have around 80 back-end devs, using BEM to keep everything under control made sense.</p>
+</div>
+<div class="dialog dialog--question">
+    <p>You talked about CSS architecture. Last week I saw a tweet about the <a href="https://twitter.com/heydonworks/status/730761073440268288">CSS Architecture being &#x201C;organising stylesheets&#x201D;</a> which in some way is terribly right, but at the same time is drastically wrong, in the same way as &#x201C;programming&#x201D; is &#x201C;writing lines of code&#x201D;.</p>
+    <p>Are we over-engineering something that should - and could - be much much simpler? (at the end, is not even a programming language, is a presentational / declarative language)</p>
+    <p>Or actually there is a real problem to solve? And in that case, why is BEM the right solution in your case, in your opinion? What problem do you have with the back-end developers? :)</p>
+</div>
+<div class="dialog dialog--answer">
+    <p>We are far from over-engineering. I can say that CSS is easy because it is declarative. But I can also say that CSS is hard because it is declarative. Styling a page with CSS is easy. Making a scalable, organised CSS architecture where a new joiner can come and understand where / how to use existing code is hard.</p>
+</div>
+<div class="dialog dialog--question">
+    <p>Great response :)</p>
+</div>
+<div class="dialog dialog--answer">
+    <p>I was looking at the existing CSS codebase, written by various people in 5 years of crazy growth for our company. Because it wasn't started with scalability in mind we found it really difficult to maintain.</p>
+    <p>Mostly because there was no logic in including Sass partials in compiled stylesheets.</p>
+    <p>We now took the idea of BEM and components and decided to create small partials corresponding to each component.</p>
+    <p>The result of that is that you won&apos;t include that _clear.scss 30 times in your project because it&apos;s imported in files that are imported in a main file and everything makes sense now.</p>
+</div>
+<div class="dialog dialog--question">
+    <p>But &quot;making sense of things&quot; could not be achieved without BEM? With good practices, clean code, team communication and some documentation?</p>
+    <p>Importing 30 times _clear.scss is not inherently a problem of CSS or Sass, but of how people work. Could you have achieved a good &quot;CSS architecture&quot; without BEM, in your case?</p>
+</div>
+<div class="dialog dialog--answer">
+    <p>You are right. BEM does not translate to &quot;making sense of things&quot;. If it&apos;s a logical decision that can be understood and extended by anyone in your team just by reading the code / documentation, then it&apos;s the right decision.</p>
+    <p>In our case, BEM made sense because we wanted a modular approach for the platform and helped us integrate it easier with our always-work-in-progress pattern library. Being able to copy/paste an HTML structure with existing classes without the fear of uncontrolled bleeding / inheritance of styles was really important for us.</p>
+    <p>And, from the start we knew that only by adopting BEM wouldn&apos;t be enough. It would just solve the problem of nested selectors and brittle CSS.</p>
+    <p>One advice for anyone thinking about BEM: don&apos;t assume it will auto-magically solve your scalability issues. It is a good start, but there is a lot of work to be done. We had to bend the rules a bit and use ideas from other methodologies
+        so that things are still under control.</p>
+</div>
+<div class="dialog dialog--question">
+    <p>You say &#x201C;adopting BEM isn&#x2019;t enough&#x201D; and &#x201C;bend the rules a bit and use ideas from other methodologies&#x201D;. Can you be more specific? What part of BEM didn&apos;t work well (or well enough) for you? Or what BEM is missing, for example.</p>
+</div>
+<div class="dialog dialog--answer">
+    <p>Well, as I was saying before, you need to structure your files well. We did a project where we used BEM but structured the partials according to the page that we were building (e.g. _about-us.scss) and importing it into the main stylesheet. I still cringe about that decision and it&apos;s still a hot topic in our front-end meetings. Then we switched to component partials and everything is much better now.</p>
+    <p>Then there&apos;s the good ol&apos; saying &quot;naming things is hard&quot;. When writing CSS I think I spend most of the time thinking on how to uniquely name my BEM blocks.</p>
+    <p>Also, I think the biggest disadvantage of BEM is that it was built for static components. So, when I say &quot;we bent the rules&quot; I mean: we had to adopt state classes from SMACSS. And a bit of OOCSS + ITCSS by creating prefix-named reusable utility classes (e.g. .u-center-text)</p>
+</div>
+<div class="dialog dialog--question">
+    <p>I&apos;ll come back to the components in a second, but before another question.</p>
+    <p>You were talking about &#x201C;reading the code&#x201D; which is one of the main issues I have with BEM (not only in the CSS/Sass/Less files, but also in the HTML files with the proliferation of class-names that make my eyes cry)</p>
+    <p>I mean, this is real code from a real website:</p>
+    <pre>&lt;div class="select select-theme-default select-element select-enabled select-abutted select-abutted-left select-element-attached-top select-element-attached-left select-target-attached-bottom select-target-attached-left select-open"&gt;</pre>
+    <p>Anyway, about reading the code: did it already happen to you to refactor your own code, maybe written 6 months before? How did it go?</p>
+    <p>And someone else&#x2019;s code structured using BEM? Went well in the same way?</p>
+    <p>The question is: is it easy to read and work with BEM code that you have not written, or that you have written but you don&apos;t remember anymore how and why you have built in such way?</p>
+</div>
+<div class="dialog dialog--answer">
+    <p>My opinion is that if you don&apos;t cringe over the code you wrote 6 months ago and say &quot;what was I thinking?&quot;, you&apos;re doing it wrong.</p>
+</div>
+<div class="dialog dialog--question">
+    <p>Ahahahh :)</p>
+</div>
+<div class="dialog dialog--answer">
+    <p>We did refactor a lot of HTML / CSS from the code that we wrote less than a year ago and it went decent. The main reason for refactoring is because we chose the wrong name for a component.</p>
+    <p>Regarding the BEM class names, I wish I had a smart answer to give you, but in all honesty, they are ugly. But we will never have the perfect solution. You just have to weigh the pros and cons and I think ugly class names are a small con when compared to the pros.</p>
+    <p>And looking at your example, I think that is a perfect demonstration of how BEM is not suited for all projects.</p>
+    <p>Sometimes you have to look at the design patterns in a different way. And if you have so many variations of a single element, maybe it&apos;s time to have a chat with your design team.</p>
+</div>
+<div class="dialog dialog--question">
+    <p>OK, but then when you work with components, why the simple namespacing is not enough? What value BEM adds, in your experience?</p>
+    <p>I mean, if you have a component, let&apos;s say a breadcrumb, why do you need:</p>
+    <pre>.breadcrumbs {…}
+.breadcrumbs__wrap {…}
+.breadcrumbs__step {…}
+.breadcrumbs__title {…}
+</pre>
+    <p>plus all the modifiers, when you could simply use</p>
+    <pre>.breadcrumbs {
+    .wrap {…}
+    .step {…}
+    .title {…}
+}</pre>
+    <p>If you have a component &quot;breadcrumbs&quot; no one is going to create a second component or override its properties, with or without BEM, without clearly doing something wrong.</p>
+    <p>I mean, in Javascript the developers have learnt, the hard way, that you don&apos;t write variables and functions in the global scope</p>
+    <p>Why don&apos;t we &#x201C;CSS developers&#x201D; can do and learn the same, and stop polluting the global scope? why can&apos;t we just namespace, in the same way as in JS you use closures?</p>
+    <p>What BEM adds in your experience?</p>
+</div>
+<div class="dialog dialog--answer">
+    <p>I&apos;ve asked myself in the past the exact same thing. If we look at components individually, yeah, it makes no sense to use BEM.</p>
+    <p>But if we look at a real-life project, if you want to scale and reuse code, you might end up with components INSIDE components.</p>
+    <p>Take this example:</p>
+    <pre>&lt;aside class="sidebar"&gt;
+    &lt;h2 class="title"&gt;This is my sidebar&lt;/h2&gt;
+
+    &lt;div class="article"&gt;
+        &lt;h3 class="title"&gt;Title of a component inside another component&lt;/h3&gt;
+    &lt;/div&gt;
+&lt;/aside&gt;</pre>
+    <p>In this case ".sidebar .title" will bleed into your ".article .title"</p>
+</div>
+<div class="dialog dialog--question">
+    <p>Ok, makes sense</p>
+</div>
+<div class="dialog dialog--answer">
+    <p>You could, of course do some specificity magic and avoid this, but then you end up either with an ugly CSS or with CSS that is tightly connected to your HTML structure, making both of them brittle.</p>
+</div>
+<div class="dialog dialog--question">
+    <p>But are &quot;title&quot;, &quot;sidebar&quot; and &quot;article&quot; actually components? in Atomic Design they are more at the &quot;templates&quot; or &quot;pages&quot; level</p>
+    <p>So maybe we could find a different way to assign the style, maybe less based on &#x201C;where they are in the DOM&#x201D;, and more on &#x201C;what they look like&#x201D;</p>
+    <p>Anyway, there is no clear simple solution for that, it&#x2019;s years we are struggling with it :)</p>
+    <p>I have another question, that interests me a lot</p>
+    <p>One of the strength point of BEM in my opinion is that, whoever will join your team, be it a newcomer or a junior developer, he/she will probably know BEM (at least in its own basic rules, and whatever happens, he will always be able to find resources on BEM online, on stackoverflow, on Google, etc.)</p>
+    <p>As compared to &#x201C;having our own special naming conventions&#x201D; that probably will require some time to understand and master</p>
+    <p>Did it already happen to you to have a newcomer or a junior developer joining the team? how did it go, how it was his impact with BEM?</p>
+</div>
+<div class="dialog dialog--answer">
+    <p>Before answering your question, I want to add something to what you&apos;ve said &quot;it&#x2019;s years we are struggling with it&quot;.</p>
+</div>
+<div class="dialog dialog--question">
+    <p>Sure</p>
+</div>
+<div class="dialog dialog--answer">
+    <p>That is the beauty of front-end development and that will always be the case. We&apos;ve come a long way and we&apos;re not even close to what can be achieved. We started with using &lt;table&gt; to create faux columns, we continued with quirky floats / clears, now we&apos;re moving to flex while looking forward to grids. I think BEM is one of those things. We&apos;re gonna look at BEM in a few years and say &quot;how could we work that way? Now it&apos;s so much easier with &lt;insert solution&gt;.&quot;</p>
+</div>
+<div class="dialog dialog--question">
+    <p>You&apos;re so right :)</p>
+</div>
+<div class="dialog dialog--answer">
+    <p>To answer your question: yes, we did have 3 new joiners in our team since we started using BEM regularly. All of them were already familiar with it, so it went very smooth. And I&apos;m very happy to say that we improved the way we write our CSS since they joined.</p>
+    <p>Also, as you&apos;ve said, being able to Google something is invaluable :)</p>
+</div>
+<div class="dialog dialog--question">
+    <p>Ok, let&apos;s go back to the components.</p>
+    <p>Atomic Design (think <a href="http://bradfrost.com/blog/post/atomic-web-design/">Brad Frost</a> and all that has come out of this idea) and Modular Design (think <a href="https://about.futurelearn.com/blog/modular-design-collaborative-approach-digital-products/">Alla Kholmatova</a> and all her experiences at FutureLearn) on one side.</p>
+    <p>Web Components and the &#x201C;React revolution&#x201D; on the other side (like it or not, it changed a lot in the way we look at the front-end today)</p>
+    <p>In the middle <a href="http://styleguides.io/">the rise of style guides</a>, <a href="http://patternlab.io/">pattern libraries</a>, <a href="https://www.lightningdesignsystem.com/">design systems</a>, etc. (there&apos;s been even <a href="http://clarityconf.com/">an entire conference</a> dedicated to these topics)</p>
+    <p>If we look at BEM, on one side it makes total sense for a framework or a component library, where everyone can pick and use a component and you don&apos;t know (and don&apos;t have control) where and how he/she will use it.</p>
+    <p>But on the other side, as you also said before, at a component level BEM loses its own reason of being.</p>
+    <p>If then you add the way in which <a href="http://glenmaddern.com/articles/css-modules">CSS Modules</a> are integrated within React (and I expect other frameworks will start to do the same) all the reasons that led to BEM, all the inheritance and leaking problems that we have, they all appear to be magically solved. Is this the case, do you think? Or simply we have not yet discovered where the downsides of this approach are?</p>
+</div>
+<div class="dialog dialog--answer">
+    <p>As I was saying before, we&apos;re gonna look back at BEM and cringe. BEM will cease to exist when it will not be needed anymore.</p>
+    <p>And CSS modules might be the way to go in the near future. But I hope that the solution to the inheritance problem in CSS will come from CSS.</p>
+    <p>It might be the unpopular opinion of the day, but I think JS should be kept away from CSS. If today we need to involve JS to fix CSS, then we still need BEM, as we want to build apps that are not JS dependent.</p>
+</div>
+<div class="dialog dialog--question">
+    <p>I am pretty sure a lot will come in the very near future, about CSS and JS.</p>
+    <p>Anyway, my last question is the same I asked to Christoph Reinartz last week: to BEM or not to BEM?</p>
+    <p>If someone should start a large-scale greenfield project today, would you advice her/him to use BEM? or yourself, would you still choose BEM?</p>
+</div>
+<div class="dialog dialog--answer">
+    <p>There is no black or white answer. I would say: BEM if it makes sense. Take a step back, look at your project as a whole, understand the design language, find the patterns and then take an informed decision, not a trendy one.</p>
+</div>
+<div class="dialog dialog--question">
+    <p>Great answer, again :)</p>
+</div>
+<div class="dialog dialog--question">
+    <p>One very last question: you are one of the organisers of London Sass meetup, one of my favourite events here in London. When will be the next appointment? Any time soon?</p>
+</div>
+<div class="dialog dialog--answer">
+    <p>First of all, I never got to thank you for all the great advices you gave us for this meetup. So... Thank you!</p>
+    <p>Organising this meetup is very important for us and we noticed that the community is really interested in it, as this is kind of a missing piece in the whole London frontend meet-ups puzzle.</p>
+    <p>We are looking for speakers for the next one (if anyone is interested, tweet us at <a href="https://twitter.com/LDN_Sass">@LDN_Sass</a> or you&apos;ll end up with me rambling about Sass for an hour :D), we also are looking into finding more venues where we can host it (again, <a href="https://twitter.com/LDN_Sass">@LDN_Sass</a> if you have a venue).</p>
+    <p>The next one should be in June / July most likely in our offices at Funding Circle, so stay tuned!</p>
+</div>
+<div class="dialog dialog--question">
+    <p>Ahahah</p>
+    <p>Thanks you for your time. It&apos;s a sunny Sunday here in London, so you would be probably in a park or along Southbank at this time, sipping Pimm&apos;s or enjoying the nice weather. So thank you again Razvan, I really enjoyed our conversation.</p>
+</div>
+
 {% endblock %}

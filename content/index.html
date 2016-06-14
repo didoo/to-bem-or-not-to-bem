@@ -25,7 +25,7 @@
                             {{ interview.nameslug }}
                         {% endif %}
                     </h2>
-                    <h4 class="billboard__subtitle">{{ interview.interviewee.minibio }}</h4>
+                    <h4 class="billboard__subtitle">{{ interview.interviewee.minibio|safe }}</h4>
                 </div>
                 {% if interview.status == 'public' %}
                 <div class="billboard__abstract">
