@@ -43,7 +43,7 @@
             "nameslug" : "sam__thurman",
             "title" : "Interview with Sam Thurman",
             "date" : "2016-06-15",
-            "status" : "preview",
+            "status" : "public",
             "quote" : "I have preached BEM, and I think it's a good solution to a lot of CSS semantic issues. But I think having a well documented naming scheme is more important than having a perfect one, and being dogmatic doesn't help anyone.",
             "interviewee": {
                 "avatar": "img/sam+thurman.jpg",
