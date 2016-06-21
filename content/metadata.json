@@ -60,7 +60,7 @@
             "nameslug" : "micah__godbolt",
             "title" : "Interview with Micah Godbolt",
             "date" : "2016-06-22",
-            "status" : "preview",
+            "status" : "public",
             "quote" : "While I really like the flat selector approach that BEM defines, I prefer to not clutter my elements with a bunch of classes. My decision was then to use data attributes to apply my modifiers and contexts.",
             "interviewee": {
                 "avatar": "img/micah+godbolt.jpg",
