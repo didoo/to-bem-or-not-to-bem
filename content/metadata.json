@@ -91,9 +91,34 @@
             }
         },
         "06": {
+            "nameslug" : "adam__onishi",
+            "title" : "Interview with Adam Onishi",
+            "date" : "2016-xx-xx",
+            "status" : "draft",
+            "quote" : "",
+            "interviewee": {
+                "avatar": "img/adam+onishi.jpg",
+                "fullname": "Adam Onishi",
+                "minibio": "Front-end developer working in the Origami team at the Financial Times in London. Co-creator of 12 Devs of Xmas and author of the book Pro WordPress Theme Development.",
+                "links": {
+                    "website": "http://adamonishi.com/",
+                    "twitter": "https://twitter.com/onishiweb",
+                    "github": "https://github.com/onishiweb"
+                }
+            }
+        },
+        "07": {
+            "nameslug" : "stephanie__rewis",
+            "title" : "",
+            "date" : "2016-xx-xx",
+            "status" : "draft",
+            "quote" : "",
+            "interviewee": {}
+        },
+        "08": {
             "nameslug" : "mark__dalgleish",
             "title" : "",
-            "date" : "2016-06-08",
+            "date" : "2016-xx-xx",
             "status" : "draft",
             "quote" : "",
             "interviewee": {}
