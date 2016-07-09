@@ -75,11 +75,20 @@
         },
         "05": {
             "nameslug" : "varya__stepanova",
-            "title" : "",
-            "date" : "2016-06-08",
-            "status" : "draft",
-            "quote" : "",
-            "interviewee": {}
+            "title" : "Interview with Varya Stepanova",
+            "date" : "2016-07-08",
+            "status" : "preview",
+            "quote" : "If you have to imagine this kind of pain, think about new versions of Bootstrap. And multiply it by 1000 due to the bigger size of the library and the amount of projects. These were the problems which BEM offered to solve.",
+            "interviewee": {
+                "avatar": "img/varya+stepanova.jpg",
+                "fullname": "Varya Stepanova",
+                "minibio": "Frontend developer for Zalando. Previously: SC5, TMG and Yandex. React lover, BEM adept and a cat fan",
+                "links": {
+                    "website": "http://varya.me/",
+                    "twitter": "https://twitter.com/varya_en",
+                    "tech blog": "http://varya.me/en/posts/"
+                }
+            }
         },
         "06": {
             "nameslug" : "mark__dalgleish",
