@@ -76,8 +76,8 @@
         "05": {
             "nameslug" : "varya__stepanova",
             "title" : "Interview with Varya Stepanova",
-            "date" : "2016-07-08",
-            "status" : "preview",
+            "date" : "2016-07-12",
+            "status" : "public",
             "quote" : "If you have to imagine this kind of pain, think about new versions of Bootstrap. And multiply it by 1000 due to the bigger size of the library and the amount of projects. These were the problems which BEM offered to solve.",
             "interviewee": {
                 "avatar": "img/varya+stepanova.jpg",
