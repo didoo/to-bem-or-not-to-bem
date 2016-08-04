@@ -49,8 +49,10 @@ gulp.task('convert', function () {
                         kind = 'answer';
                     }
                     $dm.attr('class','dialog dialog--' + kind);
+                    $dm.removeAttr('data-item-id');
                     $dm.removeAttr('data-message-id');
                     $dm.removeAttr('data-component-context');
+                    $dm.removeAttr('data-card-component');
                     $dm.append(
                         $dm.find('.DirectMessage-message .DirectMessage-text p')
                         .removeAttr('class')

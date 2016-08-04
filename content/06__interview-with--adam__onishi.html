@@ -14,4 +14,135 @@ number: "06"
 
 {% block interview %}
 
+<div class="dialog dialog--question">
+    <p>Hello Adam</p>
+    <p>thank you so much for accepting my invitation.</p>
+    <p>We know each other since a few years now, and I followed you since I saw your talks at Front End London and other London meetups.</p>
+    <p>I wanted to interview you because you are a very eclectic developer. You have gained a lot of experience in different areas of the front end development, so your opinion and first-hand experience on BEM in different contexts is precious.</p>
+    <p>Looking at <a href="https://speakerdeck.com/onishiweb">your Speaker Deck</a>, I can find talks on team management and Sass, on Wordpress performance and theming, on front end tooling and the web as a platform.</p>
+    <p>You have worked as freelance, as well as in a web agency, and now in a big company on a super-cool team like the Origami team.</p>
+    <p>You definitely must have a clear idea of what works well (and maybe what doesn’t) of BEM in different scenarios and contexts.</p>
+    <p>But let’s start from the classic introduction. For those who don’t know you, can you tell us a little about your background, and what you are working on right now?</p>
+</div>
+<div class="dialog dialog--answer">
+    <p>Hey Cristiano, thanks for inviting me, and thanks for the very flattering introduction. As you’ve already mentioned, currently I’m working on the <a href="http://origami.ft.com/">Origami team</a> at the Financial Times. The team is responsible for a large set of reusable components across a lot of the FT’s products and brands. The aim is to make development better, faster, and stronger for other FT teams and provide a way of unifying branding across the FT’s digital products.</p>
+    <p>I’m still fairly new to the team having only been here 6 months. Before Origami I have worked for a variety of agencies for a range of different clients from household products, food brands, and in the public sector.</p>
+</div>
+<div class="dialog dialog--question">
+    <p>I’ll go straight to the point. Since when BEM appeared on the scenes, have you always used it in all your projects? What were your first impressions the first time you saw it? How did you decide to give it a try?</p>
+</div>
+<div class="dialog dialog--answer">
+    <p>I’m not sure how long it took me to start using BEM since it was first proposed, but I certainly wasn’t an early adopter. I was quite skeptical at first, the long classnames it would produce, the weird combination of underscores and hyphens, I thought it a bit over the top for just writing CSS. I’ve always been quite specific on how I wrote CSS, class names were always short and I used to nest classes a bit more. So BEM was quite a different approach to how I was writing selectors at the time.</p>
+    <p>I decided to start using it around two years ago during a refactor of a big project for the new Persil websites we were working on at one of my past jobs at <a href="http://wearearchitect.com/">Architect</a>. When it was first built there was no real methodology around how we wrote CSS apart from it being quite modular, thanks in part to using Sass. This structure was the perfect opportunity to try out BEM whilst refactoring one of the components and from then it’s really grown on me.</p>
+    <p>Now I use it as part of a combination of techniques on pretty much everything I build, both in the Origami team and freelance projects.</p>
+</div>
+<div class="dialog dialog--question">
+    <p>Ahaha! I still remember <a href="https://speakerdeck.com/onishiweb/cleaner-themes-a-persil-dot-co-dot-uk-case-study">that talk</a>. It was at the Shoreditch Village Hall in Hoxton Square, right? I remember my “Wow!” when you explained the templating system you built (on Wordpress!) for that Project.</p>
+    <p>The recurring theme I have seen – in almost every interview I have done until now – is the mix of techniques that everyone has adopted, beside BEM.</p>
+    <p>Apparently no one uses a “pure” BEM approach (whatever that means).</p>
+    <p>Can you explain me what this “combination of techniques” is? What is your secret recipe in CSS naming? (if you can share it, of course :)</p>
+</div>
+<div class="dialog dialog--answer">
+    <p>I don’t know if there’s any secret recipe to CSS naming, I think there’s using the right method at the right time for the best results. For me, BEM works perfectly for component styling. It allows you to easily separate styles and makes name-spacing really clear. As well as allowing us to keep specificity of the CSS selectors really low, which is a great advantage.</p>
+    <p>But not everything in a website can be a component. I use some general classnames for things like a “container” for instance, and sometimes general typography as well, to save repeating these styles throughout each component. As well as that I often use utility classes to do specific things like applying font weights or positioning. I don’t go in for atomic CSS completely but adding some styles in that way seems to make sense.</p>
+    <p>I’ve found that rather than sticking to a specific methodology to write CSS, it’s better to write your styles in a way that can be understood most easily. For instance, if the component should always have a bold heading the style probably best fits in the component CSS, whereas if it’s just a single instance of a component that has a bold heading, it could be set by a utility class. That way it’s quite easy for someone else coming into the project to understand the architecture too, just by looking at the HTML.</p>
+</div>
+<div class="dialog dialog--question">
+    <p>And does this “secret recipe” still applies to a CSS codebase like the one underlying the <a href="http://origami.ft.com">Origami modules</a>?</p>
+    <p>How it’s been your impact with the CSS codebase? In some way you inherited the result of years of work done by different developers (<a href="http://kaelig.fr/">Kaelig</a> above all, I suppose) with maybe different ideas and strategies than yours. Did you try to adapt your pragmatic approach and embrace their choices, or started to “break things” and do it your way?</p>
+    <p>And having a convention like BEM in use at the Origami team, how much did it help you in getting fluent with the code?</p>
+</div>
+<div class="dialog dialog--answer">
+    <p>My impact so to say has actually been fairly little with the Origami codebase so far - as much as it comes to radically changing how the styles are written. But this is for a fairly good reason.</p>
+    <p>Almost everything we do in Origami has to conform to <a href="http://origami.ft.com/docs/component-spec/">our specifications</a>, which is fairly strict on how we write styles. For instance, BEM is actually part of our spec on <a href="http://origami.ft.com/docs/syntax/scss/#specificity">how we should write selectors in our CSS</a>. I think this part of the Origami system is great, because I’m a huge fan of consistency and making sure things are clear, having the spec means that we have guidelines around what to do and how to be consistent when we’re writing things. It’s also brilliant in terms of getting up to speed with the codebase and how I should be writing my code, so this was easily one of the easiest on-boarding experiences I’ve had in terms of the code side of things.</p>
+    <p>Of course there is wiggle room as well, and our team while also maintaining the components, also maintains the specification, so we can just change something if it doesn’t work for what we want to do. But having that specification means we need to think about why we’re changing something and then update the spec and explain why we’re making that change.</p>
+    <p>But in terms of the whole “secret recipe” to writing more “site-wide” CSS, I don’t think this applies too much to Origami. Mostly because we only write components for others to consume. It means our code needs to be consistent, which by using a combination of techniques across components could end up getting in the way of other people’s CSS. So we mainly stick to using BEM conventions and any component code is name-spaced with the component name, so in these cases, BEM makes a lot of sense for us.</p>
+</div>
+<div class="dialog dialog--question">
+    <p>I understand.</p>
+    <p>Last time we met, you mentioned me that your team is already working on the transition to proper Web Components for the Origami modules.</p>
+    <p>Yesterday Jonathan Snook published an article, <a href="https://snook.ca/archives/html_and_css/will-web-components-change-css">How Will Web Components Change CSS Architecture?</a>, in which he states:</p>
+    <p><em>&#xAB;As you can probably guess, my approach (with SMACSS, natch) to building a site using Web Components doesn’t really change. Some concerns like using naming convention to namespace CSS fall by the wayside due to the Shadow DOM.&#xBB;</em></p>
+    <p>And also when I spoke with Mark Dalgleish, about CSS Modules, he told me that they don’t use anymore BEM, there’s not the need anymore.</p>
+    <p>In both cases, this isolation of the components makes BEM in some way redundant, I understand.</p>
+    <p>Do you already have an idea, or have had a discussion as a team, if you will continue to use BEM anyway, even with a “web components” implementation?</p>
+</div>
+<div class="dialog dialog--answer">
+    <p>We’ve been looking into <a href="https://www.w3.org/standards/techs/components">Web Components</a> a lot lately as there seems to be a lot more consensus among browser vendors now. The specifications are pretty much agreed so we’re starting to get prepared for when they’re due in browsers towards the end of the year. I’ve been looking into them a lot for a new talk I’m writing which will cover how we can approach styling in a web components world. But as far as the team are concerned we haven’t gone into detail too much yet of how we’re going to officially approach it.</p>
+    <p>Because of what Web Components offer we’ll be starting to transition Origami components pretty swiftly to use them. Mostly because it will solve our HTML delivery issue we have at the moment, in that we don’t actually deliver any HTML other than through example code our users have to copy-paste. Sadly this leaves us with the issue Varya discussed in <a href="05__interview-with--varya__stepanova.html">one of your previous interviews</a>:</p>
+    <p><em>“To deliver CSS-only library would have caused a lot of pain when switching from version to version for our in-house library customers.”</em></p>
+    <p>With Web Components coming we’ll be able to finally work on serving the HTML via <a href="https://www.w3.org/TR/2014/NOTE-html-templates-20140318/">templates</a> and whichever composition system the vendors finally decide on, which will be a huge bonus for Origami.</p>
+    <p>In terms of styling though, as Mark, Jonathan, and yourself mention, the name-spacing is no longer an issue anymore. Styles can now be scoped specifically to each component without touching anything else on the page thanks to Shadow DOM. It’s going to greatly change how we’re able to write CSS, probably bringing back styles that can even be directly attached to element selectors instead of classes. So it makes sense that a lot of what the BEM CSS technique brings to styling will be redundant now.</p>
+    <p>The only bit we’re going to need to be more aware of is how we allow the consumers of our components to overwrite the styles we provide.</p>
+</div>
+<div class="dialog dialog--question">
+    <p>Yes, I think that as CSS developers we have exciting times in front of us.</p>
+    <p>Speaking of the way in which the “web-componentisation” solves many of the problems of specificity and name-spacing, today I saw <a href="https://twitter.com/markdalgleish/status/753204732538126336">this tweet by Mark Dalgleish</a> re-tweeting <a href="https://twitter.com/markdalgleish/status/753204732538126336">Max Stoiber on React and CSS Modules</a></p>
+    <p>In some way, CSS Modules reconcile HTML, CSS and JS, that can go back and work together in the way they were intended. And above all, we can stop doing holy wars about where CSS should go, if HTML can be written in JS, what class name give to a UI component, and so if BEM is better than SMACSS or OOCSS, and so on.</p>
+    <p>Anyway, getting back to BEM. I was a meet up a few days ago, and a friend of mine - Michele Bertoli, the &quot;<a href="https://github.com/MicheleBertoli/css-in-js">#CSS-in-JS</a> man&quot; - was showing me some CSS code.</p>
+    <p>Since he is using CSS Modules (actually a modified version, <a href="https://medium.com/yplan-eng/atomic-css-modules-cb44d5993b27">Atomic CSS Modules</a>) all the selectors were the classic &quot;good old&quot; CSS selectors.</p>
+    <p>And my brain was like &quot;oooh, what is that?&quot;: I could not recognise the patterns, the relations between the components and their parts, for me it was like an unknown language.</p>
+    <p>Did it ever happen to you? Especially now that you are starting to experiment with Web Components and CSS Modules, do you feel confused when you read CSS code that is not BEM based?</p>
+</div>
+<div class="dialog dialog--answer">
+    <p>It certainly takes me a little while to get back into the swing of writing non-BEM style classes now for sure. They make a lot of sense and I’ve been using them on pretty much every production project I’ve worked on for about a year or so now. Recently I was doing some prototyping and it felt strange not writing BEM style for once.</p>
+    <p>With Web Components that’s certainly the case too. There’s no more need to think about namespacing or writing styles that don’t overlap with another component thanks to the style encapsulation. It’s even not really necessary to write class selectors anymore, writing plain element selectors is going to work just fine in a web components world.</p>
+    <p>I like the constant change though, it’s refreshing having to learn and rethink our approaches from time-to-time. I’ve even been writing some CSS Modules code lately and that’s a whole new experience. I’m not sure I’ll ever be comfortable with it but I can see why some people really get on with it.</p>
+</div>
+<div class="dialog dialog--question">
+    <p>Yes, I saw <a href="https://twitter.com/onishiweb/status/753890894189920257">your thread on Twitter</a>. It raised a lot of interest and discussion (and it even lead to Oliver Turner giving a talk for <a href="http://www.meetup.com/London-CSS-Meetup/events/232745951/">the next London CSS meetup</a>, among other things).</p>
+    <p>As far as I can see from the responses, a lot of people - also big players and large websites - are using CSS Modules in production, and generally they look happy about that choice.</p>
+    <p>But at the same time, it looks like they have gained a lot of critiques (and in some cases even hate).</p>
+    <p>See <a href="https://twitter.com/Real_CSS_Tricks/status/754045216449933312">these</a> <a href="https://twitter.com/mxstbr/status/755481795206971392">tweets</a> or <a href="https://medium.com/learnreact/scale-fud-and-style-components-c0ce87ec9772#.p7o7zeg8g">this Medium post</a>.</p>
+    <p>It feels strange to me and sad to see such religious war in the CSS community. We used to be more open to the change. In some way, a CSS developer _needs_ to be adaptive and resilient: every a few months the technology and the browser support changes and you have to re-learn everything or adapt your approach to how you code your layouts, your responsiveness, your styles. The “constant” change you were mentioning above.</p>
+    <p>What is happening? And what’s your opinion on the whole &quot;CSS in JS&quot; movement/vanguard? (I don’t know how to call it, for me is just people exploring new ways of writing CSS)</p>
+</div>
+<div class="dialog dialog--answer">
+    <p>I think there’s room to critique new ideas always. Nothing should be beyond criticism. But it seems to come from both sides of the argument. People saying CSS Modules is _the_ way people should be writing CSS now, is no better than someone saying CSS Modules isn’t CSS. I even <a href="http://adamonishi.com/2016/06/how-to-make-a-chilli/">wrote about it recently</a> as well.</p>
+    <p>My opinion on the “CSS in JS” thing is mixed. I see some serious downsides in various aspect. It worries me when it comes to on-boarding new team members, CSS in JS is such a change, that it needs you to completely change the way of working as a web developer. We’re constantly having this battle trying to encourage designers to learn more code, and CSS in JS techniques simply increase this knowledge gap. And when trying to learn how to use this stuff too, there’s such a level of assumed knowledge in the community around it that it’s really hard to pick up as a beginner.</p>
+    <p>That said, I can see why people use it. If you’re already using a JavaScript framework with a build-system set up, this sort of thing will fit right in. Plus the addition of style encapsulation without having to wait for the browsers to implement all the new standards is definitely a plus. It means writing styles is easier and maintenance less of an overhead.</p>
+</div>
+<div class="dialog dialog--question">
+    <p>I agree with you. In the latest months I am trying to be as open minded as possible towards every methodology or approach to CSS and CSS Architecture – hence this “To BEM or not to BEM” project, for example – or my interest in Atomic CSS or CSS Modules as possible source of inspiration if not even implementation and adoption.</p>
+    <p>But at the same time I want to be also “critic” as you say, especially towards my own approaches and ideas. I have recently joined a company where I have found a medium/large CSS codebase to maintain and some very smart CSS developers/colleagues to work with, so everything I knew had to be questioned.</p>
+    <p>For example this morning I saw <a href="https://vimeo.com/channels/cssday/134190982">this video by Stephen Hay</a>, at CSS Day 2015. And made me think really a lot.</p>
+    <p>Like you, I don’t have a clear and ultimate opinion on both the two &quot;sides&quot;: I can see pros and cons on both of them. What is clear for me is that whatever solution, approach, methodology you choose (and what this project has taught me is that most of the people choose more than one, so don’t feel guilty if you do it too) it must the be the solution _for you_. Don’t adopt someone else’s solution to their problems, because probably they are not your problems. You can learn from their solution, from their experience, from their findings. But at the end always use your head (and your gut too, if you have enough experience).</p>
+    <p>I still have a couple of questions, and then I’ll let you go.</p>
+    <p>I saw the slides of the talk you have given at London Web Standard, about “<a href="https://speakerdeck.com/onishiweb/planes-trains-and-css-components">Planes, Trains, and CSS Components</a>.</p>
+    <p>It’s been a great talk, I can see it :)</p>
+    <p>I am so sad I could not attend (but I am sure there will be other chances to see it live, am I right?)</p>
+    <p>There is A LOT of knowledge and experience there. But at the same time you are clearly doing a lot of explorations on what will be the best option for your team/project in the future.</p>
+    <p>What really made me curious is the <a href="https://speakerdeck.com/onishiweb/planes-trains-and-css-components?slide=69">slide #69</a></p>
+    <p>When after the question &quot;Is Origami going to use CSS Modules?&quot; there is a single plain &quot;No.&quot; in the slide.</p>
+    <p>Apart from the reasons you mentioned above, there are other reasons or is &quot;simply&quot; (notice the quotation marks) a matter of on-boarding new developers and learning curve compared with other &quot;simpler&quot; (notice the quotation marks) solutions?</p>
+    <p>Or is more - and I quote someone you know very well here - a matter of &quot;What happened to just writing CSS?&quot; :)</p>
+</div>
+<div class="dialog dialog--answer">
+    <p>I definitely always feel like I’m just finding my way with whatever choice I make in these things. I’m never certain if one way is going to suit the situation better than another for a given project. It’s why I used to like working at agencies so much in the past, because you were flicking between different projects you could always try out a new way of doing things and experiment. Although I think after working on some particularly larger projects lately, the main thing to keep about everything is consistency. Whatever way you choose you need to be consistent for your future self and any other people coming onto the project.</p>
+    <p>Thanks for your comments on the talk, it was a fun one to write, but I really wish I’d focused more on the web components side of things. There’s a lot of cool things coming in that area and it’s really interesting to see it develop. I’m going to be doing versions of that talk again I think, hopefully at <a href="http://www.meetup.com/London-CSS-Meetup/">London CSS</a> in September and a very short version focusing on Web Components only at <a href="http://frontendnorth.com/">Front End North</a> in September too.</p>
+    <p>In terms of the CSS Modules answer though, it’s a lot to do with just getting people to use Origami in the first place. We have a free market culture at the FT in terms of technology choices, which means internal projects have to compete with other 3rd-party and open source solutions. For Origami it means we have to make it as easy as possible to start using for all teams in the FT. This includes developers with varying skill levels and even a lack of general interest in building front-ends in the first place. If we were to create something with a complicated build process that required learning an entirely new way of writing styles, people would just switch to something easier and just give up on us.</p>
+    <p>CSS Modules have their place, it’s just not within such a large and diverse organisation as the FT at the moment.</p>
+</div>
+<div class="dialog dialog--question">
+    <p>Well, I’ll be honest’: I was not looking at Web Components as a viable solution for a product, at least for now. But your presentation and <a href="http://adamonishi.com/2016/08/web-components-and-progressive-enhancement/">your recent blog post</a> about the relation between web components and progressive enhancement, made me think that I should definitely keep an eye on that space :)</p>
+    <p>One last question, and then I’ll let you go, really. It’s been a very long interview, and you’ve been very patient.</p>
+    <p>Yesterday I had time (finally!) to read <a href="http://ecss.io/">“Enduring CSS” by Ben Frain</a>.</p>
+    <p>I have mixed feelings about the methodology. On one side I really appreciate the fact that he tried to get away from the &quot;canonical&quot; methodologies, and find his own solution. On the other side to me it looks like he only did half of the step. I think he could have pushed a little bit more the implications of his approach and simplify even more the way he handles the name-spacing of the elements.</p>
+    <p>Anyway, when he explains the differences between his method and BEM, he says: <em>“ECSS isn’t widely used and documented: consider BEM if ubiquity is a major concern.”</em></p>
+    <p>And that word - “ubiquity” - struck me a lot. At the end it’s true, if I have to think about what is the main value of BEM for me, is the fact that it has become a common language between the CSS developers. Whether you like it or not, you use it or not, you can still understand his mechanics, and you can &quot;learn&quot; it in a couple of hours if you want.</p>
+    <p>If you have to describe what is the main value of BEM for you, in your personal experience, what would you say?</p>
+</div>
+<div class="dialog dialog--answer">
+    <p>I think it’s a combination of things, but ubiquity amongst developers certainly is one of them. I took a look at the Steven Hay talk you mentioned previously and it’s clear that BEM has caught on really well in the dev community when Steven asks the audience about which methodologies they use. SMACSS and OOCSS have been around a bit longer and while they have been picked up in the past, they’ve certainly not had the kind of impact BEM has so far.</p>
+    <p>The other part of it for me is that it fits so easily with the way I want to write CSS now. I’ve been focusing more on a component based architecture long before I joined the Origami team, and for that BEM just makes sense. I find it also helps me think about the components I’m writing, if the selectors are starting to get confusing or too many for a single component, I know it’s time to start thinking about splitting things up. As I mentioned earlier I started using BEM in the refactor of the Persil website and that really made a difference when it came to compartmentalising code and splitting big files into more accessible chunks.</p>
+    <p>Granted though, it’s not the easiest syntax to look at, but after a while you adjust and get used to it. I think like any change that’s bound to happen.</p>
+</div>
+<div class="dialog dialog--question">
+    <p>Well, perfect conclusion for this interview.</p>
+    <p>Thank you so much for your time and your patience (for those who will read this interview, it took several days to complete it).</p>
+    <p>See you in September then, here in London or up in the North :)</p>
+</div>
+<div class="dialog dialog--answer">
+    <p>Thanks Cristiano. Been a pleasure discussing all these areas of styling with you. Interesting thinking about it all and writing it all down.</p>
+</div>
 {% endblock %}

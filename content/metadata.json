@@ -93,9 +93,9 @@
         "06": {
             "nameslug" : "adam__onishi",
             "title" : "Interview with Adam Onishi",
-            "date" : "2016-xx-xx",
-            "status" : "draft",
-            "quote" : "",
+            "date" : "2016-08-05",
+            "status" : "preview",
+            "quote" : "BEM fits so easily with the way I want to write CSS now. I’ve been focusing more on a component based architecture long before I joined the Origami team, and for that BEM just makes sense.",
             "interviewee": {
                 "avatar": "img/adam+onishi.jpg",
                 "fullname": "Adam Onishi",
