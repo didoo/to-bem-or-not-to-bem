@@ -1,0 +1,184 @@
+---
+number: "07"
+---
+
+{% extends "../templates/pages/interview.html" %}
+
+{% block biography %}
+
+<p>Principal UI Developer at Salesforce where she leads the team responsible for the CSS framework in the Lightning Design System.</p>
+<p>She has been a front-end developer, passionate about web standards and accessibility, for over 16 years.</p>
+<p>Well known speaker and book author, she has worked with a wide spectrum of clients including Under Armour, Newsweek, MLB, New York Magazine, Adobe, Disney's 'TRON', and a lively bunch of startups.</p>
+<p>When not fighting specificity wars, she and her husband escape on their catamaran, border-radius.</p>
+
+{% endblock %}
+
+{% block interview %}
+
+<div class="dialog dialog--question">
+    <p>Hi Stephanie</p>
+    <p>the first time I have met you is at <a href="http://2016.industryconf.com/">Industry Conf</a>, a couple of months ago. I admire the work that you and your team have done in Salesforce, building the <a href="https://www.lightningdesignsystem.com/">Lightning Design System</a>. Since then I have chased you to make this interview, and finally here you are :)</p>
+    <p>Let's start from you: you are Principal UI Developer of the team responsible for the <a href="https://github.com/salesforce-ux/design-system">CSS framework</a> in the <a href="https://www.lightningdesignsystem.com/">Salesforce Lightning Design System (SLDS)</a>. I can't think to something more interesting and challenging - professionally, for someone that works in the front end I mean - than that. Styleguides, Pattern Libraries and Design System are the hot new thing in that special middle ground between the front end development and design. What's your role, what is your daily job?</p>
+</div>
+<div class="dialog dialog--answer">
+    <p>When I was hired at Salesforce, the Design Systems team had just gotten approval to add the CSS Framework to the existing Design System. My role was to architect and build that framework. It quickly became apparent that, with the rapidity that our execs were embracing what we were doing, we were going to need a bigger team.</p>
+    <p>My daily job still includes building components and checking other team member PRs, but what seems to take exceedingly more time lately is working with teams that are adopting the framework internally. There are always challenges and I enjoy helping to solve those so we can be more efficient, and the framework can be more easily adopted.</p>
+    <p>I also do a good bit of answering questions (my team has a bi-weekly advisory board) and providing support.</p>
+</div>
+<div class="dialog dialog--question">
+    <p> Do you still find time to code? Or it’s all about meeting, supervising, organising other people's work?</p>
+</div>
+<div class="dialog dialog--answer">
+    <p>I do still find time to code. But definitely less than I did initially — though that’s not so much because I’m organizing other people, but more about being involved with other teams we integrate with.</p>
+    <p>Though our team is small, it’s a very smooth-running team. People are very self-motivated and hard-working. None of us need much supervision — we collaborate and support each other very well.</p>
+</div>
+<div class="dialog dialog--question">
+    <p>How is your team composed? How many people work with you?</p>
+</div>
+<div class="dialog dialog--answer">
+    <p>As I said, we have a very small team that actually builds the framework. It was initially <a href="https://twitter.com/bferrua">Brandon</a> and I who worked on it full-time, and <a href="https://twitter.com/jina">Jina</a> was half-time framework and half-time design and patterns. We just hired Isha about three months ago.</p>
+    <p>Interestingly, we have 3 women and 1 man — somewhat unusual from what I understand.</p>
+    <p>We monitor consistency in patterns as well. We recently split our two designers onto a sister team under a creative director. We also have a sister team that runs the infrastructure, systems, testing, and our integration with other internal systems.</p>
+    <p>The Accessibility team is also now under our larger umbrella which has been a fantastic move so that we can integrate with them even more tightly. Also under our umbrella is a team that does rapid prototyping and testing of the patterns and new components before they're built.</p>
+    <p>I believe the large overall team is roughly around 21 people now.</p>
+</div>
+<div class="dialog dialog--question">
+    <p>As you know, this project is called To BEM or not to BEM. What is your relation with BEM? You chose to use it for the CSS framework in SLDS, right?</p>
+</div>
+<div class="dialog dialog--answer">
+    <p>Yes, I did make the BEM choice. I had used it at the startup I worked at previously. Though nothing is perfect, I really appreciate the way BEM's structure makes it easy to tell at a glance exactly how selectors relate to each other. And while "we BEM", we have made a couple modifications and taken a few liberties. We've also made a few mistakes.</p>
+</div>
+<div class="dialog dialog--question">
+    <p>Usually when someone builds a CSS framework, is to use it on its own product/project. In your case, your framework has been built to be used and consumed by an heterogeneous user base, internal and external to Salesforce. How does this factor played in the decision to adopt BEM as naming convention?</p>
+</div>
+<div class="dialog dialog--answer">
+    <p>Because we have an huge number of consumers of our framework — both internal and external — it was important to me that A) naming was understandable and B) specificity was kept as low as possible to avoid the !important trump card being used. That means many times you will put a class where you might generally write a descendant selector. It pays off though.</p>
+</div>
+<div class="dialog dialog--question">
+    <p>Alla Kholmatova in <a href="http://alistapart.com/article/language-of-modular-design">her article on A List Apart</a> suggests to name component based on their "high-level function", so what is their ultimate scope and not simply their name in the context of use. Also suggests to name things collaboratively, at team level. Quoting her: <em>“if an object in the interface doesn’t have a name — a name that makes sense to your team, and is known and used by people on your team — then it doesn’t exist as a concrete, actionable module to work with.”</em></p>
+    <p>A few weeks ago you tweeted (<a href="https://twitter.com/stefsull/status/734930389559578624">I loved that tweet</a>)<br/><em>“OMG! I'm experiencing an extreme BEM-blockage. Naming is SO hard.”</em><br/>How do your team(s) name things?</p>
+</div>
+<div class="dialog dialog--answer">
+    <p>Naming IS hard. Even after you've named a module, sometimes deciding how much of the component is unique and how much is smaller, reusable micropatterns can bring us to debate.</p>
+    <p>Clarity is our number one principal, so we do try to name things in a way that makes sense to us as well as developers.</p>
+    <p>However, within our ecosystem (CRM), there are some interesting, unique names for things. And to be honest, we've definitely got some oddly named components due to the names internal teams wanted. Also, sometimes over time, components become more similar. Yet we've initially built them as unique components. We have a bit of regrouping and clarification to do.</p>
+    <p>We're in the midst of a spike now where we're working on the metadata for the framework, creating a new taxonomy and imagining new ways to define and describe things. This will create an API of sorts — so that we can create our IA in a variety of more useful ways.</p>
+</div>
+<div class="dialog dialog--question">
+    <p>Who decides what name to give to an element or a component? Is a collaborative effort, or you are the final judge? Or you always use the <a href="http://blog.capwatkins.com/the-sliding-scale-of-giving-a-fuck">Cap Watkins Sliding Scale</a>? (I remember you mentioned it at Industry Conf)</p>
+</div>
+<div class="dialog dialog--answer">
+    <p>We discuss it. Both with the teams that are requesting the component/pattern and amongst ourselves. And I am not a dictator.</p>
+    <p>LOL I love collaboration. We are stronger together. When we can't agree via discussion, we absolutely use Cap Watkins sliding scale. It's magical if you use it honestly.</p>
+</div>
+<div class="dialog dialog--question">
+    <p>“Naming things” - especially in a context of a strict naming convention like BEM - has also an impact on how you decide to structure - or modularize - your components. How do you avoid name clashing? Every time you have to find a new name, and be sure is not conflicting (and will not conflict in the future) with other class names, other components, blocks, etc.</p>
+</div>
+<div class="dialog dialog--answer">
+    <p>You're right. And as the framework grows, this becomes more tricky. We look at a component and build by starting with the micropatterns or atoms. If something is a small, reusable pattern, then we build it separate from the component that houses it.</p>
+    <p>Sometimes, a small reusable component, like tiles, are included in a larger experience component. But the naming of the tiles doesn’t need to contain the name of the parent component — though sometimes they may require a modifier class.</p>
+    <p>As far as clashing, we tend to group similar components which helps us to see what exists pretty easily.</p>
+</div>
+<div class="dialog dialog--question">
+    <p>How do you avoid the classic bikeshedding discussions? (they happen in every team)</p>
+</div>
+<div class="dialog dialog--answer">
+    <p>Great question. I'm not sure we totally avoid them, but we're a pretty pragmatic, and very busy team. Usually one of us speaks up and says, "Does this really matter in the larger scheme of things?" We don't really have a methodology around it (though we might apply the sliding scale if we don't agree).</p>
+</div>
+<div class="dialog dialog--question">
+    <p>How do you do code reviews, in your team? There is someone - you? - that is the gatekeeper of the naming conventions and strategies? With so many components I imagine someone needs to know all the possible names and classes, to avoid clashes and collisions.</p>
+</div>
+<div class="dialog dialog--answer">
+    <p>Since <a href="https://twitter.com/bferrua">Brandon Ferrua</a> and I started out doing most of the code, we kept each other in check. We reviewed each other's PRs. Gave each other a sanity check. My feeling is, if you okay all my PRs, you're clearly not looking at them close enough. Challenge me!<p>
+    <p>As the team has grown, we try to have two of us look at each PR, unless it's something super simple. People review differently and see things differently — the more the merrier, to catch little discrepancies.</p>
+</div>
+<div class="dialog dialog--question">
+    <p>In a discussion on the Design System channel on Slack you mentioned having problems integrating BEM classes into XML-type environments? Can you explain what is the problem you are facing? And did you find yet a solution?</p>
+</div>
+<div class="dialog dialog--answer">
+    <p>This is a frustration. We use the BEM notation of <code>.block</code>, <code>.block__element</code>, <code>.block--modifier</code>. In XML, you can't have a double dash inside a comment. Our internal system compiles XML prior to runtime, so we'd not be deploying anything illegal. But the XML checker we use flags it and refuses to compile.</p>
+    <p>We've tried a variety of ideas, including <code>&lt;![CDATA[</code> and a couple other things, but it hasn't worked. Someone suggested something on Twitter that looked interesting, but it was the weekend and I didn't get a chance to try it. And alas, since you can't search within your own Twitter stream (that I know of anyway), I lost it. So person, if you're out there, feel free to resuggest!</p>
+</div>
+<div class="dialog dialog--question">
+    <p>Looking at the organisation of the files and <a href="https://github.com/salesforce-ux/design-system/tree/master/ui/">UI components in the CSS codebase</a>, I see that the files that compose a single UI element (e.g. <a href="https://github.com/salesforce-ux/design-system/tree/master/ui/components/buttons">buttons</a> or forms or tabs) are collected under a "flavors" folder. Why? What is the meaning of that folder?</p>
+</div>
+<div class="dialog dialog--answer">
+    <p>A flavor was, at the time we started, an internal naming convention for a variation of a component. We used it, and it's in our folder structure, but we don't surface it anywhere. That folder creates the "variations" of a component, and we also currently show "states" of a component as well since we are an agnostic, UI-only framework. States are our way of showing JS interactions.</p>
+</div>
+<div class="dialog dialog--question">
+    <p>Don't you think that this organisation of your components can lead to an excessive fragmentation and scattering of files - I have counted more than 150 Sass files - and therefore also to an unnecessary complexity and a steeper learning curve (and more difficult adoption)?</p>
+</div>
+<div class="dialog dialog--answer">
+    <p>As you might guess, the system has been through a variety of permutations over the past 18 months. We're always looking at better ways to do things.</p>
+    <p>As I mentioned before, we're working on the metadata and taxonomy. We may flatten our file system out a bit with that project as well.</p>
+    <p>That said, I actually find it easier to identify where to find CSS when it's kept with its component or variation. Compiling isn't a big deal since we don't compile at runtime. In fact, we pre-compile our React prior to runtime as well and serve static pages.</p>
+</div>
+<div class="dialog dialog--question">
+    <p>I have seen that in your codebase in some places you are using the "evil" nesting of selectors to build the Block-Element-Modifier name stucture of BEM:<p>
+<pre>.#{$css-prefix}page-header {
+    &amp;__title {
+    }
+}</pre>
+    <p>and in other places you are explicitly writing the full BEM selector.</p>
+    <p>I know for sure that <a href="http://kaelig.fr/">Kaelig</a> doesn't like it (<a href="https://github.com/franzheidl/bemify/issues/7#issuecomment-200083293">here</a> and <a href="https://twitter.com/kaelig/status/443758841331998721">here</a>). It's hard to search/grep, I agree with him, and personally I think is also hard to read. Are you getting rid of them or did Kaelig simply surrender?</p>
+</div>
+<div class="dialog dialog--answer">
+    <p>Hahah! Kaelig, surrender? You surely do not know Kaelig well then. ;)</p>
+    <p>But seriously, we had already begun down this path when Kaelig joined the team. However, due to tooling our dev ops teams is building, we are finding it to be problematic. And searching for a selector in a large code base can be nightmarish.</p>
+    <p>As it is with @extends, "just because you can doesn't mean you should". We will probably be unnesting for human and machine readability in the big project we're currently working on.</p>
+</div>
+<div class="dialog dialog--question">
+    <p>A "stinging" question: why do you decided to use this syntax <code>.#{$css-prefix}</code> without the dash after? Every time I see it my eyes cry... :)</p>
+</div>
+<div class="dialog dialog--answer">
+    <p>That prefix will be gone shortly in light of the plain <code>.slds-</code> namespace in front of each class.</p>
+    <p>The reason it was done dynamically initially is, the name of our framework was changed more than once by marketing. Rather than grep the codebase to change the namespace, we made it dynamic to change in a single place. (The syntax is from one of our sister teams.) Now that things have been settled for over a year, we're simplifying and making it more readable.</p>
+</div>
+<div class="dialog dialog--question">
+    <p>Let's get back to BEM: in the codebase on Github I have seen some classes like:</p>
+<pre>
+.#{$css-prefix}tabs--default__item
+.#{$css-prefix}tabs--default__link
+</pre>
+    <p>I don't think is correct from the BEM perspective. Or is it "allowed"?</p>
+</div>
+<div class="dialog dialog--answer">
+    <p>Remember when I said we still contain some mistakes? Sometimes you build things, and then the rules about the component change (or you learn more).</p>
+    <p>Tabs were initially built in another way, with a few descendant selectors which I warned about above. Later, we found they needed to be nested and we had some styles competing. We made the decision to break them out and put classes on all the parts. The mistake though is not about <code>.slds-tabs--default__link</code> as much as the problem that there is no base <code>.slds-tabs</code> component. So we have two variations and no base. Womp womp!</p>
+    <p>Stuff happens. Perfection is unattainable. And sometimes you have to live with a poor decision because it’s "in the wild" already.</p>
+    <p>We have some other "strange BEM" that is part of our system and done by design. Sometimes a component will have an optional container. We don't want to put the base component class name on that container. However, that container will only be used on that component.</p>
+    <p>We experimented with a lot of notations and different characters we could use. But nearly all of them had to be escaped and that looks pretty gross in your CSS. So we chose to go with a single underscore to denote a container. For example: <code>.slds-component_container</code>. I'm sure folks have opinions and other ways of doing it, but we're quite happy with this solution. It's understandable at a glance that this is an optional container class for a specific component.</p>
+</div>
+<div class="dialog dialog--question">
+    <p>I see that in the repo on Github there are a lot of React files (typically <code>index.react.jsx</code>). As far as I understand they are used to build the documentation and for testing purposes. Are you already considering the migration to CSS Modules?</p>
+</div>
+<div class="dialog dialog--answer">
+    <p>Yes, those React files are what we build our documentation site from — including the variety of states. We are not yet considering CSS Modules. We're a huge system and I don't feel it's ready for prime time yet. Maybe in a couple of years.</p>
+</div>
+<div class="dialog dialog--question">
+    <p>Looks like - at least to me - that the new "hot thing" in Design Systems are the <a href="https://www.lightningdesignsystem.com/design-tokens/">“tokens”</a>, the visual design atoms (or quarks?) of the systems. Simplifying, they are a list of variables, typically in JSON, that store the basic visual design attributes of the system and can be then cascade down to all platforms. Bootstrap was <a href="https://github.com/twbs/bootstrap/blob/v3.0.0/less/variables.less">a precursor</a>, then?</p>
+</div>
+<div class="dialog dialog--answer">
+    <p>Tokens are simply stored values — maybe subatomic particles. LOL For us, they originated from Aura, the system we use to build product from. They had been using tokens to store strings of all kinds. Several years ago, we started using them as "design tokens”. The team then built a tool called <a href="https://github.com/salesforce-ux/theo">Theo (open source)</a> that uses JSON to output the values to a large number of formats. Bootstrap seems to be surfacing Less (or Sass) variables, but we export about 7 or 8 different formats.</p>
+</div>
+<div class="dialog dialog--question">
+    <p>Out of curiosity: from your LinkedIn I see you “Created the 32 CSS Layouts included in Dreamweaver CS3 and updated for Dreamweaver CS5”. Wow!  What layouts techniques did you use? Tables, Floated divs, Flexbox, CSS Grids?</p>
+</div>
+<div class="dialog dialog--answer">
+    <p>Well, since this was back in 2005 or 2006, there was no flexbox or grid layout. They were built to be modern (for that era), with pure CSS layout techniques, so no tables.</p>
+    <p>Yes, floating divs were involved. As I recall, options included 2 or 3 columns, optional headers and footers, and they were either fixed width, fluid (responsive %), elastic (em units), hybrid (fixed sides, fluid middle) or absolutely positioned. (I fought the positioned ones, but I didn't win.)</p>
+    <p>They were meant to give people who were not CSS experts a quick way to get started and learn how to use CSS for layout. They had no design — just structure and shades of gray.</p>
+    <p>I commented the heck out of everything as a teaching tool (though once you got used to them, you could choose the non-commented version). It was a fun project.</p>
+</div>
+<div class="dialog dialog--question">
+    <p>A last silly question :) what made you decide to call a catamaran “border-radius”?</p>
+</div>
+<div class="dialog dialog--answer">
+    <p>Since our plan is to circumnavigate the globe on a catamaran, we liked the play on words (since border-radius can make a full circle like the globe). We toyed with float:left or float:right. We definitely ruled out float:none though.</p>
+    <p>Since we spoke, we've purchased Amritha, the 40ft catamaran we'll be circumnavigating on later, and border-radius has a new family.</p>
+</div>
+<div class="dialog dialog--question">
+    <p>Well, what can I say: you’re an all-round developer :)</p>
+    <p>Thank you so much Stephanie for the interview: it took a while, but it was definitely worth the wait!</p>
+</div>
+{% endblock %}

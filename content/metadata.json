@@ -109,11 +109,20 @@
         },
         "07": {
             "nameslug" : "stephanie__rewis",
-            "title" : "",
-            "date" : "2016-xx-xx",
-            "status" : "draft",
-            "quote" : "",
-            "interviewee": {}
+            "title" : "Interview with Stephanie Rewis",
+            "date" : "2016-11-16",
+            "status" : "public",
+            "quote" : "Though nothing is perfect, I really appreciate the way BEM's structure makes it easy to tell at a glance exactly how selectors relate to each other.",
+            "interviewee": {
+                "avatar": "img/stephanie-rewis.jpg",
+                "fullname": "Stephanie Rewis",
+                "minibio": "Principal UI Developer at Salesforce Lightning Design System. Front-end developer, passionate about web standards and accessibility, well known speaker and author.",
+                "links": {
+                    "medium": "https://medium.com/@stefsull",
+                    "twitter": "https://twitter.com/stefsull",
+                    "github": "https://github.com/stefsullrew"
+                }
+            }
         },
         "08": {
             "nameslug" : "mark__dalgleish",
