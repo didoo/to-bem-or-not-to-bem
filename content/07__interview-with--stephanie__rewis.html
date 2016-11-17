@@ -17,7 +17,7 @@ number: "07"
 
 <div class="dialog dialog--question">
     <p>Hi Stephanie</p>
-    <p>the first time I have met you is at <a href="http://2016.industryconf.com/">Industry Conf</a>, a couple of months ago. I admire the work that you and your team have done in Salesforce, building the <a href="https://www.lightningdesignsystem.com/">Lightning Design System</a>. Since then I have chased you to make this interview, and finally here you are :)</p>
+    <p>the first time I have met you is at <a href="http://2016.industryconf.com/">Industry Conf</a>, a few months ago. I admire the work that you and your team have done in Salesforce, building the <a href="https://www.lightningdesignsystem.com/">Lightning Design System</a>. Since then I have chased you to make this interview, and finally here you are :)</p>
     <p>Let's start from you: you are Principal UI Developer of the team responsible for the <a href="https://github.com/salesforce-ux/design-system">CSS framework</a> in the <a href="https://www.lightningdesignsystem.com/">Salesforce Lightning Design System (SLDS)</a>. I can't think to something more interesting and challenging - professionally, for someone that works in the front end I mean - than that. Styleguides, Pattern Libraries and Design System are the hot new thing in that special middle ground between the front end development and design. What's your role, what is your daily job?</p>
 </div>
 <div class="dialog dialog--answer">
@@ -36,10 +36,12 @@ number: "07"
     <p>How is your team composed? How many people work with you?</p>
 </div>
 <div class="dialog dialog--answer">
-    <p>As I said, we have a very small team that actually builds the framework. It was initially <a href="https://twitter.com/bferrua">Brandon</a> and I who worked on it full-time, and <a href="https://twitter.com/jina">Jina</a> was half-time framework and half-time design and patterns. We just hired Isha about three months ago.</p>
+    <p>As I said, we have a very small team that actually builds the framework. It was initially <a href="https://twitter.com/bferrua">Brandon</a> and I who worked on it full-time, and <a href="https://twitter.com/jina">Jina</a> was half-time framework and half-time design and patterns. We just hired <a href="https://twitter.com/ikasliwal">Isha</a> about three months ago.</p>
     <p>Interestingly, we have 3 women and 1 man — somewhat unusual from what I understand.</p>
-    <p>We monitor consistency in patterns as well. We recently split our two designers onto a sister team under a creative director. We also have a sister team that runs the infrastructure, systems, testing, and our integration with other internal systems.</p>
-    <p>The Accessibility team is also now under our larger umbrella which has been a fantastic move so that we can integrate with them even more tightly. Also under our umbrella is a team that does rapid prototyping and testing of the patterns and new components before they're built.</p>
+    <p>We monitor consistency in patterns as well. We recently split our two designers onto a sister team under a creative director.</p>
+    <p>We also have a sister team that runs the infrastructure, systems, testing, and our integration with other internal systems.</p>
+    <p>The Accessibility team is also now under our larger umbrella which has been a fantastic move so that we can integrate with them even more tightly.</p>
+    <p>Also under our umbrella is a team that does rapid prototyping and testing of the patterns and new components before they're built.</p>
     <p>I believe the large overall team is roughly around 21 people now.</p>
 </div>
 <div class="dialog dialog--question">
@@ -56,7 +58,8 @@ number: "07"
 </div>
 <div class="dialog dialog--question">
     <p>Alla Kholmatova in <a href="http://alistapart.com/article/language-of-modular-design">her article on A List Apart</a> suggests to name component based on their "high-level function", so what is their ultimate scope and not simply their name in the context of use. Also suggests to name things collaboratively, at team level. Quoting her: <em>“if an object in the interface doesn’t have a name — a name that makes sense to your team, and is known and used by people on your team — then it doesn’t exist as a concrete, actionable module to work with.”</em></p>
-    <p>A few weeks ago you tweeted (<a href="https://twitter.com/stefsull/status/734930389559578624">I loved that tweet</a>)<br/><em>“OMG! I'm experiencing an extreme BEM-blockage. Naming is SO hard.”</em><br/>How do your team(s) name things?</p>
+    <p>A few weeks ago <a href="https://twitter.com/stefsull/status/734930389559578624">you tweeted</a>: <em>“OMG! I'm experiencing an extreme BEM-blockage. Naming is SO hard.”</em><br/>(oh, I loved that tweet!)</p/>
+    <p>How do your team(s) name things?</p>
 </div>
 <div class="dialog dialog--answer">
     <p>Naming IS hard. Even after you've named a module, sometimes deciding how much of the component is unique and how much is smaller, reusable micropatterns can bring us to debate.</p>
@@ -116,7 +119,9 @@ number: "07"
 <div class="dialog dialog--question">
     <p>I have seen that in your codebase in some places you are using the "evil" nesting of selectors to build the Block-Element-Modifier name stucture of BEM:<p>
 <pre>.#{$css-prefix}page-header {
+    …
     &amp;__title {
+        …
     }
 }</pre>
     <p>and in other places you are explicitly writing the full BEM selector.</p>
