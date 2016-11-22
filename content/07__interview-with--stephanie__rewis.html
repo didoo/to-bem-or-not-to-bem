@@ -100,7 +100,7 @@ number: "07"
 </div>
 <div class="dialog dialog--answer">
     <p>This has been a frustration. We have been using the common BEM notation of <code>.block</code>, <code>.block__element</code>, <code>.block--modifier</code>. In XML, you can't have a double dash inside a comment. Our internal system compiles XML prior to runtime, so the XML parser we use won’t compile with comments.</p>
-    <p>On Twitter, <a href="https://twitter.com/morklash/status/758563570929938432">Mauro Alvarez</a> suggested the <code>ignore</code> directive. We tested that, and while we can make it work, it means that developers have to learn to comment in a non-standard way. Our company wasn’t satisfied with that solution, so we’ll be changing to the original Yandex BEM notation of <code>.block</code>, <code>.block__element</code>, <code>.block_modifier</code> in a future release.</p>
+    <p>On Twitter, <a href="https://twitter.com/morklash/status/758563570929938432">Mauro Alvarez</a> suggested the <code>ignore</code> directive. We tested that, and while we can make it work, it means that developers have to learn to comment in a non-standard way. So we're weighing our options.</p>
 </div>
 <div class="dialog dialog--question">
     <p>Looking at the organisation of the files and <a href="https://github.com/salesforce-ux/design-system/tree/master/ui/">UI components in the CSS codebase</a>, I see that the files that compose a single UI element (e.g. <a href="https://github.com/salesforce-ux/design-system/tree/master/ui/components/buttons">buttons</a> or forms or tabs) are collected under a "flavors" folder. Why? What is the meaning of that folder?</p>
@@ -153,7 +153,6 @@ number: "07"
     <p>Stuff happens. Perfection is unattainable. And sometimes you have to live with a poor decision because it’s "in the wild" already.</p>
     <p>We have some other "strange BEM”, purposely created, which due to our syntax change we’ll now need to update. Sometimes a component will have an optional container. We don't want to put the base, block component class name on that container. However, that container will only be used on that component.</p>
     <p>Originally, Brandon and I experimented with a lot of possible characters we could use. But nearly all of them had to be escaped — which looks pretty gross in your CSS. We chose to go with a single underscore to denote a container. For example: <code>.slds-component_container</code>. We felt it was clear at a glance that this class was an optional container class for a specific component.</p>
-    <p>Now that we’re updating our BEM notation, it’s likely we’ll either swap that around (<code>.slds-container_component</code>) or brainstorm an altogether new notation. No decision has yet been made.</p>
 </div>
 <div class="dialog dialog--question">
     <p>I see that in the repo on Github there are a lot of React files (typically <code>index.react.jsx</code>). As far as I understand they are used to build the documentation and for testing purposes. Are you already considering the migration to CSS Modules?</p>
