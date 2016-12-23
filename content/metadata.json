@@ -136,12 +136,12 @@
             "nameslug" : "michele__bertoli",
             "title" : "Interview with Michele Bertoli",
             "date" : "2016-xx-xx",
-            "status" : "preview",
+            "status" : "public",
             "quote" : "Now that we have components, BEM is not needed anymore. In my opinion, this closes the circle.",
             "interviewee": {
                 "avatar": "img/michele-bertoli.jpg",
                 "fullname": "Michele Bertoli",
-                "minibio": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium iure molestiae, architecto, voluptate nulla quos nam velit exercitationem nihil, quas sunt incidunt eaque omnis quia distinctio hic, obcaecati nostrum id.",
+                "minibio": "Front End Engineer with a passion for beautiful UIs. Currently working with React.js, crafting modern JavaScript applications. Author, speaker and conference organiser.",
                 "links": {
                     "website": "http://michele.berto.li",
                     "twitter": "https://twitter.com/MicheleBertoli",
