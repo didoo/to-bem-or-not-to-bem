@@ -34,6 +34,11 @@
         position: absolute;
         margin: 25px auto 0px -80px;
     }
+    .interview--THE-END & {
+        @include media(desktop) {
+            margin-left: -140px;
+        }
+    }
 }
 
 .interview__title {

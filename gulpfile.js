@@ -53,6 +53,7 @@ gulp.task('convert', function () {
                     $dm.removeAttr('data-message-id');
                     $dm.removeAttr('data-component-context');
                     $dm.removeAttr('data-card-component');
+                    $dm.removeAttr('data-quick-reply-json');
                     $dm.append(
                         $dm.find('.DirectMessage-message .DirectMessage-text p')
                         .removeAttr('class')

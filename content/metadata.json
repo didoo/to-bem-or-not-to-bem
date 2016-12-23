@@ -131,6 +131,24 @@
             "status" : "draft",
             "quote" : "",
             "interviewee": {}
+        },
+        "THE-END": {
+            "nameslug" : "michele__bertoli",
+            "title" : "Interview with Michele Bertoli",
+            "date" : "2016-xx-xx",
+            "status" : "preview",
+            "quote" : "Now that we have components, BEM is not needed anymore. In my opinion, this closes the circle.",
+            "interviewee": {
+                "avatar": "img/michele-bertoli.jpg",
+                "fullname": "Michele Bertoli",
+                "minibio": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium iure molestiae, architecto, voluptate nulla quos nam velit exercitationem nihil, quas sunt incidunt eaque omnis quia distinctio hic, obcaecati nostrum id.",
+                "links": {
+                    "website": "http://michele.berto.li",
+                    "twitter": "https://twitter.com/MicheleBertoli",
+                    "medium": "https://medium.com/@michelebertoli",
+                    "github": "https://github.com/MicheleBertoli"
+                }
+            }
         }
     }
 }
