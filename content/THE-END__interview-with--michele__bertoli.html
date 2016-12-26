@@ -17,12 +17,17 @@ number: "THE-END"
 {% block interview %}
 
 <div class="dialog dialog--question">
+    <p>This is the last interview of the project. For this reason I have invited Michele Bertoli.</p>
+    <p>&quot;Mee-keh-leh&quot;, as he likes to tell at the beginning of his talks &#x2013; is a dear friend of mine, we are from the same city in Italy, Brescia. He&apos;s been a front-end developer for a long time, and for this reason I absolutely trust his opinions and even more his &quot;instinct&quot;; this means that we are quite used to discuss about methodologies, techniques, new ideas and approaches to our work.</p>
+    <p>It was during one of those discussions (we were eating street food for lunch in Hoxton Square) that we ended up debating if BEM was a good choice or not. I was trying to convince him that BEM was not &quot;needed&quot;, that there were other ways to solve the problems it was supposed to solve, while he was explaining me how it made things a lot easier for him and how it was natural to read and understand its syntax after a while.</p>
+    <p>In some way this interview is a follow up to that discussion, and the final thoughts for this project.</p>
+</div>
+<div class="dialog dialog--question">
+    <p>–––––––––––––––––––––</p>
+</div>
+<div class="dialog dialog--question">
     <p>Hello Michele</p>
     <p>Thanks for accepting my invite to close this series of interviews about BEM.</p>
-    <p>For those who don&apos;t know him, Michele &#x2013; pronounced &quot;Mee-keh-leh&quot; as he likes to tell at the beginning of his talks &#x2013; is a dear friend of mine, we are from the same city in Italy, Brescia. He&apos;s been a front-end developer since a long time, and for this reason I absolutely trust his opinions and even more his &quot;instinct&quot;.</p>
-    <p>For the same reason, I love our discussions about methodologies, techniques, new ideas and approaches to our work.</p>
-    <p>And it was during one of those discussions (street food for lunch in Hoxton Square, Iremember?) that we ended up debating if BEM was a good choice or not.</p>
-    <p>I was trying to convince you that BEM was not &quot;needed&quot;, there were other ways to solve the problems it was supposed to solve, while you were explaining me how it made things a lot easier for you and how it was natural read its syntax and understand it after a while.</p>
     <p>Now, I won&apos;t ask you what do you think of that discussion and of BEM in general, I&apos;ll come back to it in a moment.</p>
     <p>Now that you&#x2019;ve become for everyone the reference point for <a href="https://github.com/MicheleBertoli/css-in-js">CSS-in-JS</a>, I would like you to introduce yourself. How do you see yourself today? A front-end developer? A CSS developer? A JavaScript developer? A unicorn? :)</p>
 </div>
@@ -36,11 +41,11 @@ number: "THE-END"
 <div class="dialog dialog--question">
     <p>Wow, I&apos;m absolutely shocked!</p>
     <p>I don&apos;t think I was &quot;right&quot; on BEM, in the sense that I was right in principle, but in the practice of everyday&apos;s life I was wrong (and that&apos;s what is important, that&apos;s the reality of our work). At least this is what my experience in the last year (and this series of interviews) has taught me.</p>
-    <p>OK, let&apos;s talk about BEM then, and this &quot;BEM or not to BEM&quot; thing. I know that you were and eager reader of the interviews, but I never asked you anything about them to avoid spoiling this final interview.</p>
+    <p>OK, let&apos;s talk about BEM then, and this &quot;to BEM or not to BEM&quot; thing. I know that you were an eager reader of the interviews, but I never asked you anything about them to avoid spoiling this final interview.</p>
     <p>What did you get out of them? What are the &quot;lessons&quot; you have learned, the conclusions you think we can take?</p>
 </div>
 <div class="dialog dialog--answer">
-    <p>Let me explain a little bit more :) You were right saying that BEM was the wrong (unneeded?) solution to the problem. On the other hand, It became the de facto standard, and I find myself comfortable every time I approach a codebase that uses it.</p>
+    <p>Let me explain a little bit more :) You were right saying that BEM was the wrong (unneeded?) solution to the problem. On the other hand, it became the de facto standard, and I find myself comfortable every time I approach a codebase that uses it.</p>
     <p>It is widely adopted and (often) well-understood by developers with different skill sets, which is the biggest win of BEM. I loved this series of interviews since the beginning because it is #forreal.</p>
     <!-- <p>In particular, I believe the format is great because it is more than a typical interview with fixed questions, it&apos;s an informal chat with smart people. The discussion flows naturally, and they share their real experiences. You can read the posts multiple times, and you will always find some new tips.</p> -->
     <p>The key points that emerged from almost all the posts, and contributed to change my mind about the topic, are:</p>
@@ -63,54 +68,54 @@ number: "THE-END"
 </div>
 <div class="dialog dialog--question">
     <p>I agree with you, if today I should bet on something it&apos;s CSS Modules :)</p>
-    <p>But getting back to what you just said, if you need webpack or other special tools (in most of the cases) how much the solution is actually influenced by the tooling stack and its evolution? Are you sure we are trying to find &quot;solutions to common problems&quot; or aren&apos;t we just trying to find the strangest way to avoid to write CSS at all, leveraging the fact that our tools are &quot;programmable&quot; and so we can take any syntax or declaration of sort and convert it to CSS in output?</p>
+    <p>But getting back to what you just said, if you need Webpack or other special tools (in most of the cases) how much is the solution actually influenced by the tooling stack and its evolution? Are you sure we are trying to find &quot;solutions to common problems&quot;, or aren&apos;t we just trying to find the strangest way to avoid to write CSS at all, leveraging the fact that our tools are &quot;programmable&quot; and so we can take any syntax or declaration of sort and convert it to CSS in output?</p>
 </div>
 <div class="dialog dialog--answer">
     <p>I understand your point, but I think it has always been like that. Aren&apos;t Sass or Less just tools we use to avoid writing CSS? I can&apos;t see any difference, apart from the fact that the new solutions tend to use JavaScript. CSS have been created to style documents, while we build web applications using components. It seems natural to me that something has to change.</p>
 </div>
 <div class="dialog dialog--question">
-    <p>Well, the evolution from CSS to Less/Sass/Stylus etc. it&apos;s been pretty slick at the end. It&apos;s been a change of syntax and file architecture/organisation, but the core remained the same. While the recent JavaScript-based implementations take the game to a completely new level, are definitely disruptive. And that&apos;s also why are so controversial and generate so much &quot;heat&quot; in the community.</p>
-    <p>And regarding this shift from building web-pages to building web-applications, have you seen <a href="https://twitter.com/sebmarkbage/status/811348741143699457">this tweet</a> by Sebastian Markb&#xE5;ge yesterday?</p>
+    <p>Well, the evolution from CSS to Less/Sass/Stylus etc. has been pretty slick at the end. It&apos;s been a change of syntax and file architecture/organisation, but the core remained the same. While the recent JavaScript-based implementations take the game to a completely new level, they are definitely disruptive. And that&apos;s also why they are so controversial and generate so much &quot;heat&quot; in the community.</p>
+    <p>Also, regarding this shift from building web-pages to building web-applications, have you seen <a href="https://twitter.com/sebmarkbage/status/811348741143699457">this tweet</a> by Sebastian Markb&#xE5;ge yesterday?</p>
     <p>Clearly the web is forking, but do you think the web should &quot;concede defeat&quot; to native applications, like PPK suggested? Because in my experience, even in my daily job, I think is the opposite.</p>
 </div>
 <div class="dialog dialog--answer">
-    <p>Today we are used to pre-processors, but the first time I saw one I thought: what kind of sorcery is this? That&apos;s not real CSS, and you lose control over the bundle? Why should I add a build step to my workflow? Gulp or Grunt? We could split and import partials, create mixins, extend classes. Pre-processors changed completely the way we used to approach CSS, but since they didn&apos;t touch the other &quot;concerns&quot; they have been accepted.</p>
-    <p>Sebastian&apos;s post is awesome, and I agree when he says that the future of the web is &quot;very interesting&quot;. The web is forking, and I couldn&apos;t be more excited. PPK is on point saying that websites are often over-engineered, and they sometimes offer a bad UX (e.g. scroll hijacking) but I don&apos;t believe the web should concede defeat.</p>
-    <p>My personal feeling is that the web has a bright future and when the platform (as a whole) will be good enough, we should rethink the role of native applications instead. I recently attended <a href="https://ldnwebperf.org/events/progressive-web-apps-with-jake-archibald/">a talk by Jack Archibald</a>) that blown my mind about how browsers are evolving and how many possibilities we are going to have in the near future.</p>
+    <p>Today we are used to pre-processors, but the first time I saw one I thought: what kind of sorcery is this? That&apos;s not real CSS, and you lose control over the bundle? Why should I add a build step to my workflow? Gulp or Grunt? We could split and import partials, create mixins, extend classes. Pre-processors completely changed the way we used to approach CSS, but since they didn&apos;t touch the other &quot;concerns&quot; they have been accepted.</p>
+    <p>Sebastian&apos;s post is awesome, and I agree when he says that the future of the web is &quot;very interesting&quot;. The web is forking, and I couldn&apos;t be more excited. PPK is on point saying that websites are often over-engineered, and they sometimes offer a bad UX (e.g. scroll hijacking) but I don&apos;t believe the web should &quot;concede defeat&quot;.</p>
+    <p>My personal feeling is that the web has a bright future and when the platform (as a whole) will be good enough, we should rethink the role of native applications instead. I recently attended <a href="https://ldnwebperf.org/events/progressive-web-apps-with-jake-archibald/">a talk by Jack Archibald</a>) that blew my mind about how browsers are evolving and how many possibilities we are going to have in the near future.</p>
 </div>
 <div class="dialog dialog--question">
-    <p>Mmm, not sure if I agree with you on the first part of your comment, about pre-processors: of course they introduced new methods of writing CSS, but was still the same game at the end. But I want to move on, so probably matter for a new discussion at lunchtime.</p>
+    <p>Mmm, not sure if I agree with you on the first part of your comment, about pre-processors: of course they introduced new methods of writing CSS, but it was still the same game at the end. But I want to move on, so it&apos;s probably matter for a new discussion at lunchtime.</p>
     <p>I want to come back to what you said above about the &quot;experimental solutions&quot;. I totally get the exploration and inspiration and moving the web forward.</p>
     <p>But then these experimental solutions end up in real production code, in real business products. They enter in the &quot;master&quot; codebase of a company, not only in personal side projects.</p>
     <p>And I don&apos;t have problem with that, as soon as a company is aware of the risks and possible downsides of adopting emerging technologies, that sometimes are mastered only by a few bunch of people, if not in some cases by the one developer inside the company that wants to try something new, cool and Modern&#x2122; and doesn&apos;t care (or realise) that then this code will need to be maintained and updated, possibly for a few years to come.</p>
-    <p>Which at the end is what a lot of &quot;old school&quot; developers and ma&#xEE;tre a penser contest: that these approaches and techniques are not sustainable on the long term, are throwaway methodologies that will be replaced by the next cycle of hype.</p>
+    <p>Which at the end is what a lot of &quot;old school&quot; developers and ma&#xEE;tre a penser contest: that these approaches and techniques are not sustainable on the long term, they are throwaway methodologies that will be replaced by the next cycle of hype.</p>
     <p>What do you think?</p>
 </div>
 <div class="dialog dialog--answer">
-    <p>Wow, this is a fascinating topic. I found myself multiple times in the position where I could choose the shiny new technology VS staying safe. I believe that having a high level of seniority :) help with that, but (as you said) it&apos;s always a risky decision for the company.</p>
+    <p>Wow, this is a fascinating topic. I have found myself multiple times in the position where I could choose the shiny new technology VS staying safe. I believe that having a high level of seniority :) helped with that, but (as you said) it&apos;s always a risky decision for the company.</p>
     <p>I guess it also highly depends on the industry. For example, when I used to work in creative agencies on short-term projects (e.g. marketing campaigns) I was asked to choose the latest crazy cool stuff. Then I moved to startups where projects are potentially (and hopefully) long-terms, but you still bet every single day on the future of the product.</p>
-    <p>I firmly believe there should always be a reason for when you invest in experimental solutions, and that reason should not be that someone tweeted about it.</p>
+    <p>I firmly believe there should always be a reason for investing in experimental solutions, and that reason should not be that someone tweeted about it.</p>
     <p>To accurately answer your question, I would like to share my personal experience (which is the essence of this project). At <a href="https://yplanapp.com/">YPlan</a>, my previous company, I was leading the front-end team, and we have been asked to create a &quot;framework&quot; which we could use to build new UIs quickly. We were developing a new Portal for our partners, and we used to work iteratively, doing a lot of user testing.</p>
     <p>For that reason, we wanted to be able to create and destroy interfaces without wasting time and iterate fast. Our primary product was built with React and Sass+BEM. We decided (of course :)) to keep React, but we wanted to take a step further on the componentization and avoid following a naming convention.</p>
     <p>The natural solution was CSS Modules. I believe that moving to CSS Modules doesn&apos;t require to be brave because, with a simple command, you can extract the CSS (tweaking the class names as you wish).</p>
     <p>The &quot;crazy&quot; part was when we decided to try the Atomic CSS. I heard (at FEL) that, with Atomic CSS, you could prototype UIs quickly and that was exactly our goal. On the other hand, we didn&apos;t want to pollute the markup with tens of classes. That&apos;s why we decided to use <a href="https://medium.com/yplan-eng/atomic-css-modules-cb44d5993b27#.3jntjcgpo">CSS Modules to compose our Atomic classes</a> inside the CSS.</p>
     <p>How did we know that was a good solution? How could we make sure we weren&apos;t creating a technical debt? The first step we took has been building a prototype to see if the solution could work and it was flexible enough to cover all the cases. At that point, the most important thing was for everyone in the team to agree. We shared the demo with the rest of the company, and people was impressed with the speed in which we could create and destroy interfaces (keeping the size of the CSS under control).</p>
-    <p>When everyone is on board, the second thing I learned is to fail fast. Go and build the most sophisticated interface and see how it goes, don&apos;t wait for the experimental solution to polluting your codebase. Timeout has now acquired the startup and lot of new developers are going to work on the codebase.</p>
+    <p>When everyone is on board, the second thing I learned is to fail fast. Go and build the most sophisticated interface and see how it goes, don&apos;t wait for the experimental solution to pollute your codebase. Timeout has now acquired the startup and lot of new developers are going to work on the codebase.</p>
     <p>My ex-colleague <a href="https://twitter.com/elmotta">Lucas</a> had to do the handover but since we documented all the decisions with blog posts and presentations he didn&apos;t have any problems.</p>
-    <p>To recap, the key points are: - bet on experimental solutions only if they solve a real problem - get everyone on board and document your decisions - fail fast and prepare a backup plan It worked very well for us :)</p>
+    <p>To recap, the key points are: - bet on experimental solutions only if they solve a real problem - get everyone on board and document your decisions - fail fast and prepare a backup plan. It worked very well for us :)</p>
 </div>
 <div class="dialog dialog--question">
-    <p>Now, let me do the devil&apos;s advocate here, because you were too good in your answer (probably because it&apos;s Christmas).</p>
+    <p>Now, let me be the devil&apos;s advocate here, because you were too good in your answer (probably because it&apos;s Christmas).</p>
     <p>Recently I have started to ask myself if all this &quot;code quality&quot;, and clean codebase, and refactoring to reduce the technical debt are just myths, or illusions.</p>
     <p>What I have seen are two kind of projects: those that once created and deployed are left there untouched forever, and those that are then maintained day by day, month by month, accumulating workarounds and patches and &quot;we&apos;ll fix later&quot;, and a whole team dreaming of a future moment in which there will be time to do things properly.</p>
-    <p>But this time never comes because the company collapses (see VisualDNA), gets acquired (see Yplan) or decides to completely re-design the product and at that point the old codebase is simply ditched and a new clean &quot;master&quot; branch sees the light, just to end up in the same situation a few months later.</p>
+    <p>But this time never comes because the company collapses (see VisualDNA), gets acquired (see Yplan) or decides to completely re-design the product, and at that point the old codebase is simply ditched and a new clean &quot;master&quot; branch sees the light, just to end up in the same situation a few months later.</p>
     <p>So all this principles of maintainability, future-proof code, technical choices that can span years of lifecycle of a product, are just a gimmick.</p>
     <p>At the end if our code is throwaway, why should we bother to write clean code, to fight against the technical debt, to imagine architectures and introduce methodologies and care about the code?</p>
     <p>Why in that sense Sass+BEM is a better choice compared to CSSinJS, if both are destined to never be touched again or be replaced in a few months? (I remember reading somewhere that typically there is a complete redesign/refactoring of a project every 12-16 months, and that resonates a lot with my experience)</p>
 </div>
 <div class="dialog dialog--answer">
     <p>I can confirm I&apos;ve only seen those two types of projects in my career, too. I always thought I would find the long-lived well-architectured codebase sooner or later. Maybe in my next experience :)</p>
-    <p>However, to me, the technical debt doesn&apos;t only apply to the long terms (years). How quickly it is to change the code you wrote this morning? That&apos;s why, for example, I prefer to use a tool like CSS Modules that scopes the class names for me rather than a methodology, such as BEM, that makes me overthink and spend time on non-so-important things.</p>
+    <p>However, to me, the technical debt doesn&apos;t only apply to the long term (years). How quick is it to change the code you wrote this morning? That&apos;s why, for example, I prefer to use a tool like CSS Modules that scopes the class names for me rather than a methodology, such as BEM, that makes me overthink and spend time on non-so-important things.</p>
     <p>I like to focus on building features and creating value for the users; that&apos;s it. My goal is writing code that is easy to delete.</p>
 </div>
 <div class="dialog dialog--question">
