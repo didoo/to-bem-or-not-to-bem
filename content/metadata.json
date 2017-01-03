@@ -125,12 +125,21 @@
             }
         },
         "08": {
-            "nameslug" : "mark__dalgleish",
-            "title" : "",
+            "nameslug" : "jof__arnold",
+            "title" : "Interview with Jof Arnold",
             "date" : "2016-xx-xx",
-            "status" : "draft",
-            "quote" : "",
-            "interviewee": {}
+            "status" : "public",
+            "quote" : "BEM definitely promotes more CSS. We've moved away from it for that reason.",
+            "interviewee": {
+                "avatar": "img/jof-arnold.jpg",
+                "fullname": "Jof Arnold",
+                "minibio": "Entrepreneur and engineer. Nuclear robotics and Russian spacecrafts, then motorsport cars and fuel injection systems. Co-founder of multiple internet startups.",
+                "links": {
+                    "website": "http://www.jofarnold.com/",
+                    "twitter": "https://twitter.com/JofArnold",
+                    "github": "https://github.com/JofArnold"
+                }
+            }
         }
     }
 }
