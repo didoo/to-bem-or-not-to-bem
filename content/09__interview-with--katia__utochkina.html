@@ -1,0 +1,43 @@
+---
+number: "09"
+---
+
+{% extends "../templates/pages/interview.html" %}
+
+{% block biography %}
+
+<p>Software engineer in the making, drawn into coding over a year ago after the completion of a selective course on front-end development.</p>
+<p>Passionate about making websites, attending tech meetups and codebars, she says to be only happy when her hands are on the keyboard.</p>
+<!-- <p>Recently in love with CSS, JavaScript and Python</p> -->
+<p>Seeking an opportunity to develop her skills in software engineering with a company that cares passionately about developing clean and tested code and values curiosity and zeal.</p>
+
+{% endblock %}
+
+{% block interview %}
+
+<div class="dialog dialog--question">
+    <p>You told me that you are using BEM. There are many CSS methodologies out there (BEM, OOCSS, SMACSS, ITCSS, ECSS just to name the most famous ones). Why BEM? And where did you hear about it in the first time, do you remember?</p>
+</div>
+<div class="dialog dialog--answer">
+    <p>I learnt about BEM from a <a href="https://codebar.io/">Codebar</a> coach last summer. Ever since, I’ve been using the technique in every project. I think BEM is easy to pickup. It is very logical. It also allows for better code readability  -- you can easily see the relationships between bits of code and the styles applied to them. I use the technique wherever possible. I believe it helps keep my CSS and HTML consistent and logical.</p>
+</div>
+<div class="dialog dialog--question">
+    <p>But since that first "lesson", did you also looked for other resources where to learn more about BEM? And in that case which ones?</p>
+    <p>Also, which version of the BEM syntax are you using? The original Yandex one (<code>B__E_M</code>) or the most common "Harry Roberts" version (<code>B__E--M</code>)?</p>
+</div>
+<div class="dialog dialog--answer">
+    <p>My go-to resources for learning the technique have been CSS Trick's BEM 101 and Harry Roberts' introduction to BEM.</p>
+    <p>I'm using the Harry Robert's version of the syntax. To me, a double hyphen gives a cleaner separation, and I can instantly see the modifier.</p>
+</div>
+<div class="dialog dialog--question">
+    <p>Is there something of BEM that you've found difficult to understand or to grasp, while you were using it? The last time we met, looking together at the code of <a href="http://iheartcoding.herokuapp.com">your new personal blog</a> I saw you had some doubts about the definition of what is a "block" and how to identify its child "elements". Do you think this part is taken too much for granted, while it should be explained or communicated more clearly?</p>
+</div>
+<div class="dialog dialog--answer">
+</div>
+
+<div class="dialog dialog--question">
+</div>
+<div class="dialog dialog--answer">
+</div>
+
+{% endblock %}
