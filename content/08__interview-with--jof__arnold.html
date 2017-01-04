@@ -6,7 +6,9 @@ number: "08"
 
 {% block biography %}
 
-<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio adipisci quidem, sapiente molestiae laborum dolore, est aspernatur a, porro dignissimos delectus aut enim sequi facere iure quasi iusto, id totam.</p>
+<p>Jof is a frontend developer, Y Combinator alumnus and one of the humans at BOTS.sh.</p>
+<p>Previously into nuclear robotics and Russian spacecrafts, then motorsport cars and fuel injection systems.</p>
+<p>When not at his desk he can be found on his bike or staring at art.</p>
 
 {% endblock %}
 
@@ -15,7 +17,7 @@ number: "08"
 <div class="dialog dialog--question">
     <p>Hi Jof</p>
     <p>Thank you for accepting to share your experiences and opinions about BEM.</p>
-    <p>Let's start from you: <a href="http://jofarnold.com/">in your website I read</a> that you are an entrepreneur and an engineer. Nuclear robotics and Russian spacecrafts, then motorsport cars and fuel injection systems, and now you are at your umpteenth internet startup called <a href="https://bots.sh/">BOTS</a>, an online web service automation IDE. But at the same time you are a software/front-end developer, a designer and a speaker too. Can you tell me briefly about you? Do you still get your hands dirty, with HTML/JS/CSS or you're more in a leading role?</p>
+    <p>Let's start from you: <a href="http://jofarnold.com/">in your website I read</a> that you are an entrepreneur and an engineer. Nuclear robotics and Russian spacecrafts, then motorsport cars and fuel injection systems, and now you are at your umpteenth internet startup. But at the same time you are a software/front-end developer, a designer and a speaker too. Can you tell me briefly about you? Do you still get your hands dirty, with HTML/JS/CSS or you're more in a leading role?</p>
 </div>
 <div class="dialog dialog--answer">
     <p>As you say I've been involved with quite a lot of different things over the years, but since about 2006 it's been coding all the way. That said, it's really only in the last 4 or 5 - since we did our YC startup - that I've started doing web app development full time.</p>
@@ -28,7 +30,7 @@ number: "08"
 </div>
 <div class="dialog dialog--answer">
     <p>As I mention, we use React and a key concept in building React apps is breaking down the app into small stateless components. We saw an opportunity to improve maintainability by breaking the SCSS into one file per component. Within each file we used a modified BEM naming scheme with underscores and titlecase. For instance a component called <code>MyButton</code> might contain block classes such as <code>MyButton_label</code> and <code>MyButton_icon</code>. In order to specify the button be blue or red or whatever we'd send through a prop like <code>'theme="primary"'</code> which would then be rendered as, for instance, the class <code>MyButton_label__primary</code>.</p>
-    <p>By namespacing it to the component like we can be fairly sure it won't be overriden - at least by accident. We can reuse the component and expect it to look the same everywhere (provided we have no globs styles, use rems etc). Like with all BEM, however, the naming scheme is only a contract; if someone insists on overrding the scoping with something like <code>.MyWrapper .MyButton_label {color: red}</code> then there's not much you can do about it apart from code review.</p>
+    <p>By namespacing it to the component like we can be fairly sure it won't be overriden - at least by accident. We can reuse the component and expect it to look the same everywhere (provided we have no globs styles, use rems etc). Like with all BEM, however, the naming scheme is only a contract; if someone insists on overriding the scoping with something like <code>.MyWrapper .MyButton_label {color: red}</code> then there's not much you can do about it apart from code review.</p>
     <p>Now the question comes; how do you give that button its height, color and hover transitions? Likely you'll probably use a global SCSS constant or mixin, but that's where the problems start. Rather than having generic classes you can apply to any component that needs it you're now outputting those lines everywhere the mixin is used; i.e. you start to add extra CSS into the compiled assets which wouldn't have been the case if you were composing within the class name such as <code>class="title primary float-left clear-both fast-hover"</code> etc. Worse still, your build tools don't know if that CSS is ever used so it'll shove it in the compiled assets regardless.</p>
     <p>For us, all this mixin and constants abuse caused our compiled CSS to balloo to over 10,000 queries. Not only does this cause a performance hit loading and rendering the document but also older versions of IE can't even parse that many queries from one file. Furthermore, we found it too easy to violate the contract of "don't use parent component selectors to override those of their children" (as per the example with <code>MyWrapper</code> above) which created a huge ball of CSS spaghetti.</p>
     <p>The solution was to move to CSS Modules with PostCSS and SCSS, using a mix of composing within the SCSS files themselves (usually for things like hover effects and transitions) and importing styles (usually for theming - e.g. colors) into the JS file (for example, like in <a href="https://github.com/javivelasco/react-css-themr">react-css-themr</a>). The build tools then chain all the class names together for you. In addition to solving the above problems it vastly improve compile and hot reload times since the build system only has to modify a very small part of the code.</p>
@@ -56,6 +58,7 @@ number: "08"
 &lt;/Title&gt;
 </pre>
     <p>Where the style is within the Title component and the children (i.e. `My Title`) inherit those properties such as font-weight, font-size etc. This could be a very long discussion - especially as our approach is a bit odd/specific and possibly not useful generically - so instead I'll just point you to <a href="https://github.com/styled-components/styled-components">Styled Components</a> and <a href="https://github.com/javivelasco/react-css-themr">react-css-themr</a> so you can explore further.</p>
+</div>
 <div class="dialog dialog--question">
     <p>Yes, I see your point and I totally get the benefits of using CSS Modules (this morning I was looking at the slides of the talk that Josh Johnston presented at CSS Conf AU this year, <a href="https://github.com/joshwnj/6-ways-to-win">At Least 6 Ways to Win with CSS Modules</a>, and clearly there are big wins there). But I can't stop thinking that when in a project you end up with "15,000 LOC style file and 7,000+ selectors", as you experienced first hand, there is no technology or methodology that can protect you: this is a developers' "failure" (no offence intended, I imagine I've been one of these developers in my career).</p>
     <p>Also, how much of this neatness of CSS Modules is due to the fact that the developers using it are somehow very "zen" in their coding, naturally? Being early adopters probably means also that they put a lot of care and thinking in "how to do it properly". Don't you think that the early adopters of BEM achieved the same neatness and cleanness, and then things simply evolved and becoming mainstream reached developers less "zen" in their approach (and in some cases went out of hand, clearly)? Don't you think that when CSS Modules will become mainstream, you'll see the same distortions and bad practices as above?</p>
@@ -80,8 +83,15 @@ number: "08"
 </div>
 <div class="dialog dialog--question">
     <p>Well, very good response too!</p>
-    <p>That's it. Thank Jof for your time and for sharing your thoughts about BEM and the future of CSS development. And good luck for your new startup project, as soon as you can reveal more details I won't miss to share and tweet about it ;)</p>
+    <p>That's it. Thank Jof for your time and for sharing your thoughts about BEM and the future of CSS development.</p>
+    <p>And good luck for your new startup project, <a href="https://bots.sh/">BOTS</a>. Can you tell us a little about it, and when we will be able to try it?</p>
 </div>
+<div class="dialog dialog--answer">
+    <p>Thanks :)</p>
+    <p><a href="https://bots.sh/">BOTS</a> is an IDE for building, deploying, iterating and maintaining time-saving web services automations. It is developer-focussed with tools such as a data browser, persisted variables and replay debugging. You can use it to rapidly build things like automated GitHub flows; uptime monitoring and autoscaling; authenticated Slack commands; weekly metrics email and much more.</p>
+    <p>We're looking for more Alpha users now, so do register your interest at <a href="https://bots.sh/">bots.sh</a> or @ me <a href="https://twitter.com/JofArnold">@jofarnold</a>. Say that Cristiano sent you ;)</p>
+</div>
+
 
 
 {% endblock %}
