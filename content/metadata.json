@@ -124,6 +124,23 @@
                 }
             }
         },
+        "08": {
+            "nameslug" : "jof__arnold",
+            "title" : "Interview with Jof Arnold",
+            "date" : "2016-xx-xx",
+            "status" : "public",
+            "quote" : "BEM definitely promotes more CSS. We've moved away from it for that reason.",
+            "interviewee": {
+                "avatar": "img/jof-arnold.jpg",
+                "fullname": "Jof Arnold",
+                "minibio": "Frontend developer, Y Combinator alumnus and one of the humans at BOTS.sh. When not at his desk he can be found on his bike or staring at art.",
+                "links": {
+                    "website": "http://www.jofarnold.com/",
+                    "twitter": "https://twitter.com/JofArnold",
+                    "github": "https://github.com/JofArnold"
+                }
+            }
+        },
         "09": {
             "nameslug" : "katia__utochkina",
             "title" : "Interview with Katia Utochkina",
