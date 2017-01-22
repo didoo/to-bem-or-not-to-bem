@@ -146,11 +146,11 @@
             "title" : "Interview with Katia Utochkina",
             "date" : "2016-xx-xx",
             "status" : "public",
-            "quote" : "I think BEM is easy to pickup. It is very logical. It also allows for better code readability. I believe it helps keep my CSS and HTML consistent and logical.",
+            "quote" : "I think BEM is easy to pick up. It is very logical. It also allows for better code readability. I think it makes my code more consistent and logical.",
             "interviewee": {
                 "avatar": "img/katia-utochkina.jpg",
                 "fullname": "Katia Utochkina",
-                "minibio": "A budding software engineer, recently converted to a programming career from a journalism background. Keen Codebar student. In love with CSS, JavaScript and Python.",
+                "minibio": "A budding software engineer, recently converted to a programming career from a journalism background. Codebar student. In love with HTML/CSS, JavaScript and Python.",
                 "links": {
                     "website": "https://katia-utochkina.github.io/",
                     "blog": "http://iheartcoding.herokuapp.com/",
