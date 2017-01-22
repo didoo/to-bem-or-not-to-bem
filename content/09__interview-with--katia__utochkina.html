@@ -1,0 +1,70 @@
+---
+number: "09"
+---
+
+{% extends "../templates/pages/interview.html" %}
+
+{% block biography %}
+
+<p>A former journalist with a keen interest in tech.</p>
+<p>After working in the news media, developed a fondness for coding.</p>
+<p>Now constantly looking for excuses to improve her tech skills.</p>
+<p>Her experiments and tinkerings have been in HTML/CSS, JavaScript and Python.</p>
+<p>She is now looking for her first tech role.</p>
+
+{% endblock %}
+
+{% block interview %}
+
+<div class="dialog dialog--question">
+    <p>Hi Katia</p>
+    <p>Thank you for accepting my invite. So let’s start from you, tell us more about how and why you decided to move your first steps in the front-end and software development.</p>
+</div>
+<div class="dialog dialog--answer">
+    <p>I took a <a href="http://www.codefirstgirls.org.uk/">Code First: Girls</a> course that I absolutely loved. It got me interested in coding. One thing led to another, and before long, I decided to change careers. My background is in journalism, so, it was like slightly jumping into the fire. But I haven’t regretted it. I think web development is a fascinating field and a meaningful career path.</p>
+</div>
+<div class="dialog dialog--question">
+    <p>You told me that you are using BEM. There are many CSS methodologies out there (BEM, OOCSS, SMACSS, ITCSS, ECSS just to name the most famous ones). Why BEM? And where did you hear about it in the first time, do you remember?</p>
+</div>
+<div class="dialog dialog--answer">
+    <p>I learnt about BEM from a <a href="https://codebar.io/">Codebar</a> coach last summer. And I’ve been using it ever since. I think BEM is easy to pick up. It is very logical. It also allows for better code readability. You can easily see the relationships between bits of code and the styles applied to them. I use the technique where possible. I think it makes my code more consistent and logical.</p>
+</div>
+<div class="dialog dialog--question">
+    <p>But since that first "lesson", did you also look for other resources where to learn more about BEM? And in that case which ones?</p>
+    <p>Also, which version of the BEM syntax are you using? The original Yandex one (<code>B__E_M</code>) or the most common "Harry Roberts" version (<code>B__E--M</code>)?</p>
+</div>
+<div class="dialog dialog--answer">
+    <p>Of course, I did some research. I went through several tutorials, including <a href="https://css-tricks.com/bem-101/">CSS Trick's BEM 101</a> and <a href="http://csswizardry.com/2013/01/mindbemding-getting-your-head-round-bem-syntax/">Harry Roberts' introduction to BEM</a>.</p>
+    <p>I prefer using the Harry Robert's version of the syntax. I think it is easier and faster to read.</p>
+</div>
+<div class="dialog dialog--question">
+    <p>Is there something of BEM that you've found difficult to understand or to grasp, while you were using it? The last time we met, looking together at the code of <a href="http://iheartcoding.herokuapp.com">your new personal blog</a> I saw you had some doubts about the definition of what is a "block" and how to identify its child "elements". Do you think this part is taken too much for granted, while it should be explained or communicated more clearly?</p>
+</div>
+<div class="dialog dialog--answer">
+    <p>It probably is taken too much for granted. BEM is all about independent blocks. Learning to see those in a web project is a skill, and it may take time to develop it. Once you get comfortable with it, structuring CSS and HTML gets easier. This has been my main takeaway from using BEM in my projects. Another lesson has been the importance of thinking sharp and crisp about naming CSS classes. This is something that also takes time to develop.</p>
+</div>
+<div class="dialog dialog--question">
+    <p>My suggestion is to look at other projects that use BEM, see how other people have implemented their frameworks, look into their codebases to understand how they used the naming conventions and broke down the UI in modules of blocks and elements. Then compare it with your implementation, and see where you can improve.</p>
+    <p>You've learned BEM. What will be the next technology, methodology or tool on your list of new things to learn?</p>
+</div>
+<div class="dialog dialog--answer">
+    <p><a href="https://d3js.org/">D3</a> is certainly an area that sparks my interest. I’m currently working on a D3 project and hope to have it polished well enough to show it very soon. I'm also pretty fascinated with React, a JavaScript library I’ve just started exploring. </p>
+</div>
+<div class="dialog dialog--question">
+    <p>You have started to code a little over one year ago, right? Being a junior developer, a newcomer in this industry, what are your impressions?</p>
+</div>
+<div class="dialog dialog--answer">
+    <p>I’m totally fascinated by the industry. You get to meet people whose paths you may never have crossed otherwise. The last 12 months have introduced me to some amazing developers. They have influenced and inspired me in many ways. A few of these people are now my mentors. Having them by my side has been invaluable. I’ve learnt a ton of new things, and for that I’m very grateful. I think my coding experience would have been nowhere near as rewarding without them.</p>
+</div>
+<div class="dialog dialog--question">
+    <p>You told me you were trying to get your first tech role. What are your impressions and what have you found most difficult, up to now, in your career as a new software engineer?</p>
+</div>
+<div class="dialog dialog--answer">
+    <p>I guess the trickiest part has been the list of things to master. It is endless and not easy to pick up. But I’ve enjoyed learning to code and will continue putting my time and heart into it. As for finding my place in the industry, my journey has included no shortage of hard work. And I’m sure there will be a way for me to put what I've learned to good use. I’m excited to see what the next chapter brings.</p>
+</div>
+<div class="dialog dialog--question">
+    <p>Well, I can't help help thinking about <a href="http://iheartcoding.herokuapp.com/motto/">your motto</a> in this case: <em>“Always keep Ithaca in your mind. To arrive there is your ultimate goal. But do not hurry the voyage at all. It is better to let it last for many years; and to anchor at the island when you are old, rich with all you have gained on the way, not expecting that Ithaca will offer you riches. Ithaca has given you the beautiful voyage. Without her you would have never set out on the road.”</em></p>
+    <p>Have a good, long, happy journey Katia. I'm sure you will find the first of your harbors in your career very soon.</p>
+</div>
+
+{% endblock %}
