@@ -1,0 +1,87 @@
+---
+number: "10"
+---
+
+{% extends "../templates/pages/interview.html" %}
+
+{% block biography %}
+
+<p>Mark is a self-described JavaScript addict, lead organiser of <a href="http://melbjs.com/">MelbJS</a>, and co-creator of <a href="https://github.com/css-modules/css-modules">CSS Modules</a>.</p>
+<p>In love with open source and software engineering, but always as a means to creating elegant, usable experiences.</p>
+<p>Today, he works as a DesignOps Lead at SEEK, the most popular job site in Australia.</p>
+
+{% endblock %}
+
+{% block interview %}
+
+<div class="dialog dialog--question">
+    <p>Hello Mark</p>
+    <p>thank you so much for accepting my invitation.</p>
+    <p>This interview somehow started months ago, when I approached you at Front Trends in Warsaw, to ask you more on what you just told <a href="https://www.youtube.com/watch?v=KmtgJ1d4zuY">in your talk about CSS Modules and CSS in JS</a>: that in the era of web components, and in your daily work, BEM was not required anymore. Now it&apos;s clear to me why, but at the time it was something that suprised me a lot.</p>
+    <p>Since then I always wanted to get back in touch and continue the conversation, but I was unsure: I imagined you were super-busy, so every time I postponed to later in time.</p>
+    <p>But this evening I saw <a href="https://twitter.com/markdalgleish/status/819289589911146496">one of your tweets</a>, that made me extremely curious:</p>
+    <pre>&#x201C;Too often we create linear histories of new approaches replacing old ones, ignoring context, tradeoffs and valid alternatives.&#x201D;</pre>
+    <p>I think I have intended it correctly, but can you explain a little bit more what you mean, what you are referring to?</p>
+</div>
+<div class="dialog dialog--answer">
+    <p>I first want to stress that I&apos;m as guilty as anyone when it comes to creating &quot;linear histories&quot;. It&apos;s human nature for us to, after the fact, form a coherent narrative out of chaos, which is definitely what we&apos;re seeing with open source technology.</p>
+    <p>Sometimes we have an explosion of new ideas, but eventually the community settles on only a small number of them. Particularly amongst the broader community of those who aren&apos;t close to the technology, we want to know who the &quot;winner&quot; is, so we compress this timeline further into a highlights reel of sorts.</p>
+    <p>This process is especially tempting because it makes for great blog posts and presentations, but at the cost of deep historical accuracy. All the valid reasons why someone would pick an alternative approach, or hold off on migrating to the latest technology, are conveniently left out.</p>
+    <p>If you&apos;re experienced enough in the domain in question, you have the context to understand what&apos;s been left out and why, but everyone else is presented with an overly simplified overview of the space.</p>
+    <p>Ultimately, though, my tweet was as much a reminder to myself to try to avoid falling into this trap, but that&apos;s a very hard thing to do. Like most people, it&apos;s most likely that I&apos;ll continue doing this, but it&apos;s definitely worth thinking about.</p>
+</div>
+<div class="dialog dialog--question">
+    <p>I imagine you are referring (not only, of course, but firstly) to the recent war of words around CSS in JS and in general the questioning of the &quot;separation of concerns&quot; paradigm.</p>
+    <p>One of the latest episodes I have seen <a href="https://twitter.com/mholzschlag/status/820703602096283648">is this twitter thread</a>, just to give an example: you clearly see two parts, two factions, and probably both parts have good reasons, but we tend to see only where the others are wrong.</p>
+    <p>That&apos;s why I started this project, to show how different people was using (or not using) BEM, how each one was interpreting the &quot;strict rules&quot; of BEM in their own way, adapting and sometimes bending them to their own needs.</p>
+    <p>And that&apos;s ok! As soon as the tools, methodologies, approaches you use can take you to the results you wanted to achieve, it&apos;s totally fine.</p>
+</div>
+<div class="dialog dialog--answer">
+    <p>I think people often reject these new ideas so strongly because they feel like they&apos;re being left behind in the linear view of history.</p>
+    <p>Or, at least, that&apos;s what they feel they&apos;ve been told.</p>
+    <p>Our industry isn&apos;t very good at saying &quot;for your particular use case, what you&apos;re doing is totally fine&quot;, both in terms of our own work, and the work of others.</p>
+</div>
+<div class="dialog dialog--question">
+    <p>100% agree, I could not say it better!</p>
+    <p>In your talk at Front Trends I remember your slide saying <a href="https://markdalgleish.github.io/presentation-first-class-styles/#11">&#x201C;Documents vs. Web Apps&#x201D;</a></p>
+    <p>I used to think that this was the reason, that at the end the two &quot;world&quot; would simply end up living together, coexisting on the same medium in two different format, as you were saying.</p>
+    <p>But recently, also thanks to your tweets, I started to think that maybe it&apos;s not so simple, it&apos;s again a &quot;linear&quot; way of thinking of me.</p>
+    <p>And so I started to think that maybe what is happening is that the world of the CSS development is undergoing a transformation that the JS world has seen a few years ago.</p>
+    <p>Do you remember a few years ago when JS was not even considered a programming language, those using it not real programmers? And then the world of JS development was completely transformed by the appearance of web-based applications?</p>
+    <p>JS became a professional language, with its own dignity and business relevance.</p>
+    <p>And &quot;standard&quot; patterns and architectures started to appear, and developers somehow stopped to fight one against the other for the &quot;best&quot; JS framework to use.</p>
+    <p>Well, maybe that&apos;s what is happening to CSS too. Nowadays you have &#x201C;CSS developer&#x201D; as a specific role in a team (like me, for example). As a community we have started to discuss of CSS Architectures and how to use CSS in the specific context of web applications.</p>
+    <p>So maybe we are simply a too young community in that sense and we never had the necessary discussion about who we are and what we do.</p>
+    <p>What do you think? A too naive explanation?</p>
+</div>
+<div class="dialog dialog--answer">
+    <p>It&apos;s interesting. I think once you&apos;re accustomed to the component mindset, scoping CSS to smaller parts of your page, you find yourself wanting to use these patterns everywhere, not just on complex sites. If I&apos;m writing a web document, I&apos;d much prefer to build up my own language with components. I think that given enough time, more of the web community will adjust, and the tooling will naturally adjust too.</p>
+    <p>Right now, though, there isn&apos;t much in the way of component-oriented tooling for simpler sites, but we&apos;re seeing movement in the space with projects like <a href="https://github.com/gatsbyjs/gatsby">Gatsby</a> that bring the world of components to static sites. Long term, I can see approaches like this becoming the norm.</p>
+</div>
+<div class="dialog dialog--question">
+    <p>Now, getting back to BEM: one of the main positive features of it, is that <a href="./09__interview-with--katia__utochkina.html">is very easy to pick up</a> as Katia Utochkina told me in her recent interview, as others before her.</p>
+    <p>It&apos;s very easy to explain, to understand (at least in its basic implementation) and to start to use it, especially if you are a young developer like her.</p>
+    <p>In your talk at Front Trends, <a href="https://markdalgleish.github.io/presentation-first-class-styles/#107">you mentioned</a> &#x201C;Increased authoring speed, less fear of change, maintainable by default, faster debugging&#x201D; as main features of <a href="https://github.com/css-modules/css-modules">CSS Modules</a>.</p>
+    <p>Now, what is your experience (if you had one, or know of) with the onboarding of junior developers in a team that uses CSS Modules, CSS-in-JS or Atomic CSS? How is the learning curve in this case? Can it be an obstacle in a wider adoption of these techniques?</p>
+</div>
+<div class="dialog dialog--answer">
+    <p>One of the most exciting things about CSS Modules for me is that it takes the principles behind BEM, but makes it look and feel like regular global CSS.</p>
+    <p>When you look at it from a junior developer&apos;s perspective, it is completely familiar to them. The only difference is that they need to import their classes into a template, which isn&apos;t hard to teach at all.</p>
+    <p>The biggest issue is that it requires more advanced tooling to provide this workflow, but assuming you have the right expertise in your team to set this up, your less experienced developers should have no issues working in this environment.</p>
+    <p>Automating best practices like this might seem like merely a convenience layer for experienced BEM developers, but I think that its real value is the way that it enforces a more maintainable structure on your less experienced team members without them even realising it.</p>
+</div>
+<div class="dialog dialog--question">
+    <p>My next question was exactly on the &quot;problem&quot; of tooling :)</p>
+    <p>The dream of every front-end developer it&apos;s always been to be able to work so tightly with the designers to the point that they can work directly on the CSS, make changes autonomously to the code, and push the changes in production without the intervention of a developer.</p>
+    <p>But the layer of &#x201C;tools&#x201D; required to work on a codebase seems to cut out the designers from this process (you will certainly remember the &#x201C;Designers should code&#x201D; argument).</p>
+    <p>Recently the rise of the &#x201C;design tokens&#x201D; has opened new ways for the designers to intervene on the code, but it&apos;s not the same thing as writing some HTML or CSS, and is typically a solution for large projects.</p>
+    <p>On the other hand, I have seen <a href="https://twitter.com/markdalgleish/status/821533267220262912">your tweet</a> recently in which you were explaining how the PRs to a style guide automatically were deploying a preview of a static site for testing.</p>
+    <p>This blew my mind and sparked my imagination about what actually a designer can do with the right amount of tools and automation.</p>
+    <p>I have seen you're DesignOps Lead in <a href="https://www.seek.com.au/">SEEK</a>, so you <a href="https://medium.com/salesforce-ux/introducing-design-systems-ops-7f34c4561ba7#.ov1sdi1o1">build bridges</a> between the designers and the engineers.</p>
+    <p>What is your experience with the designers you work with? Do they interact with the code too, or do they work only with more traditional tools like Sketch (of course, with a modular/atomic approach) and then it&apos;s up to you convert these visual components in actual code?</p>
+</div>
+<div class="dialog dialog--answer">
+    [to be continued]
+</div>
+
+{% endblock %}

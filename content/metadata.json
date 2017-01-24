@@ -157,6 +157,23 @@
                     "github": "https://github.com/katia-utochkina"
                 }
             }
+        },
+        "10": {
+            "nameslug" : "mark__dalgleish",
+            "title" : "Interview with Mark Dalgleish",
+            "date" : "2016-xx-xx",
+            "status" : "public",
+            "quote" : "One of the most exciting things about CSS Modules for me is that it takes the principles behind BEM, but makes it look and feel like regular global CSS.",
+            "interviewee": {
+                "avatar": "img/mark-dalgleish.jpg",
+                "fullname": "Mark Dalgleish",
+                "minibio": "CSS Modules co-creator, MelbJS organiser. Full-stack ECMAScript addict, interaction craftsman + coffee drinker. DesignOps Lead at SEEK.",
+                "links": {
+                    "website": "http://markdalgleish.com/",
+                    "twitter": "https://twitter.com/markdalgleish",
+                    "github": "https://github.com/markdalgleish"
+                }
+            }
         }
     }
 }
