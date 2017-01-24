@@ -4,8 +4,8 @@
 {% set head_meta_social = {
     'title': interview.title + ' -- ' + project.title,
     'description': '“' + interview.quote + '”',
-    'image': project.basepath + '/img/social-card-' + number + '.png',
-    'url': project.basepath + '/' + number + '__interview-with--' + interview.nameslug + '.html'
+    'image': project.basepath + '/img/social-card-' + interview.id + '.png',
+    'url': project.basepath + '/' + interview.id + '__interview-with--' + interview.nameslug + '.html'
 } %}
 
 {% extends "../base.html" %}
@@ -15,7 +15,7 @@
 
     {% if interview.status == 'public' or interview.status == 'preview' %}
         <aside class="interview__intro">
-            <span class="interview__number">#{{ number }}</span>
+            <span class="interview__number">#{{ interview.id }}</span>
             <h2 class="interview__title">{{ interview.nameslug }}</h2>
             <div class="interviewee">
                 <img class="interviewee__avatar" src="{{ interview.interviewee.avatar }}" alt="{{ interview.interviewee.fullname }}">
