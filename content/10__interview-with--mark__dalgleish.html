@@ -77,11 +77,31 @@ number: 9
     <p>Recently the rise of the &#x201C;design tokens&#x201D; has opened new ways for the designers to intervene on the code, but it&apos;s not the same thing as writing some HTML or CSS, and is typically a solution for large projects.</p>
     <p>On the other hand, I have seen <a href="https://twitter.com/markdalgleish/status/821533267220262912">your tweet</a> recently in which you were explaining how the PRs to a style guide automatically were deploying a preview of a static site for testing.</p>
     <p>This blew my mind and sparked my imagination about what actually a designer can do with the right amount of tools and automation.</p>
-    <p>I have seen you're DesignOps Lead in <a href="https://www.seek.com.au/">SEEK</a>, so you <a href="https://medium.com/salesforce-ux/introducing-design-systems-ops-7f34c4561ba7#.ov1sdi1o1">build bridges</a> between the designers and the engineers.</p>
+    <p>I have seen you&apos;re DesignOps Lead in <a href="https://www.seek.com.au/">SEEK</a>, so you <a href="https://medium.com/salesforce-ux/introducing-design-systems-ops-7f34c4561ba7#.ov1sdi1o1">build bridges</a> between the designers and the engineers.</p>
     <p>What is your experience with the designers you work with? Do they interact with the code too, or do they work only with more traditional tools like Sketch (of course, with a modular/atomic approach) and then it&apos;s up to you convert these visual components in actual code?</p>
 </div>
 <div class="dialog dialog--answer">
-    [to be continued]
+    <p>Exactly. I think we&apos;re seeing an interesting convergence towards components for both developers and designers. With CSS methodologies like BEM and UI libraries like React, we&apos;re thinking very carefully about breaking our interfaces down into reusable pieces.</p>
+    <p>To a lesser degree, we&apos;re also seeing UI-specific design tools like Sketch pushing designers towards reusable symbols, solving the exact same problem that we face as developers.</p>
+    <p>There&apos;s a real opportunity here for engineering to be embedded with designers, creating living design systems that take the designers&apos; concepts and accurately map them into technology that&apos;s readily usable by product teams.</p>
+    <p>In my case, my job is to get developers and designers speaking the same language. I want to break down the walls between disciplines. I want designers talking about components, and I want developers talking about type hierarchies. In my experience, designers usually don&apos;t interact with the code, but I think living style guides could prove to be a gateway for many designers who want to iterate on a design system, but don&apos;t want to deal with the complexities of full-blown application development.</p>
+</div>
+<div class="dialog dialog--question">
+    <p>Yes, true.</p>
+    <p>One last question, and then I&apos;ll let you go, I promise: recently I have seen more an more interest in a possible integration between a system of <a href="https://medium.com/eightshapes-llc/tokens-in-design-systems-25dd82d58421">Design Tokens</a> expressed in YAML, converted in JSON with a tool like <a href="https://github.com/salesforce-ux/theo">Theo</a>, and then imported directly in a system of UI components that use <a href="https://github.com/MicheleBertoli/css-in-js">CSS-in-JS</a> for styling. At this point imagine to connect also the style guide generation and the automatic deploying of a static website, like the one you were mentioning, and you have the perfect workflow. Makes a lot of sense for me. </p>
+    <p>Do you have any experience with (or have tested) this kind of pipeline, using Design Tokens I mean?</p>
+</div>
+<div class="dialog dialog--answer">
+    <p>I haven&apos;t worked with them yet, mainly because my current work is very web focused.</p>
+    <p>The further along the living style guide path we get, the more we start to look towards including native applications in the process. Since the technology is so different, having some system of low level design tokens could become a critical way to keep design in sync across platforms.</p>
+    <p>That said, I&apos;m personally more excited by approaches like react-primitives and react-native-web, leveraging them to build a cross-platform set of components, but of course the challenge there is whether you can align technology across multiple teams to this degree. I take a lot of inspiration from companies like <a href="https://github.com/airbnb/react-with-styles">Airbnb</a> that work really hard to build a design system that works regardless of device, and this style of design really lends itself to the creation of a common set of components.</p>
+    <p>Now that mobile design patterns are becoming more acceptable on the web, this approach starts to make a lot more sense to me.</p>
+</div>
+<div class="dialog dialog--question">
+    <p>Any chance to see you in Europe again this year, at some conferences, talking about all these interesting things?</p>
+</div>
+<div class="dialog dialog--answer">
+    <p>[continue]</p>
 </div>
 
 {% endblock %}
