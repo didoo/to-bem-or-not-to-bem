@@ -12,9 +12,9 @@
 
     <ul class="billboards">
         {% for interview in interviews %}
-            {% set interview.path = loop.key + '__interview-with--' + interview.nameslug + '.html' %}
+            {% set interview.path = interview.id + '__interview-with--' + interview.nameslug + '.html' %}
             <li class="billboard {{ interview.status }}">
-                <span class="billboard__number">#{{ loop.key }}</span>
+                <span class="billboard__number">#{{ interview.id }}</span>
                 <div class="billboard__heading">
                     <h2 class="billboard__title">
                         {% if interview.status == 'public' %}

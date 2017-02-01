@@ -4,8 +4,9 @@
         "description": "a series of interviews on BEM methodology",
         "basepath": "http://www.didoo.net/to-bem-or-not-to-bem"
     },
-    "interviews": {
-        "01": {
+    "interviews": [
+        {
+            "id" : "01",
             "nameslug" : "christoph__reinartz",
             "title" : "Interview with Christoph Reinartz",
             "date" : "2016-05-06",
@@ -22,7 +23,8 @@
                 }
             }
         },
-        "02": {
+        {
+            "id" : "02",
             "nameslug" : "razvan__spatariu",
             "title" : "Interview with Razvan Spatariu",
             "date" : "2016-05-15",
@@ -39,7 +41,8 @@
                 }
             }
         },
-        "03": {
+        {
+            "id" : "03",
             "nameslug" : "sam__thurman",
             "title" : "Interview with Sam Thurman",
             "date" : "2016-06-15",
@@ -56,7 +59,8 @@
                 }
             }
         },
-        "04": {
+        {
+            "id" : "04",
             "nameslug" : "micah__godbolt",
             "title" : "Interview with Micah Godbolt",
             "date" : "2016-06-22",
@@ -73,7 +77,8 @@
                 }
             }
         },
-        "05": {
+        {
+            "id" : "05",
             "nameslug" : "varya__stepanova",
             "title" : "Interview with Varya Stepanova",
             "date" : "2016-07-12",
@@ -90,7 +95,8 @@
                 }
             }
         },
-        "06": {
+        {
+            "id" : "06",
             "nameslug" : "adam__onishi",
             "title" : "Interview with Adam Onishi",
             "date" : "2016-08-05",
@@ -107,7 +113,8 @@
                 }
             }
         },
-        "07": {
+        {
+            "id" : "07",
             "nameslug" : "stephanie__rewis",
             "title" : "Interview with Stephanie Rewis",
             "date" : "2016-11-16",
@@ -124,7 +131,8 @@
                 }
             }
         },
-        "08": {
+        {
+            "id" : "08",
             "nameslug" : "jof__arnold",
             "title" : "Interview with Jof Arnold",
             "date" : "2016-01-10",
@@ -141,10 +149,11 @@
                 }
             }
         },
-        "09": {
+        {
+            "id" : "09",
             "nameslug" : "katia__utochkina",
             "title" : "Interview with Katia Utochkina",
-            "date" : "2016-01-24",
+            "date" : "2017-01-24",
             "status" : "public",
             "quote" : "I think BEM is easy to pick up. It is very logical. It also allows for better code readability. I think it makes my code more consistent and logical.",
             "interviewee": {
@@ -158,10 +167,29 @@
                 }
             }
         },
-        "THE-END": {
+        {
+            "id" : "10",
+            "nameslug" : "mark__dalgleish",
+            "title" : "Interview with Mark Dalgleish",
+            "date" : "2017-02-01",
+            "status" : "public",
+            "quote" : "One of the most exciting things about CSS Modules for me is that it takes the principles behind BEM, but makes it look and feel like regular global CSS.",
+            "interviewee": {
+                "avatar": "img/mark-dalgleish.jpg",
+                "fullname": "Mark Dalgleish",
+                "minibio": "CSS Modules co-creator, MelbJS organiser. Full-stack ECMAScript addict, interaction craftsman + coffee drinker. DesignOps Lead at SEEK.",
+                "links": {
+                    "website": "http://markdalgleish.com/",
+                    "twitter": "https://twitter.com/markdalgleish",
+                    "github": "https://github.com/markdalgleish"
+                }
+            }
+        },
+        {
+            "id" : "THE-END",
             "nameslug" : "michele__bertoli",
             "title" : "Interview with Michele Bertoli",
-            "date" : "2016-xx-xx",
+            "date" : "2017-xx-xx",
             "status" : "public",
             "quote" : "Now that we have components, BEM is not needed anymore. In my opinion, this closes the circle.",
             "interviewee": {
@@ -176,5 +204,5 @@
                 }
             }
         }
-    }
+    ]
 }
